@@ -2,7 +2,7 @@ import {Injectable} from "@angular/core";
 import {ApiHttp} from "./http/apiHttp.service";
 @Injectable()
 
-export class Reports {
+export class ReportsService {
   constructor(public apiHttp: ApiHttp) {}
   postReports(id, body) {
     return this.apiHttp.post('api/staff' + id + '/reports', body)

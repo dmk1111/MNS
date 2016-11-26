@@ -21,15 +21,35 @@ import { CustomBrowserXhr } from './services/http/CustomXHR';
 import { Angular2DataTableModule } from 'angular2-data-table';
 import { StaffListComponent } from './home/staff/staffList';
 import { StaffEditModalComponent } from './home/staff/staffEditModal/staffEditModal';
+import { BaseStaffComponent } from './home/component/base-staff/base.staff.component';
+import { staffReducer } from './reducers/staff.reducer';
+import { StoreModule } from '@ngrx/store';
+import { StaffAction } from './action/staff.action';
+import { WorkExperienceService } from './services/work.experience.service';
+import { StaffPhotoService } from './services/staffphoto.service';
+import { StaffPersonalSerivce } from './services/staffpersonal.service';
+import { StaffDocumentsSevice } from './services/staff.documents.service';
+import { ReportsService } from './services/reports.service';
+import { PromotionService } from './services/promotion.service';
+import { PremiumFineService } from './services/premium.fine.service';
+import { OtherService } from './services/other.service';
+import { HospitalService } from './services/hospital.service';
+import { HolidaysService } from './services/holidays.service';
+import { FiredService } from './services/fired.service';
+import { EducationService } from './services/education.service';
+import { BenefitsService } from './services/benefits.service';
 
 @NgModule({
   bootstrap: [App],
   declarations: [
-    Home, Login, App, StaffListComponent, StaffEditModalComponent
+    Home, Login, App, StaffListComponent, StaffEditModalComponent, BaseStaffComponent
   ],
   imports: [
     ToastModule,
     Angular2DataTableModule,
+    StoreModule.provideStore({
+      staff: staffReducer
+    }),
     MaterialModule.forRoot(),
     HttpModule, BrowserModule, FormsModule,
     RouterModule.forRoot(routes, {
@@ -39,6 +59,20 @@ import { StaffEditModalComponent } from './home/staff/staffEditModal/staffEditMo
   providers: [
     API_HTTP_PROVIDERS,
     AuthService,
+    StaffAction,
+    BenefitsService,
+    EducationService,
+    FiredService,
+    HolidaysService,
+    HospitalService,
+    OtherService,
+    PremiumFineService,
+    PromotionService,
+    ReportsService,
+    StaffDocumentsSevice,
+    StaffPersonalSerivce,
+    StaffPhotoService,
+    WorkExperienceService,
     UserApiService,
     AuthGuard, ...AUTH_PROVIDERS,
     {provide: BrowserXhr, useClass: CustomBrowserXhr}

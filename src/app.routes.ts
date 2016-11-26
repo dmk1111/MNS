@@ -5,7 +5,7 @@ import { AuthGuard } from './common/auth.guard';
 import { StaffListComponent } from './home/staff/staffList';
 
 export const routes: Routes = [
-  { path: '',       component: Login },
+  { path: '',       redirectTo: 'home', pathMatch: 'full' },
   { path: 'login',  component: Login },
   { path: 'home',
     component: Home,
@@ -14,5 +14,5 @@ export const routes: Routes = [
       { path: 'staff',  component: StaffListComponent },
     ],
     canActivate: [AuthGuard] },
-  { path: '**',     component: Login },
+  { path: '**',     redirectTo: 'home', pathMatch: 'full' },
 ];

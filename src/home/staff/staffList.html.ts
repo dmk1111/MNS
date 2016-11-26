@@ -1,7 +1,7 @@
 //noinspection TsLint
 export const staffListHtml = `
   <h3>Staff</h3>
-   <div>
+   <div style="margin-bottom: 20px">
     <datatable *ngIf="staff && staff.length"
       class="material"
       [rows]="staff"
