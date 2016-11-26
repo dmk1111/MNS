@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {ApiHttp} from "./http/apiHttp.service";
-@Injectable()
 
+@Injectable()
 export class StaffPhotoService {
   constructor(public apiHttp: ApiHttp){}
   postStaffPhoto(id, body) {
