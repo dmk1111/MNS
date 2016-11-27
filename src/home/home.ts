@@ -15,7 +15,7 @@ export class Home {
   constructor(public router: Router) {
   }
 
-  logout() {
+  logOut() {
     localStorage.clear();
     this.router.navigate(['login']);
   }
