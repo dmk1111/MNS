@@ -27,7 +27,6 @@ export class StaffEditModalComponent {
         this.staff = staff;
       }));
     this.store.select('updateStaff').subscribe(res => {
-      debugger
     });
   }
   updateArr(event) {

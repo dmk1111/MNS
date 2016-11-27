@@ -32,6 +32,7 @@ export class BaseStaffComponent {
         if (type === 'date') {
           val = new Date(this.data[key]).toLocaleDateString().split('/');
           val = `${val[2]}-${val[1]}-${val[0]}`;
+          debugger
         }
         return {
           type: type === 'string' ? 'text' : type,

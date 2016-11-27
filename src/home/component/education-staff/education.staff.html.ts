@@ -19,10 +19,10 @@ export const educationStaffHtml = `
     </md-card>
   </div>
   <div class="col-md-4 col-xs-6" style="margin-top: 10px">
-  <md-card style="height: 309px">
+  <md-card (click)="addEdu()" style="height: 309px">
         <md-card-content>
           <div class="row">
-            ADd
+            <span>Add</span>
             <div class="col-md-12">
             </div>
           </div>

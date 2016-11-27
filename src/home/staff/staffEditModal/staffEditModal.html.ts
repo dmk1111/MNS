@@ -12,7 +12,7 @@ export const staffEditHtml = `
     z-index: 100;
     overflow: hidden;
     position: fixed;"></div>
-    <div class="modal-content" style="width: 80%;z-index: 9999;left: 10%;bottom: -77px;"> 
+    <div class="modal-content" style="width: 100%;z-index: 9999;height: 100%"> 
         <md-card style="background: white;padding-top: 20px">
         
       <md-card-header>
@@ -21,7 +21,6 @@ export const staffEditHtml = `
             <li [ngClass]="{active: tabIndex === 2}"><a (click)="tabIndex = 2">Education</a></li>
             <li [ngClass]="{active: tabIndex === 3}"><a (click)="tabIndex = 3">Other</a></li>
         </ul> 
-        <span (click)="close()" style="float: right;">X</span>
       </md-card-header>
       <md-card-content>
         <md-card>
@@ -32,12 +31,14 @@ export const staffEditHtml = `
             <education-staff *ngIf="tabIndex === 2" [data]="staff.education"></education-staff>
              <other-staff *ngIf="tabIndex === 3" [data]="staff.other"></other-staff>
           </md-card-content>  
+          
+           <md-card-actions align="end">
+        <button md-raised-button color="primary" (click)="save()">save</button>
+        <button md-raised-button color="accent" (click)="close()">close</button>
+   </md-card-actions>
         </md-card>
       </md-card-content>
-      <md-card-actions align="end">
-        <button md-button (click)="save()">save</button>
-        <button md-button (click)="close()">close</button>
-   </md-card-actions>
+     
 </md-card>
     </div>
 </div>
