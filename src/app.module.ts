@@ -41,6 +41,8 @@ import { BenefitsService } from './services/benefits.service';
 import  EducationStaffComponent  from './home/component/education-staff/education.staff.component';
 import OtherStaffComponent from "./home/component/other-staff/other.staff.component";
 import { staffUpdateReducer } from './reducers/updateStaff.reducer';
+import WorkExperienceComponent from "./home/component/work-experience/work.experience.component";
+import {BenefitsComponent} from "./home/component/benefits-staff/benefits.component";
 
 @NgModule({
   bootstrap: [App],
@@ -52,7 +54,9 @@ import { staffUpdateReducer } from './reducers/updateStaff.reducer';
     StaffEditModalComponent,
     BaseStaffComponent,
     EducationStaffComponent,
-    OtherStaffComponent
+    OtherStaffComponent,
+    WorkExperienceComponent,
+    BenefitsComponent
   ],
   imports: [
     ToastModule,
