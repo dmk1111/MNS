@@ -11,4 +11,14 @@ export class StaffAction {
       payload: staff
     });
   }
+  setStaffBase(key, value, needUpdate?) {
+    let obj = {};
+    obj[key] = value;
+    if (needUpdate)
+      obj['needUpdate'] = true;
+    this.store.dispatch({
+      type: 'SET_STAFF_BASE',
+      payload: obj
+    });
+  }
 }

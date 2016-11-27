@@ -24,15 +24,19 @@ export const staffEditHtml = `
         <span (click)="close()" style="float: right;">X</span>
       </md-card-header>
       <md-card-content>
-      <md-card>
-        <md-card-content>
-          
-          <!--Base Tab-->
-          <base-staff *ngIf="tabIndex === 1" [data]="staff.mainStaff"></base-staff>
-          <education-staff *ngIf="tabIndex === 2" [data]="staff.education"></education-staff>
-        </md-card-content>  
-      </md-card>
+        <md-card>
+          <md-card-content>
+            
+            <!--Base Tab-->
+            <base-staff *ngIf="tabIndex === 1" [data]="staff.mainStaff"></base-staff>
+            <education-staff *ngIf="tabIndex === 2" [data]="staff.education"></education-staff>
+          </md-card-content>  
+        </md-card>
       </md-card-content>
+      <md-card-actions align="end">
+        <button md-button (click)="save()">save</button>
+        <button md-button (click)="close()">close</button>
+   </md-card-actions>
 </md-card>
     </div>
 </div>

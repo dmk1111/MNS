@@ -10,6 +10,5 @@ export default class EducationStaffComponent {
   constructor() {}
   ngOnInit() {
     console.log(this.data)
-    debugger
   }
 }

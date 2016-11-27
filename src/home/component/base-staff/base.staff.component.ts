@@ -1,7 +1,7 @@
 import { baseStaffHtml } from './base.staff.html';
 import { Store } from '@ngrx/store';
 import { StaffAction } from '../../../action/staff.action';
-import { Input, Component } from '@angular/core';
+import { Input, Component, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'base-staff',
   template: baseStaffHtml,
@@ -11,8 +11,10 @@ import { Input, Component } from '@angular/core';
 })
 
 export class BaseStaffComponent {
+  @Output('onDestroy') onDestroy = new EventEmitter();
   @Input() data;
   private formObject;
+  private isChange = false;
   constructor(private store: Store<any>,
               private action: StaffAction) {}
   ngOnInit() {
@@ -38,6 +40,12 @@ export class BaseStaffComponent {
         };
       });
   }
+  onChange(key, event) {
+    this.action.setStaffBase(key, event.target.value, true);
+  }
   ngOnDestroy() {
+    if (this.isChange) {
+      this.onDestroy.emit('mainStaff');
+    }
   }
 }

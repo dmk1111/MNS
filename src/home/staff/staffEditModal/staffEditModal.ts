@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { staffEditHtml } from './staffEditModal.html';
 import { UserApiService } from '../../../services/user.service';
 import { Store } from '@ngrx/store';
-
+import * as _ from 'lodash"';
 
 @Component({
   selector: 'staffModal',
@@ -14,6 +14,7 @@ export class StaffEditModalComponent {
   @Output() onClose = new EventEmitter();
   private tabIndex = 1;
   private unsubscribe = [];
+  private needUpdate = [];
   private staff;
 
   constructor(public router: Router,
@@ -26,6 +27,9 @@ export class StaffEditModalComponent {
         this.staff = staff;
       }));
   }
+  updateArr(event) {
+    this.needUpdate.push(event);
+  }
   save() {
     this.onClose.emit(null);
   }
@@ -33,6 +37,6 @@ export class StaffEditModalComponent {
     this.onClose.emit(null);
   }
   ngOnDestroy() {
-    this.unsubscribe.forEach(el => el.unsubscribe());
+    this.unsubscribe.forEach(el => el.unsubscribe())
   }
 }

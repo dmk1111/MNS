@@ -6,6 +6,15 @@ export const staffReducer: ActionReducer<Object> = (state: Staff = undefined, ac
   switch (action.type) {
     case SET_STAFF:
       return action.payload;
+    case 'SET_STAFF_BASE':
+      return Object.assign(
+        {},
+        state,
+        { mainStaff: Object.assign(
+          {},
+          state.mainStaff,
+          action.payload)
+        });
     default:
       return state;
   }
