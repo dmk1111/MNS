@@ -30,6 +30,7 @@ export const staffEditHtml = `
             <!--Base Tab-->
             <base-staff *ngIf="tabIndex === 1" [data]="staff.mainStaff"></base-staff>
             <education-staff *ngIf="tabIndex === 2" [data]="staff.education"></education-staff>
+             <other-staff *ngIf="tabIndex === 3" [data]="staff.other"></other-staff>
           </md-card-content>  
         </md-card>
       </md-card-content>

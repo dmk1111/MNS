@@ -39,6 +39,7 @@ import { FiredService } from './services/fired.service';
 import { EducationService } from './services/education.service';
 import { BenefitsService } from './services/benefits.service';
 import  EducationStaffComponent  from './home/component/education-staff/education.staff.component';
+import OtherStaffComponent from "./home/component/other-staff/other.staff.component";
 
 @NgModule({
   bootstrap: [App],
@@ -49,7 +50,8 @@ import  EducationStaffComponent  from './home/component/education-staff/educatio
     StaffListComponent,
     StaffEditModalComponent,
     BaseStaffComponent,
-    EducationStaffComponent
+    EducationStaffComponent,
+    OtherStaffComponent
   ],
   imports: [
     ToastModule,
