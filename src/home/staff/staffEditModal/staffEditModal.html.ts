@@ -20,6 +20,8 @@ export const staffEditHtml = `
             <li  [ngClass]="{active: tabIndex === 1}"><a (click)="tabIndex = 1">Base</a></li>
             <li [ngClass]="{active: tabIndex === 2}"><a (click)="tabIndex = 2">Education</a></li>
             <li [ngClass]="{active: tabIndex === 3}"><a (click)="tabIndex = 3">Other</a></li>
+            <li [ngClass]="{active: tabIndex === 4}"><a (click)="tabIndex = 4">WorkExperience</a></li>
+            <li [ngClass]="{active: tabIndex === 5}"><a (click)="tabIndex = 5">Benefits</a></li>
         </ul> 
         <span (click)="close()" style="float: right;">X</span>
       </md-card-header>
@@ -31,6 +33,8 @@ export const staffEditHtml = `
             <base-staff *ngIf="tabIndex === 1" [data]="staff.mainStaff"></base-staff>
             <education-staff *ngIf="tabIndex === 2" [data]="staff.education"></education-staff>
              <other-staff *ngIf="tabIndex === 3" [data]="staff.other"></other-staff>
+             <work-experience *ngIf="tabIndex === 4" [data]="staff.workExperiences"></work-experience>
+             <benefits *ngIf="tabIndex === 5" [data]="staff.benefits"></benefits>
           </md-card-content>  
         </md-card>
       </md-card-content>
