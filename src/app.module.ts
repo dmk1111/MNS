@@ -39,6 +39,7 @@ import { FiredService } from './services/fired.service';
 import { EducationService } from './services/education.service';
 import { BenefitsService } from './services/benefits.service';
 import  EducationStaffComponent  from './home/component/education-staff/education.staff.component';
+import { staffUpdateReducer } from './reducers/updateStaff.reducer';
 
 @NgModule({
   bootstrap: [App],
@@ -55,7 +56,8 @@ import  EducationStaffComponent  from './home/component/education-staff/educatio
     ToastModule,
     Angular2DataTableModule,
     StoreModule.provideStore({
-      staff: staffReducer
+      staff: staffReducer,
+      updateStaff: staffUpdateReducer
     }),
     MaterialModule.forRoot(),
     HttpModule, BrowserModule, FormsModule,

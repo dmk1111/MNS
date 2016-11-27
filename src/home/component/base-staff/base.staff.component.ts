@@ -41,7 +41,10 @@ export class BaseStaffComponent {
       });
   }
   onChange(key, event) {
-    this.action.setStaffBase(key, event.target.value, true);
+    let obj = {};
+    obj[key] = event.target.value;
+    this.action.setUpdateStaff('mainStaff', obj);
+    this.action.setStaffBase(key, event.target.value);
   }
   ngOnDestroy() {
     if (this.isChange) {

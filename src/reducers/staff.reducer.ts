@@ -1,4 +1,5 @@
 import { ActionReducer, Action } from '@ngrx/store';
+import * as  _ from 'lodash';
 
 export const SET_STAFF = 'SET_STAFF';
 
@@ -14,6 +15,17 @@ export const staffReducer: ActionReducer<Object> = (state: Staff = undefined, ac
           {},
           state.mainStaff,
           action.payload)
+        });
+    case 'SET_STAFF_EDUCATIONS':
+      let edu = Object.assign({}, state.education);
+      return Object.assign(
+        {},
+        state,
+        {
+          education: _.update(
+            edu,
+            `mainEducationBlocks[${action.payload.index}][${action.payload.key}]`,
+            (n) => action.payload.value)
         });
     default:
       return state;

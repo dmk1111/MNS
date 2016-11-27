@@ -11,14 +11,38 @@ export class StaffAction {
       payload: staff
     });
   }
-  setStaffBase(key, value, needUpdate?) {
+  setStaffBase(key, value) {
     let obj = {};
     obj[key] = value;
-    if (needUpdate)
-      obj['needUpdate'] = true;
     this.store.dispatch({
       type: 'SET_STAFF_BASE',
       payload: obj
+    });
+  }
+  setUpdateStaff(key, value) {
+    this.store.dispatch({
+      type: 'SET',
+      payload: {key: key, value: value}
+    });
+  }
+  setStaffEducation(key, value, index) {
+    this.store.dispatch({
+      type: 'SET_STAFF_EDUCATIONS',
+      payload: {
+        index: index,
+        key: key,
+        value: value
+      }
+    });
+  }
+  setUpdateStaffEducation(key, value, index) {
+    this.store.dispatch({
+      type: 'SET_EDU',
+      payload: {
+        index: index,
+        key: key,
+        value: value
+      }
     });
   }
 }
