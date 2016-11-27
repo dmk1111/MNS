@@ -1,6 +1,6 @@
 //noinspection TsLint
 export const staffEditHtml = `
-    <div class="modal" style="display: block">
+    <div class="modal" style="display: block;overflow: auto">
     <div style="    
     background-color: rgba(0,0,0,0.5);
     width: 100%;
@@ -28,11 +28,10 @@ export const staffEditHtml = `
         <md-card-content>
           
           <!--Base Tab-->
-          <base-staff *ngIf="tabIndex === 1"></base-staff>
-          
+          <base-staff *ngIf="tabIndex === 1" [data]="staff.mainStaff"></base-staff>
+          <education-staff *ngIf="tabIndex === 2" [data]="staff.education"></education-staff>
         </md-card-content>  
       </md-card>
-        <!--<base-staff-form ></base-staff-form>-->
       </md-card-content>
 </md-card>
     </div>

@@ -12,12 +12,7 @@ const template = require('./home.html');
   styles: [styles]
 })
 export class Home {
-  private staff;
-  private column;
-  private selectedStaff;
-
-  constructor(public router: Router, public http: Http,
-              private userApi: UserApiService) {
+  constructor(public router: Router) {
   }
 
   logout() {

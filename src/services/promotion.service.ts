@@ -1,5 +1,5 @@
-import {Injectable} from "@angular/core";
-import {ApiHttp} from "./http/apiHttp.service";
+import {Injectable} from '@angular/core';
+import {ApiHttp} from './http/apiHttp.service';
 @Injectable()
 
 export class PromotionService {

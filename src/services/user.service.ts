@@ -9,7 +9,7 @@ export class UserApiService {
       .map(res => res.json());
   }
   getStaff(id) {
-    return this.apiHttp.get('api/staff/' + id)
+    return this.apiHttp.get('api/staff/whole/' + id)
       .map(res => res.json());
   }
 }

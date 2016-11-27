@@ -10,14 +10,17 @@ export const staffReducer: ActionReducer<Object> = (state: Staff = undefined, ac
       return state;
   }
 };
-export interface Wallet {
-  id: number;
-  state: number;
-  name: string;
-}
 export interface Staff {
+  benefits: Array<any>;
+  education: Object;
+  fired: Object;
+  holidays: any[];
   id: number;
-  name: string;
-  selected_wallet: number;
-  wallets: Wallet[];
+  isDeleted: any;
+  mainStaff: Object;
+  other: Object;
+  premiumFines: any[];
+  promotions: any[];
+  region: any;
+  workExperiences: any[];
 }

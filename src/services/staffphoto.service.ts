@@ -1,9 +1,9 @@
-import {Injectable} from "@angular/core";
-import {ApiHttp} from "./http/apiHttp.service";
+import {Injectable} from '@angular/core';
+import {ApiHttp} from './http/apiHttp.service';
 
 @Injectable()
 export class StaffPhotoService {
-  constructor(public apiHttp: ApiHttp){}
+  constructor(public apiHttp: ApiHttp) {}
   postStaffPhoto(id, body) {
     return this.apiHttp.post('api/staff' + id + '/staffphoto', body)
       .map(res => res.json());

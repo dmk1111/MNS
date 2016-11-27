@@ -11,24 +11,28 @@ import { Store } from '@ngrx/store';
   styles: []
 })
 export class StaffEditModalComponent {
-  @Input() selectedStaff;
   @Output() onClose = new EventEmitter();
   private tabIndex = 1;
+  private unsubscribe = [];
+  private staff;
 
   constructor(public router: Router,
               private store: Store<any>,
               private userApi: UserApiService) {
   }
   ngOnInit() {
-    this.store.select('staff')
-      .subscribe(res => {
-        debugger
-      });
+    this.unsubscribe.push(this.store.select('staff')
+      .subscribe(staff => {
+        this.staff = staff;
+      }));
   }
   save() {
     this.onClose.emit(null);
   }
   close() {
     this.onClose.emit(null);
+  }
+  ngOnDestroy() {
+    this.unsubscribe.forEach(el => el.unsubscribe());
   }
 }

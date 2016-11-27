@@ -38,11 +38,18 @@ import { HolidaysService } from './services/holidays.service';
 import { FiredService } from './services/fired.service';
 import { EducationService } from './services/education.service';
 import { BenefitsService } from './services/benefits.service';
+import  EducationStaffComponent  from './home/component/education-staff/education.staff.component';
 
 @NgModule({
   bootstrap: [App],
   declarations: [
-    Home, Login, App, StaffListComponent, StaffEditModalComponent, BaseStaffComponent
+    Home,
+    Login,
+    App,
+    StaffListComponent,
+    StaffEditModalComponent,
+    BaseStaffComponent,
+    EducationStaffComponent
   ],
   imports: [
     ToastModule,

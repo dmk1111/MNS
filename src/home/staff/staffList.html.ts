@@ -16,5 +16,5 @@ export const staffListHtml = `
       [limit]="10">
     </datatable>
    </div>
-    <staffModal [selectedStaff]="selectedStaff" *ngIf="open" (onClose)="open = false"></staffModal>
+    <staffModal *ngIf="open" (onClose)="open = false"></staffModal>
 `;
