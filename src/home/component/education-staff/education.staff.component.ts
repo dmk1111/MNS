@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { educationStaffHtml } from './education.staff.html';
+import { StaffAction } from '../../../action/staff.action';
 @Component({
   selector: 'education-staff',
   template: educationStaffHtml
@@ -7,8 +8,13 @@ import { educationStaffHtml } from './education.staff.html';
 
 export default class EducationStaffComponent {
   @Input() data;
-  constructor() {}
+  private form;
+  constructor(private action: StaffAction) {}
   ngOnInit() {
-    console.log(this.data)
+    this.form = this.data.mainEducationBlocks;
+  }
+  onChange(event, key, index) {
+    this.action.setUpdateStaffEducation(key, event.target.value, index);
+    this.action.setStaffEducation(key, event.target.value, index);
   }
 }
