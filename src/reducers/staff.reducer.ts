@@ -93,6 +93,10 @@ export const staffReducer: ActionReducer<Object> = (state: Staff = undefined, ac
       state[action.payload.key] = state[action.payload.key]
         .filter(el => el.id !== action.payload.id);
       return Object.assign({}, state);
+    case 'DELETE_EDUCATION':
+      state['education']['mainEducationBlocks'] = state['education']['mainEducationBlocks']
+        .filter(el => !_.isEqual(el, action.payload));
+          return Object.assign({}, state);
     default:
       return state;
   }

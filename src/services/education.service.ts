@@ -7,8 +7,8 @@ export class EducationService {
     return this.apiHTTP.get('api/staff/' + id + '/education')
       .map(res => res.json());
   }
-  deleteEducation(id) {
-    return this.apiHTTP.delete('api/staff/' + id + '/education')
+  deleteEducation(staffId, id) {
+    return this.apiHTTP.delete('api/staff/' + staffId + '/' + id + '/education')
       .map(res => res.json());
   }
   setEducation(id, body) {

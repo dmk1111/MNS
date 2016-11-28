@@ -3,6 +3,8 @@ import {WorkExperienceHtml} from './work.experience.component.html';
 import { StaffAction } from '../../../action/staff.action';
 import { WorkExperienceService } from '../../../services/work.experience.service';
 import { ToastsManager } from 'ng2-toastr';
+import * as _ from 'lodash';
+
 @Component({
   selector: 'work-experience',
   template: WorkExperienceHtml
@@ -18,14 +20,20 @@ export default class WorkExperienceComponent {
   ngOnInit() {
     this.form = this.data;
   }
-  del(id) {
-    this.expApi.deleteWorkExperience(this.id, id)
-      .subscribe(res => {
-        if (res.success) {
-          this.action.delFromArr('workExperiences', id);
-          this.toast.success('Успішно видалено');
-        }
-      });
+  del(obj) {
+    if (obj.id) {
+      this.expApi.deleteWorkExperience(this.id, obj.id)
+        .subscribe(res => {
+          if (res.success) {
+            this.action.delFromArr('workExperiences', obj.id);
+            this.action.delFromUpdateArr('workExperiences', obj);
+            this.toast.success('Успішно видалено');
+          }
+        });
+    } else {
+      this.action.delFromUpdateArr('workExperiences', obj);
+      this.form = this.form.filter(el => !_.isEqual(el, obj));
+    }
   }
   addExp() {
     this.form.push({});

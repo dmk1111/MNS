@@ -3,6 +3,7 @@ export const promotionsHtml = `
 <div class="row">
   <div class="col-md-3 col-xs-4 marginTop" *ngFor="let fom of form;let i = index">
     <md-card>
+        <md-card-title *ngIf="!fom.id"><span (click)="del(fom)">X</span></md-card-title>
         <md-card-content>
           <div class="row">
             <div class="col-md-12">

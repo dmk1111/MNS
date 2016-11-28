@@ -47,6 +47,8 @@ import { HolidaysComponent } from './home/component/holidays/holidays.component'
 import { FiredComponent } from './home/component/fired/fired.component';
 import { PremiumFinesComponent } from './home/component/premiumFines/premiumFines.component';
 import { PromotionComponent } from './home/component/promotions/promotions.component';
+import { DocumentComponent } from './home/component/document/documanet.component';
+import { FileService } from './services/file.service';
 
 @NgModule({
   bootstrap: [App],
@@ -64,7 +66,8 @@ import { PromotionComponent } from './home/component/promotions/promotions.compo
     HolidaysComponent,
     FiredComponent,
     PremiumFinesComponent,
-    PromotionComponent
+    PromotionComponent,
+    DocumentComponent
   ],
   imports: [
     ToastModule,
@@ -97,6 +100,7 @@ import { PromotionComponent } from './home/component/promotions/promotions.compo
     StaffPhotoService,
     WorkExperienceService,
     UserApiService,
+    FileService,
     AuthGuard, ...AUTH_PROVIDERS,
     {provide: BrowserXhr, useClass: CustomBrowserXhr}
   ]

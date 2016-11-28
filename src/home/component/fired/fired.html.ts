@@ -1,6 +1,6 @@
 //noinspection TsLint
 export const firedHtml = `
-<div class="row">
+<div class="row" *ngIf="form">
     <div class="col-md-3 col-sm-4">
       <md-input (change)="onChange('article', $event)" type="text" [(ngModel)]="form.article" placeholder="article" [ngModelOptions]="{standalone: true}"></md-input>
     </div>

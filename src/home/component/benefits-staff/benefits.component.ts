@@ -3,6 +3,7 @@ import {BenefitsHtml} from "./benefits.component.html";
 import { StaffAction } from '../../../action/staff.action';
 import { BenefitsService } from '../../../services/benefits.service';
 import { ToastsManager } from 'ng2-toastr';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'benefits',
@@ -28,13 +29,19 @@ export class BenefitsComponent {
     this.action.setUpdateBenefits(this.form[index], index);
     this.action.setStaffBenefits(key, event.target.value, index);
   }
-  del(id) {
-    this.benService.deleteBenefits(this.id, id)
-      .subscribe(res => {
-        if (res.success) {
-          this.toast.success('Успішно видалено');
-          this.action.delFromArr('benefits', id);
-        }
-      });
+  del(obj) {
+    if (!obj.id) {
+      this.action.delFromUpdateArr('benefits', obj);
+      this.form = this.form.filter(el => !_.isEqual(el, obj));
+    } else {
+      this.benService.deleteBenefits(this.id, obj.id)
+        .subscribe(res => {
+          if (res.success) {
+            this.toast.success('Успішно видалено');
+            this.action.delFromArr('benefits', obj.id);
+            this.action.delFromUpdateArr('benefits', obj);
+          }
+        });
+    }
   }
 }

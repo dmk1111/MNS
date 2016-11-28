@@ -33,6 +33,7 @@ export class StaffEditModalComponent {
     this.needUpdate.push(event);
   }
   save() {
+    debugger
     this.onClose.emit(null);
   }
   close() {

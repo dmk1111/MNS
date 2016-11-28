@@ -4,7 +4,7 @@ export const WorkExperienceHtml = `
   <div class="col-md-4 col-xs-6 marginTop" *ngFor="let fom of form;let i = index">
     <md-card>
         <md-card-title>
-          <span (click)="del(fom.id)">X</span>
+          <span (click)="del(fom)">X</span>
         </md-card-title>
         <md-card-content>
           <div class="row">

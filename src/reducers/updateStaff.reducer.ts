@@ -58,7 +58,11 @@ export const staffUpdateReducer: ActionReducer<any> = (state = initState, action
       return Object.assign({}, state);
     case 'DELETE_UPDATE_FROM_ARR':
       state[action.payload.key] = state[action.payload.key]
-        .filter(el => el.id !== action.payload.id);
+        .filter(el => !_.isEqual(el, action.payload.obj));
+      return Object.assign({}, state);
+    case 'DELETE_UPDATE_EDU':
+      state['education']['mainEducationBlocks'] = state['education']['mainEducationBlocks']
+        .filter(el => !_.isEqual(el, action.payload));
       return Object.assign({}, state);
     default:
       return state;

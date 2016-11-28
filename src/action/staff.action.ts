@@ -163,12 +163,26 @@ export class StaffAction {
         id: id
       }
     });
+  }
+  delFromUpdateArr(key, obj) {
     this.store.dispatch({
       type: 'DELETE_UPDATE_FROM_ARR',
       payload: {
         key: key,
-        id: id
+        id: obj
       }
+    });
+  }
+  deleteEducation(edu) {
+    this.store.dispatch({
+      type: 'DELETE_EDUCATION',
+      payload: edu
+    });
+  }
+  delEduUpdate(edu) {
+    this.store.dispatch({
+      type: 'DELETE_UPDATE_EDU',
+      payload: edu
     });
   }
 }

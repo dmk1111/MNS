@@ -1,0 +1,9 @@
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  background-color: cornsilk;
+}
+.marginTop {
+  margin-top: 10px !important;
+}
+.md-card-header-text {
+  margin: 0 0 0 0 !important;
+}
