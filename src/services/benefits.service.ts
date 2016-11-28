@@ -8,8 +8,8 @@ export class BenefitsService {
     return this.apiHTTP.post('api/staff/' + id + '/benefits', body)
       .map(res => res.json());
   }
-  deleteBenefits(id) {
-    return this.apiHTTP.delete('api/staff/' + id + '/benefits')
+  deleteBenefits(staffId, id) {
+    return this.apiHTTP.delete('api/staff/' + staffId + '/' + id + '/benefits')
       .map(res => res.json());
   }
   getBenefits(id) {

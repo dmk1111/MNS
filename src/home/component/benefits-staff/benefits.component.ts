@@ -1,5 +1,8 @@
 import {Component, Input} from "@angular/core";
 import {BenefitsHtml} from "./benefits.component.html";
+import { StaffAction } from '../../../action/staff.action';
+import { BenefitsService } from '../../../services/benefits.service';
+import { ToastsManager } from 'ng2-toastr';
 
 @Component({
   selector: 'benefits',
@@ -7,22 +10,31 @@ import {BenefitsHtml} from "./benefits.component.html";
 })
 export class BenefitsComponent {
   @Input() data;
+  @Input() id;
   private form;
-  constructor() {}
+  constructor(private action: StaffAction,
+              private benService: BenefitsService,
+              public toast: ToastsManager) {}
   ngOnInit() {
-    this.form = [
-      {
-        "name": "sadacascx",
-        "fromDate": "18.01.2017",
-        "toDate": "12.11.2111",
-        "order": "sadacascx",
-        "orderDate": "2017-01-20",
-        "certification": "dsafgsdgfsdfgfsdfs",
-        "privilege": "sadacascx",
-        "actsAndComments": "wwwwwwwwwwwwwwwwwwwwwwww",
-        "otherInfo": "ascassssssssssssssssssssssxcasdcaxzczxczcascadwqaeqweqweqwe"
-      }
-    ]
-
+    this.form = this.data;
+  }
+  ngOnChanges() {
+    this.form = this.data;
+  }
+  addBenefits() {
+    this.form.push({});
+  }
+  onChange(event, key, index) {
+    this.action.setUpdateBenefits(this.form[index], index);
+    this.action.setStaffBenefits(key, event.target.value, index);
+  }
+  del(id) {
+    this.benService.deleteBenefits(this.id, id)
+      .subscribe(res => {
+        if (res.success) {
+          this.toast.success('Успішно видалено');
+          this.action.delFromArr('benefits', id);
+        }
+      });
   }
 }

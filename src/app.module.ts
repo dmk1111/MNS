@@ -43,6 +43,10 @@ import OtherStaffComponent from "./home/component/other-staff/other.staff.compon
 import { staffUpdateReducer } from './reducers/updateStaff.reducer';
 import WorkExperienceComponent from "./home/component/work-experience/work.experience.component";
 import {BenefitsComponent} from "./home/component/benefits-staff/benefits.component";
+import { HolidaysComponent } from './home/component/holidays/holidays.component';
+import { FiredComponent } from './home/component/fired/fired.component';
+import { PremiumFinesComponent } from './home/component/premiumFines/premiumFines.component';
+import { PromotionComponent } from './home/component/promotions/promotions.component';
 
 @NgModule({
   bootstrap: [App],
@@ -56,7 +60,11 @@ import {BenefitsComponent} from "./home/component/benefits-staff/benefits.compon
     EducationStaffComponent,
     OtherStaffComponent,
     WorkExperienceComponent,
-    BenefitsComponent
+    BenefitsComponent,
+    HolidaysComponent,
+    FiredComponent,
+    PremiumFinesComponent,
+    PromotionComponent
   ],
   imports: [
     ToastModule,

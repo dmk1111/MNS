@@ -1,5 +1,5 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import * as  _ from 'lodash';
+import * as _ from 'lodash';
 
 export const SET_STAFF = 'SET_STAFF';
 
@@ -16,6 +16,24 @@ export const staffReducer: ActionReducer<Object> = (state: Staff = undefined, ac
           state.mainStaff,
           action.payload)
         });
+    case 'SET_STAFF_OTHER':
+      return Object.assign(
+        {},
+        state,
+        { other: Object.assign(
+          {},
+          state.other,
+          action.payload)
+        });
+    case 'SET_STAFF_FIRED':
+      return Object.assign(
+        {},
+        state,
+        { other: Object.assign(
+          {},
+          state.fired,
+          action.payload)
+        });
     case 'SET_STAFF_EDUCATIONS':
       let edu = Object.assign({}, state.education);
       return Object.assign(
@@ -27,6 +45,54 @@ export const staffReducer: ActionReducer<Object> = (state: Staff = undefined, ac
             `mainEducationBlocks[${action.payload.index}][${action.payload.key}]`,
             (n) => action.payload.value)
         });
+    case 'SET_STAFF_EXP':
+      let exp = Object.assign([], state.workExperiences);
+      return Object.assign(
+        {},
+        state,
+        {
+          workExperiences: _.update(
+            exp,
+            `[${action.payload.index}][${action.payload.key}]`,
+            (n) => action.payload.value)
+        });
+    case 'SET_STAFF_BENEFITS':
+      let ben = Object.assign([], state.benefits);
+      return Object.assign(
+        {},
+        state,
+        {
+          benefits: _.update(
+            ben,
+            `[${action.payload.index}][${action.payload.key}]`,
+            (n) => action.payload.value)
+        });
+    case 'SET_STAFF_P_FINES':
+      let test = Object.assign([], state.premiumFines);
+      return Object.assign(
+        {},
+        state,
+        {
+          premiumFines: _.update(
+            test,
+            `[${action.payload.index}][${action.payload.key}]`,
+            (n) => action.payload.value)
+        });
+    case 'SET_STAFF_PROMOTION':
+      let pro = Object.assign([], state.promotions);
+      return Object.assign(
+        {},
+        state,
+        {
+          promotions: _.update(
+            pro,
+            `[${action.payload.index}][${action.payload.key}]`,
+            (n) => action.payload.value)
+        });
+    case 'DEL_FROM_ARR':
+      state[action.payload.key] = state[action.payload.key]
+        .filter(el => el.id !== action.payload.id);
+      return Object.assign({}, state);
     default:
       return state;
   }

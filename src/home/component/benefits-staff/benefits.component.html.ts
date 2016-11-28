@@ -1,8 +1,12 @@
+//noinspection TsLint
 export const BenefitsHtml = `
 
 <div class="row">
-  <div class="col-md-4 col-xs-6" *ngFor="let fom of form;let i = index">
+  <div class="col-md-4 col-xs-6 marginTop" *ngFor="let fom of form;let i = index">
     <md-card>
+        <md-card-title>
+          <span (click)="del(fom.id)">X</span>
+        </md-card-title>
         <md-card-content>
           <div class="row">
             <div class="col-md-12">
@@ -23,7 +27,7 @@ export const BenefitsHtml = `
     </md-card>
   </div>
   <div class="col-md-4 col-xs-6" style="margin-top: 10px">
-  <md-card style="height: 309px">
+  <md-card style="height: 309px" (click)="addBenefits()">
         <md-card-content>
           <div class="row">
             ADd

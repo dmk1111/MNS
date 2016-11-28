@@ -1,7 +1,7 @@
 //noinspection TsLint
 export const educationStaffHtml = `
 <div class="row">
-  <div class="col-md-4 col-xs-6" *ngFor="let fom of form;let i = index">
+  <div class="col-md-4 col-xs-6 marginTop" *ngFor="let fom of form;let i = index">
     <md-card>
         <md-card-content>
           <div class="row">

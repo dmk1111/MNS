@@ -8,8 +8,8 @@ export class WorkExperienceService {
       return this.apiHttp.post('api/staff' + id + '/workexperience', body)
         .map(res => res.json());
   }
-  deleteWorkExperience(id) {
-    return this.apiHttp.delete('api/staff' + id + '/workexperience')
+  deleteWorkExperience(staffId, id) {
+    return this.apiHttp.delete('api/staff/' + staffId + '/' + id + '/workexperience')
       .map(res => res.json());
   }
   getWorkExperience(id) {
