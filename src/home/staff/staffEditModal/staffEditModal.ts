@@ -25,10 +25,8 @@ export class StaffEditModalComponent {
     this.unsubscribe.push(this.store.select('staff')
       .subscribe(staff => {
         this.staff = staff;
-        debugger
       }));
     this.store.select('updateStaff').subscribe(res => {
-      debugger
     });
   }
   updateArr(event) {

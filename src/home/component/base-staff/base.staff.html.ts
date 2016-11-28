@@ -3,7 +3,7 @@ export const baseStaffHtml = `
 <form>
 <div class="row">
   <div *ngFor="let field of formObject" class="col-md-3 col-sm-4 col-xs-6">
-    <md-input style="width: 100%"
+    <md-input
        (change)="onChange(field.key, $event)"
       [type]="field.type"
       [placeholder]="field.key" 
