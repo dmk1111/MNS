@@ -9,7 +9,7 @@ export class WorkExperienceService {
         .map(res => res.json());
   }
   deleteWorkExperience(staffId, id) {
-    return this.apiHttp.delete('api/staff/' + staffId + '/' + id + '/workexperience')
+    return this.apiHttp.delete('api/staff/' + staffId + '/workExperience/' + id)
       .map(res => res.json());
   }
   getWorkExperience(id) {

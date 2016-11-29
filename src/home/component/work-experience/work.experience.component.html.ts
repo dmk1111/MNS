@@ -9,7 +9,7 @@ export const WorkExperienceHtml = `
         <md-card-content>
           <div class="row">
             <div class="col-md-12">
-              <md-input type="text" style="width: 100%" (change)="onChange($event, 'name', i)" [(ngModel)]="fom.name" ><md-placeholder class="test">name</md-placeholder></md-input>
+              <md-input type="textarea" style="width: 100%" (change)="onChange($event, 'name', i)" [(ngModel)]="fom.name" ><md-placeholder class="test">name</md-placeholder></md-input>
               <md-input type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="fromDate"></md-input>
               <md-input type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="toDate"></md-input>
             </div>

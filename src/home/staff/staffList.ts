@@ -30,7 +30,7 @@ export class StaffListComponent {
     this.getStaff();
   }
   onSelect(event) {
-    this.userApi.getStaff(event.selected[0].id)
+    this.userApi.getStaff(event.selected[0].staffId)
       .subscribe(res => {
         this.selectedStaff = JSON.parse(JSON.stringify(res, undefined, 2));
         this.staffAction.setStaff(this.selectedStaff);
@@ -42,10 +42,17 @@ export class StaffListComponent {
   getStaff() {
     this.userApi.getStaffList().subscribe(res => {
       this.staff = res
-        .map(el => el.mainStaff);
+        .map(el => Object.assign({}, el.mainStaff, {staffId: el.id}));
     });
   }
   openModal() {
     this.open = true;
+  }
+  closeHandle(event) {
+    debugger
+    if (event) {
+      this.getStaff();
+    }
+    this.open = false;
   }
 }

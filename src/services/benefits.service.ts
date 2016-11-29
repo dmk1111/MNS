@@ -9,7 +9,7 @@ export class BenefitsService {
       .map(res => res.json());
   }
   deleteBenefits(staffId, id) {
-    return this.apiHTTP.delete('api/staff/' + staffId + '/' + id + '/benefits')
+    return this.apiHTTP.delete('api/staff/' + staffId + '/benefits/' + id)
       .map(res => res.json());
   }
   getBenefits(id) {

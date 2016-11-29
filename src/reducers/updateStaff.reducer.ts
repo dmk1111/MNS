@@ -10,7 +10,7 @@ const initState = {
     premiumFines: [],
     promotions: []
   };
-export const staffUpdateReducer: ActionReducer<any> = (state = initState, action: Action) => {
+export const staffUpdateReducer: ActionReducer<any> = (state = Object.assign({}, initState), action: Action) => {
   switch (action.type) {
     case 'SET':
       state[action.payload.key] = Object.assign(
@@ -64,6 +64,8 @@ export const staffUpdateReducer: ActionReducer<any> = (state = initState, action
       state['education']['mainEducationBlocks'] = state['education']['mainEducationBlocks']
         .filter(el => !_.isEqual(el, action.payload));
       return Object.assign({}, state);
+    case 'CLEAR':
+      return Object.assign({}, initState);
     default:
       return state;
   }

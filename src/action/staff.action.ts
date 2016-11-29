@@ -185,4 +185,9 @@ export class StaffAction {
       payload: edu
     });
   }
+  clearUpdateObj() {
+    this.store.dispatch({
+      type: 'CLEAR'
+    });
+  }
 }

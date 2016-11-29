@@ -2,7 +2,7 @@
 export const staffEditHtml = `
     <div class="modal" style="display: block">
       <div class="modal-content" style="width: 100%;z-index: 9999;height: 100%"> 
-        <ul class="nav nav-tabs" style="width: 100%;background-color: #fff8dc;">
+        <ul class="nav nav-tabs" style="width: 100%;background-color: aliceblue;">
             <li  [ngClass]="{active: tabIndex === 1}"><a (click)="tabIndex = 1">Base</a></li>
             <li [ngClass]="{active: tabIndex === 2}"><a (click)="tabIndex = 2">Education</a></li>
             <li [ngClass]="{active: tabIndex === 3}"><a (click)="tabIndex = 3">Other</a></li>
@@ -13,8 +13,11 @@ export const staffEditHtml = `
             <li [ngClass]="{active: tabIndex === 8}"><a (click)="tabIndex = 8">Premium Fines</a></li>
             <li [ngClass]="{active: tabIndex === 9}"><a (click)="tabIndex = 9">Promotion</a></li>
             <li [ngClass]="{active: tabIndex === 10}"><a (click)="tabIndex = 10">Documents</a></li>
+            <li style="float: right;margin-top: 5px;margin-right: 5%;">
+              <button md-raised-button color="primary" (click)="save()" style="line-height: 30px">save</button>
+            </li>   
         </ul> 
-      <div style="background: aliceblue;padding-top: 20px;min-height: 100%;overflow: auto;min-height: 700px;height: 700px;">
+      <div style="background: aliceblue;padding-top: 20px;min-height: 100%;overflow: auto;min-height: 700px;height: 100%">
         
       <!--<md-card-header style="margin-bottom: 0px !important;">-->
        
@@ -38,10 +41,10 @@ export const staffEditHtml = `
                  <staff-document *ngIf="tabIndex === 10" [id]="staff.id"></staff-document>
               </md-card-content>  
               
-               <md-card-actions align="end">
-                  <button md-raised-button color="primary" (click)="save()">save</button>
-                  <button md-raised-button color="accent" (click)="close()">close</button>
-              </md-card-actions>
+               <!--<md-card-actions align="end">-->
+                  <!--<button md-raised-button color="primary" (click)="save()">save</button>-->
+                  <!--<button md-raised-button color="accent" (click)="close()">close</button>-->
+              <!--</md-card-actions>-->
             </md-card>
         </div>
         
@@ -50,11 +53,14 @@ export const staffEditHtml = `
             <md-card-content>
                <img src="img/profile.jpg" style="width: 100%">
                 <div>
-                  <h4>Ivanov Ivan Ivanu4</h4>
+                  <h4>Snoop Dog</h4>
                   <h5>Lviv, Zelena str. 21/8</h5>
                   <h5>89912</h5>
                   <h5 >+380666666666</h5>
                 </div>
+                <br>
+                 <button md-raised-button color="primary" (click)="delete()">delete</button>
+                 <button md-raised-button color="primary" (click)="close()">back to staff</button>
             </md-card-content>
           </md-card>
         </div>

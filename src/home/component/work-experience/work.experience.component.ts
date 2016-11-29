@@ -32,14 +32,21 @@ export default class WorkExperienceComponent {
         });
     } else {
       this.action.delFromUpdateArr('workExperiences', obj);
-      this.form = this.form.filter(el => !_.isEqual(el, obj));
+      this.action.delFromArr('workExperiences', obj.id);
     }
+  }
+  ngOnChanges() {
+    this.form = this.data;
   }
   addExp() {
     this.form.push({});
   }
   onChange(event, key, index) {
-    this.action.setUpdateStaffWorkExp(this.form[index], index);
+    let obj = {
+      id: this.form[index].id
+    };
+    obj[key] = event.target.value;
+    this.action.setUpdateStaffWorkExp(obj, index);
     this.action.setStaffExp(key, event.target.value, index);
   }
 }
