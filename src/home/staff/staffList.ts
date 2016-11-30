@@ -49,7 +49,6 @@ export class StaffListComponent {
     this.open = true;
   }
   closeHandle(event) {
-    debugger
     if (event) {
       this.getStaff();
     }

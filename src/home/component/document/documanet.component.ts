@@ -8,6 +8,7 @@ import { FileService } from '../../../services/file.service';
 })
 export class DocumentComponent {
   @Input() id;
+  public isRequesting = false;
   private docs = [];
   constructor(private toast: ToastsManager,
               private fileApi: FileService) {}
@@ -21,12 +22,22 @@ export class DocumentComponent {
       });
   }
   handle(file) {
+    this.isRequesting = true;
     this.fileApi.uploadDocument(file.target.files[0], this.id)
       .subscribe(res => {
         if (res.success) {
           this.getDocs();
+          this.isRequesting = false;
           this.toast.success('Успішно завантажено');
         }
+      }, err => {
+        this.isRequesting = false;
+      });
+  }
+  downloadDoc(doc) {
+    this.fileApi.getDocument(this.id, doc.id)
+      .subscribe(res => {
+         debugger
       });
   }
 }

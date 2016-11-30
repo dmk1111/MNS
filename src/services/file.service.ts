@@ -5,8 +5,13 @@ import { Observable } from 'rxjs';
 export class FileService {
   private baseUrl = 'http://52.34.34.95:8090';
   constructor(private http: ApiHttp) {}
+
   getDocuments(staffId) {
     return this.http.get(`api/staff/${staffId}/staffDoc`)
+      .map(res => res.json());
+  }
+  getDocument(staffId, docId) {
+    return this.http.get(`api/staff/${staffId}/staffDoc/${docId}`)
       .map(res => res.json());
   }
   deleteDocument(staffId, id) {
@@ -14,7 +19,6 @@ export class FileService {
   }
   uploadDocument(file, staffId) {
     return Observable.create(observer => {
-      debugger
       let formData: FormData = new FormData(),
         xhr: XMLHttpRequest = new XMLHttpRequest();
 

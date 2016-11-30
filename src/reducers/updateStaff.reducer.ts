@@ -10,6 +10,16 @@ const initState = {
     premiumFines: [],
     promotions: []
   };
+const cleatState = {
+  education: {
+    mainEducationBlocks: []
+  },
+  workExperiences: [],
+  benefits: [],
+  holidays: [],
+  premiumFines: [],
+  promotions: []
+};
 export const staffUpdateReducer: ActionReducer<any> = (state = Object.assign({}, initState), action: Action) => {
   switch (action.type) {
     case 'SET':
@@ -65,7 +75,17 @@ export const staffUpdateReducer: ActionReducer<any> = (state = Object.assign({},
         .filter(el => !_.isEqual(el, action.payload));
       return Object.assign({}, state);
     case 'CLEAR':
-      return Object.assign({}, initState);
+      state = {
+        education: {
+          mainEducationBlocks: []
+        },
+        workExperiences: [],
+        benefits: [],
+        holidays: [],
+        premiumFines: [],
+        promotions: []
+      };
+      return Object.assign({}, state);
     default:
       return state;
   }

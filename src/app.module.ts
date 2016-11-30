@@ -49,6 +49,7 @@ import { PremiumFinesComponent } from './home/component/premiumFines/premiumFine
 import { PromotionComponent } from './home/component/promotions/promotions.component';
 import { DocumentComponent } from './home/component/document/documanet.component';
 import { FileService } from './services/file.service';
+import { SpinnerComponent } from './home/component/spinner/spinner.component';
 
 @NgModule({
   bootstrap: [App],
@@ -67,7 +68,8 @@ import { FileService } from './services/file.service';
     FiredComponent,
     PremiumFinesComponent,
     PromotionComponent,
-    DocumentComponent
+    DocumentComponent,
+    SpinnerComponent
   ],
   imports: [
     ToastModule,

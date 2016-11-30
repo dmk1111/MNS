@@ -17,7 +17,7 @@ export const staffEditHtml = `
               <button md-raised-button color="primary" (click)="save()" style="line-height: 30px">save</button>
             </li>   
         </ul> 
-      <div style="background: aliceblue;padding-top: 20px;min-height: 100%;overflow: auto;min-height: 700px;height: 100%">
+      <div style="background: aliceblue;padding-top: 20px;min-height: 100%;overflow: auto;min-height: 800px;height: 100%">
         
       <!--<md-card-header style="margin-bottom: 0px !important;">-->
        
@@ -25,7 +25,7 @@ export const staffEditHtml = `
       <!--<md-card-content>-->
       <div class="row">
         <div class="col-md-9 col-xs-9">
-           <md-card style="background-color: cornsilk">
+           <md-card style="background-color: cornsilk;min-height: 800px">
             <md-card-content>
                 
                 <!--Base Tab-->
@@ -41,17 +41,13 @@ export const staffEditHtml = `
                  <staff-document *ngIf="tabIndex === 10" [id]="staff.id"></staff-document>
               </md-card-content>  
               
-               <!--<md-card-actions align="end">-->
-                  <!--<button md-raised-button color="primary" (click)="save()">save</button>-->
-                  <!--<button md-raised-button color="accent" (click)="close()">close</button>-->
-              <!--</md-card-actions>-->
-            </md-card>
+            </md-card>  
         </div>
         
-        <div class="col-md-3 col-xs-3" style="position: fixed;left: 74%">
-          <md-card style="background-color: cornsilk;padding: 0 0 0 0;">
+        <div class="col-md-3 col-xs-3" style="position: fixed;left: 74%;">
+          <md-card style="min-height: 450px;background-color: cornsilk;padding: 0 0 0 0;">
             <md-card-content>
-               <img src="img/profile.jpg" style="width: 100%">
+               <img [src]="this.avatar" style="width: 100%">
                 <div>
                   <h4>Snoop Dog</h4>
                   <h5>Lviv, Zelena str. 21/8</h5>

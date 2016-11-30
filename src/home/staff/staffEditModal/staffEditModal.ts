@@ -18,6 +18,7 @@ export class StaffEditModalComponent {
   private unsubscribe = [];
   private needUpdate = [];
   private staff;
+  private avatar;
 
   constructor(public router: Router,
               private action: StaffAction,
@@ -29,6 +30,8 @@ export class StaffEditModalComponent {
     this.unsubscribe.push(this.store.select('staff')
       .subscribe(staff => {
         this.staff = staff;
+        if (!this.avatar)
+          this.avatar = 'img/profile.jpg';
       }));
   }
   updateArr(event) {
@@ -66,7 +69,7 @@ export class StaffEditModalComponent {
         this.toast.success('успішно збережено');
         this.action.clearUpdateObj();
         this.onClose.emit(null);
-      }, err => { this.toast.success('Error'); });
+      }, err => { this.toast.error('Error'); });
   }
   delete() {
     let obj = this.store['source']['value'];

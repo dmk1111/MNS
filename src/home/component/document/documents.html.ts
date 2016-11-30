@@ -7,7 +7,8 @@ export const staffDocumetHtml = `
       opacity: 0;
       overflow: hidden;
       z-index: -1;">
-      <label for="f1" style="float: right">
+      <!--<my-spinner [isRunning]="isRequesting"></my-spinner>-->
+      <label *ngIf="!isRequesting" for="f1" style="float: right">
           <i class="material-icons" style="font-size: 48px;
     color: blue;">file_upload</i>
       </label>
@@ -16,7 +17,7 @@ export const staffDocumetHtml = `
     <h3>Documents</h3>
     <md-list>
          <md-list-item *ngFor="let doc of docs">
-            <md-icon md-list-avatar style="color: blue;">
+            <md-icon md-list-avatar style="color: blue;" (click)="downloadDoc(doc)">
             file_download</md-icon>
             <h4 md-line>{{doc.name}}</h4>
             <p md-line class="demo-2"> {{doc.id}} </p>
