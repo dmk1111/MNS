@@ -50,6 +50,7 @@ import { PromotionComponent } from './home/component/promotions/promotions.compo
 import { DocumentComponent } from './home/component/document/documanet.component';
 import { FileService } from './services/file.service';
 import { SpinnerComponent } from './home/component/spinner/spinner.component';
+import { DeleteStaffComponent } from './home/component/deletedStaff/deleted.staff';
 
 @NgModule({
   bootstrap: [App],
@@ -69,7 +70,8 @@ import { SpinnerComponent } from './home/component/spinner/spinner.component';
     PremiumFinesComponent,
     PromotionComponent,
     DocumentComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    DeleteStaffComponent
   ],
   imports: [
     ToastModule,

@@ -2,6 +2,8 @@
 export const staffEditHtml = `
     <div class="modal" style="display: block">
       <div class="modal-content" style="width: 100%;z-index: 9999;height: 100%"> 
+      
+        <!--Top Nav Bar-->
         <ul class="nav nav-tabs" style="width: 100%;background-color: aliceblue;">
             <li  [ngClass]="{active: tabIndex === 1}"><a (click)="tabIndex = 1">Base</a></li>
             <li [ngClass]="{active: tabIndex === 2}"><a (click)="tabIndex = 2">Education</a></li>
@@ -17,13 +19,13 @@ export const staffEditHtml = `
               <button md-raised-button color="primary" (click)="save()" style="line-height: 30px">save</button>
             </li>   
         </ul> 
-      <div style="background: aliceblue;padding-top: 20px;min-height: 100%;overflow: auto;min-height: 800px;height: 100%">
+        <!---->
         
-      <!--<md-card-header style="margin-bottom: 0px !important;">-->
-       
-      <!--</md-card-header>-->
-      <!--<md-card-content>-->
+        <!--Content-->
+      <div style="background: aliceblue;padding-top: 20px;min-height: 100%;overflow: auto;min-height: 800px;height: 100%">
       <div class="row">
+      
+        <!--Left Comntent Card-->
         <div class="col-md-9 col-xs-9">
            <md-card style="background-color: cornsilk;min-height: 800px">
             <md-card-content>
@@ -44,6 +46,7 @@ export const staffEditHtml = `
             </md-card>  
         </div>
         
+        <!--Right Content Card (User Profile)-->
         <div class="col-md-3 col-xs-3" style="position: fixed;left: 74%;">
           <md-card style="min-height: 450px;background-color: cornsilk;padding: 0 0 0 0;">
             <md-card-content>

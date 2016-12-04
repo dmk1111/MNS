@@ -22,7 +22,7 @@ export class StaffListComponent {
 
   ngOnInit() {
     this.column = [
-      {name: 'ID'},
+      {name: 'id'},
       {name: 'Full Name', prop: 'fullName'},
       {prop: 'biography', name: 'BIO'},
       {prop: 'categoriesCivilServants', name: 'Category'}
@@ -42,7 +42,7 @@ export class StaffListComponent {
   getStaff() {
     this.userApi.getStaffList().subscribe(res => {
       this.staff = res
-        .map(el => Object.assign({}, el.mainStaff, {staffId: el.id}));
+        .map(el => Object.assign({}, el.mainStaffDTO, {staffId: el.id}));
     });
   }
   openModal() {

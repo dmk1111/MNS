@@ -20,7 +20,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class ApiHttp extends Http {
 
-  public baseUrl: string = 'http://10.55.100.51:8090';
+  public baseUrl: string = 'http://52.34.34.95:8090';
 
   constructor(backend: ConnectionBackend,
               defaultOptions: RequestOptions) {

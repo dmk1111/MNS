@@ -20,5 +20,9 @@ export class UserApiService {
     return this.apiHttp.delete('api/staff/' + staffId)
       .map(res => res.json());
   }
+  getDeletedStaff() {
+    return this.apiHttp.get('api/staff/allDeleted')
+      .map(res => res.json());
+  }
 }
 

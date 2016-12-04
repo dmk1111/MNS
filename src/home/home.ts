@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Http } from '@angular/http';
 import { Router } from '@angular/router';
-import { UserApiService } from '../services/user.service';
 
 const styles = require('./home.css');
 const template = require('./home.html');

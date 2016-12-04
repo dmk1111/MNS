@@ -41,8 +41,8 @@ export class StaffEditModalComponent {
     let obj = this.store['source']['value'];
     let finaleObj = {};
     let updateObj = obj.updateStaff;
-    updateObj.education.mainEducationBlocks = updateObj.education.mainEducationBlocks
-      .filter(el => el !== null);
+    // updateObj.education.mainEducationBlocks = updateObj.education.mainEducationBlocks
+    //   .filter(el => el !== null);
     Object
       .keys(updateObj)
       .forEach(key => {
@@ -64,6 +64,7 @@ export class StaffEditModalComponent {
           finaleObj[key] = updateObj[key];
         }
       });
+
     this.userApi.saveStaff(obj.staff.id, finaleObj)
       .subscribe(res => {
         this.toast.success('успішно збережено');
