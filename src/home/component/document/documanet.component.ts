@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr';
 import { staffDocumetHtml } from './documents.html';
 import { FileService } from '../../../services/file.service';
+import { Response } from '@angular/http';
 @Component({
   selector: 'staff-document',
   template: staffDocumetHtml
@@ -37,7 +38,12 @@ export class DocumentComponent {
   downloadDoc(doc) {
     this.fileApi.getDocument(this.id, doc.id)
       .subscribe(res => {
-         debugger
+         this.downloadFile(res);
       });
+  }
+  downloadFile(data: Response) {
+    var blob = new Blob([data], { type: 'text/csv' });
+    var url = window.URL.createObjectURL(blob);
+    window.open(url);
   }
 }

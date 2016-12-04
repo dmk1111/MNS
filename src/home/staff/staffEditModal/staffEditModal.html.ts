@@ -50,7 +50,7 @@ export const staffEditHtml = `
         <div class="col-md-3 col-xs-3" style="position: fixed;left: 74%;">
           <md-card style="min-height: 450px;background-color: cornsilk;padding: 0 0 0 0;">
             <md-card-content>
-               <img [src]="this.avatar" style="width: 100%">
+               <img *ngIf="avatar" [src]="avatar" style="width: 100%">
                 <div>
                   <h4>Snoop Dog</h4>
                   <h5>Lviv, Zelena str. 21/8</h5>
@@ -60,6 +60,7 @@ export const staffEditHtml = `
                 <br>
                  <button md-raised-button color="primary" (click)="delete()">delete</button>
                  <button md-raised-button color="primary" (click)="close()">back to staff</button>
+                 <input type="file"  (change)="uploadPhoto($event)">
             </md-card-content>
           </md-card>
         </div>

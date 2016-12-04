@@ -17,7 +17,7 @@ export const staffDocumetHtml = `
     <h3>Documents</h3>
     <md-list>
          <md-list-item *ngFor="let doc of docs">
-            <md-icon md-list-avatar style="color: blue;" (click)="downloadDoc(doc)">
+            <md-icon md-list-avatar style="color: blue;cursor: pointer" (click)="downloadDoc(doc)">
             file_download</md-icon>
             <h4 md-line>{{doc.name}}</h4>
             <p md-line class="demo-2"> {{doc.id}} </p>

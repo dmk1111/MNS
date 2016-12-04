@@ -21,7 +21,7 @@ export class DeleteStaffComponent {
   getStaff() {
     this.staffApi.getDeletedStaff()
       .subscribe(res => {
-        this.staff = res;
+        this.staff = res.map(el => Object.assign({}, el.mainStaffDTO, {id: el.id}));
       });
   }
 }

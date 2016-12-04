@@ -7,6 +7,7 @@ import { StaffAction } from '../../../action/staff.action';
 import { ToastsManager } from 'ng2-toastr';
 // import * as _ from 'lodash';
 import * as moment from 'moment';
+import { FileService } from '../../../services/file.service';
 @Component({
   selector: 'staffModal',
   template: staffEditHtml,
@@ -19,14 +20,17 @@ export class StaffEditModalComponent {
   private needUpdate = [];
   private staff;
   private avatar;
+  private photo;
 
   constructor(public router: Router,
               private action: StaffAction,
               private toast: ToastsManager,
               private store: Store<any>,
+              private fileService: FileService,
               private userApi: UserApiService) {
   }
   ngOnInit() {
+   this.getAvatar();
     this.unsubscribe.push(this.store.select('staff')
       .subscribe(staff => {
         this.staff = staff;
@@ -36,6 +40,12 @@ export class StaffEditModalComponent {
   }
   updateArr(event) {
     this.needUpdate.push(event);
+  }
+  getAvatar() {
+    // this.fileService.getPhoto(this.store['source']['value'].staff.id)
+    //   .subscribe(res => {
+    //     this.photo = res;
+    //   });
   }
   save() {
     let obj = this.store['source']['value'];
@@ -86,5 +96,14 @@ export class StaffEditModalComponent {
   }
   ngOnDestroy() {
     this.unsubscribe.forEach(el => el.unsubscribe());
+  }
+  uploadPhoto(photo) {
+    this.fileService.uploadFoto(event.target['files'][0], this.store['source']['value'].staff.id)
+      .subscribe(res => {
+        if (res.success) {
+         this.toast.success('Фото успішно завантажено');
+          this.getAvatar();
+        }
+      });
   }
 }
