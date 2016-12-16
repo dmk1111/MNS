@@ -10,6 +10,7 @@ export const educationStaffHtml = `
               <md-input type="text" (change)="onChange($event, 'educationalLevel', i)" [(ngModel)]="fom.educationalLevel" placeholder="educationalLevel"></md-input>
               <md-input type="text" (change)="onChange($event, 'school', i)" [(ngModel)]="fom.school" placeholder="school"></md-input>
               <md-input type="text" (change)="onChange($event, 'educationQualificationLevel', i)" [(ngModel)]="fom.educationQualificationLevel" placeholder="educationQualificationLevel"></md-input>
+              <md-input type="text" (change)="onChange($event, 'qualification', i)" [(ngModel)]="fom.qualification" placeholder="qualification"></md-input>
               <md-input type="text" (change)="onChange($event, 'specialty', i)" [(ngModel)]="fom.specialty" placeholder="specialty"></md-input>
               <md-input type="text" (change)="onChange($event, 'seriesAndNumberOfDiploma', i)" [(ngModel)]="fom.seriesAndNumberOfDiploma" placeholder="seriesAndNumberOfDiploma"></md-input>
             </div>

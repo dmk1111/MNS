@@ -24,5 +24,14 @@ export class UserApiService {
     return this.apiHttp.get('api/staff/allDeleted')
       .map(res => res.json());
   }
+
+  getRegions() {
+    return this.apiHttp.get('api/region')
+      .map(res => res.json());
+  }
+  setRegion(body) {
+    return this.apiHttp.put('api/region', JSON.stringify(body))
+      .map(res => res.json());
+  }
 }
 

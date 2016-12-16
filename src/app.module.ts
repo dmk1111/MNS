@@ -51,6 +51,7 @@ import { DocumentComponent } from './home/component/document/documanet.component
 import { FileService } from './services/file.service';
 import { SpinnerComponent } from './home/component/spinner/spinner.component';
 import { DeleteStaffComponent } from './home/component/deletedStaff/deleted.staff';
+import { RegionComponent } from './home/region/region.comp';
 
 @NgModule({
   bootstrap: [App],
@@ -71,7 +72,8 @@ import { DeleteStaffComponent } from './home/component/deletedStaff/deleted.staf
     PromotionComponent,
     DocumentComponent,
     SpinnerComponent,
-    DeleteStaffComponent
+    DeleteStaffComponent,
+    RegionComponent
   ],
   imports: [
     ToastModule,
