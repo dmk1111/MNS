@@ -3,6 +3,7 @@ import { educationStaffHtml } from './education.staff.html';
 import { StaffAction } from '../../../action/staff.action';
 import { EducationService } from '../../../services/education.service';
 import * as _ from 'lodash';
+import { ToastsManager } from 'ng2-toastr';
 @Component({
   selector: 'education-staff',
   template: educationStaffHtml
@@ -13,7 +14,7 @@ export default class EducationStaffComponent {
   @Input() id;
   private form;
   private load;
-  constructor(private action: StaffAction, private eduApi: EducationService) {}
+  constructor(private action: StaffAction, private eduApi: EducationService, private toast: ToastsManager) {}
   ngOnInit() {
     this.form = this.data.mainEducationBlocks;
   }
@@ -26,6 +27,13 @@ export default class EducationStaffComponent {
       if (conf) {
         this.load = this.eduApi.deleteEducation(this.id, obj.id)
           .subscribe(res => {
+            this.toast.success('Успіщно видалено');
+            let i;
+            this.form.forEach((el, index) => {
+              if (el.id === obj.id)
+                i = index;
+            });
+            this.form.splice(i, 1);
             this.action.deleteEducation(obj);
             this.action.delEduUpdate(obj);
           });
