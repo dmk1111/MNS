@@ -72,11 +72,16 @@ export class StaffEditModalComponent {
             finaleObj[key] = Object.assign([], updateObj[key]);
           }
         } else {
-          finaleObj[key] = Object.assign([], updateObj[key]);
+          if (key === 'education') {
+            if (updateObj[key].mainEducationBlocks.filter(e => e).length) {
+              finaleObj[key] = Object.assign({}, updateObj[key]);
+            }
+          } else {
+            finaleObj[key] = Object.assign({}, updateObj[key]);
+          }
         }
       });
-    finaleObj['education'].mainEducationBlocks = finaleObj['education'].mainEducationBlocks
-      .filter(e => e);
+    debugger
     this.load = this.userApi.saveStaff(obj.staff.id, finaleObj)
       .subscribe(res => {
         this.toast.success('успішно збережено');
