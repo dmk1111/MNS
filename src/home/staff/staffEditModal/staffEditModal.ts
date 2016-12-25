@@ -73,15 +73,15 @@ export class StaffEditModalComponent {
           }
         } else {
           if (key === 'education') {
-            if (updateObj[key].mainEducationBlocks.filter(e => e).length) {
-              finaleObj[key] = Object.assign({}, updateObj[key]);
+            let mainEduBlock = updateObj[key].mainEducationBlocks.filter(e => e);
+            if (mainEduBlock.length) {
+              finaleObj[key] = Object.assign({}, {mainEducationBlocks: mainEduBlock});
             }
           } else {
             finaleObj[key] = Object.assign({}, updateObj[key]);
           }
         }
       });
-    debugger
     this.load = this.userApi.saveStaff(obj.staff.id, finaleObj)
       .subscribe(res => {
         this.toast.success('успішно збережено');
