@@ -1,10 +1,15 @@
 //noinspection TsLint
 export const WorkExperienceHtml = `
-<div class="row">
+<div class="row"
+              [ngBusy]="{busy: load, message: 'Завантаження', backdrop: true}"
+              style="z-index: 999999999"
+             >
   <div class="col-md-4 col-xs-6 marginTop" *ngFor="let fom of form;let i = index">
     <md-card>
         <md-card-title>
-          <span (click)="del(fom)">X</span>
+          <span 
+            (click)="del(fom);"
+          >X</span>
         </md-card-title>
         <md-card-content>
           <div class="row">
@@ -20,7 +25,7 @@ export const WorkExperienceHtml = `
     </md-card>
   </div>
   <div class="col-md-4 col-xs-6" style="margin-top: 10px">
-  <md-card style="height: 309px" (click)="addExp()">
+  <md-card style="height: 260px" (click)="addExp()">
         <md-card-content>
           <div class="row">
             ADD

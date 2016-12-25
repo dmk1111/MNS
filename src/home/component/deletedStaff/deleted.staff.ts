@@ -11,10 +11,10 @@ export class DeleteStaffComponent {
   constructor(private staffApi: UserApiService) {}
   ngOnInit() {
     this.column = [
-      {name: 'id'},
-      {name: 'Full Name', prop: 'fullName'},
-      {prop: 'biography', name: 'BIO'},
-      {prop: 'categoriesCivilServants', name: 'Category'}
+      {name: '#', prop: 'id'},
+      {name: 'П.І.Б', prop: 'fullName'},
+      {name: 'Біографія', prop: 'biography'},
+      {name: 'Категорії цивільних службовців', prop: 'categoriesCivilServants'}
     ];
     this.getStaff();
   }

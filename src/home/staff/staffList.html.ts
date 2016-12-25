@@ -1,8 +1,9 @@
 //noinspection TsLint
 export const staffListHtml = `
-  <h3>Staff</h3>
-   <div style="margin-bottom: 20px">
-    <datatable *ngIf="staff && staff.length"
+  <div style="position: relative;" [ngBusy]="{busy: load, message: 'Завантаження'}"></div>
+  <h3 >Персонал</h3>
+   <div style="margin-bottom: 20px" >
+    <datatable  *ngIf="staff && staff.length"
       class="material"
       [rows]="staff"
       [columns]="column"
@@ -16,5 +17,6 @@ export const staffListHtml = `
       [limit]="10">
     </datatable>
    </div>
-    <staffModal *ngIf="open" (onClose)="closeHandle($event)"></staffModal>
+    <staffModal  *ngIf="open" (onClose)="closeHandle($event)"></staffModal>
+    
 `;

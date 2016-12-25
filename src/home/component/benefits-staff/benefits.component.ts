@@ -1,5 +1,5 @@
-import {Component, Input} from "@angular/core";
-import {BenefitsHtml} from "./benefits.component.html";
+import {Component, Input} from '@angular/core';
+import {BenefitsHtml} from './benefits.component.html';
 import { StaffAction } from '../../../action/staff.action';
 import { BenefitsService } from '../../../services/benefits.service';
 import { ToastsManager } from 'ng2-toastr';
@@ -13,6 +13,7 @@ export class BenefitsComponent {
   @Input() data;
   @Input() id;
   private form;
+
   constructor(private action: StaffAction,
               private benService: BenefitsService,
               public toast: ToastsManager) {}

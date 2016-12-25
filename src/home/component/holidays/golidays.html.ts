@@ -7,11 +7,11 @@ export const holidaysHtml = `
         <md-card-content>
           <div class="row">
             <div class="col-md-12">
-              <md-input type="text" style="width: 100%" (change)="onChange($event, 'description', i)" [(ngModel)]="fom.description" placeholder="description"></md-input>
-              <md-input type="text" style="width: 100%" (change)="onChange($event, 'holidayPlace', i)" [(ngModel)]="fom.holidayPlace" placeholder="holidayPlace"></md-input>
-              <md-input type="text" style="width: 100%" (change)="onChange($event, 'typeHoliday', i)" [(ngModel)]="fom.typeHoliday" placeholder="typeHoliday"></md-input>
-              <md-input type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="fromDate"></md-input>
-              <md-input type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="toDate"></md-input>
+              <md-input type="text" style="width: 100%" (change)="onChange($event, 'description', i)" [(ngModel)]="fom.description" placeholder="Опис"></md-input>
+              <md-input type="text" style="width: 100%" (change)="onChange($event, 'holidayPlace', i)" [(ngModel)]="fom.holidayPlace" placeholder="Місце"></md-input>
+              <md-input type="text" style="width: 100%" (change)="onChange($event, 'typeHoliday', i)" [(ngModel)]="fom.typeHoliday" placeholder="Тип"></md-input>
+              <md-input type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дати З"></md-input>
+              <md-input type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата До"></md-input>
             </div>
             <div class="col-md-12">
             </div>

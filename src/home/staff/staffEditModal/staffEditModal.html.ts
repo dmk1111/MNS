@@ -1,22 +1,21 @@
 //noinspection TsLint
 export const staffEditHtml = `
-    <div class="modal" style="display: block">
+    <div [ngBusy]="{busy: load, message: 'Завантаження', backdrop: true}" class="modal" style="display: block; z-index: 999999" >
       <div class="modal-content" style="width: 100%;z-index: 9999;height: 100%"> 
-      
         <!--Top Nav Bar-->
         <ul class="nav nav-tabs" style="width: 100%;background-color: aliceblue;">
-            <li  [ngClass]="{active: tabIndex === 1}"><a (click)="tabIndex = 1">Base</a></li>
-            <li [ngClass]="{active: tabIndex === 2}"><a (click)="tabIndex = 2">Education</a></li>
-            <li [ngClass]="{active: tabIndex === 3}"><a (click)="tabIndex = 3">Other</a></li>
-            <li [ngClass]="{active: tabIndex === 4}"><a (click)="tabIndex = 4">WorkExperience</a></li>
-            <li [ngClass]="{active: tabIndex === 5}"><a (click)="tabIndex = 5">Benefits</a></li>
-            <li [ngClass]="{active: tabIndex === 6}"><a (click)="tabIndex = 6">Holidays</a></li>
-            <li [ngClass]="{active: tabIndex === 7}"><a (click)="tabIndex = 7">Fired</a></li>
-            <li [ngClass]="{active: tabIndex === 8}"><a (click)="tabIndex = 8">Premium Fines</a></li>
-            <li [ngClass]="{active: tabIndex === 9}"><a (click)="tabIndex = 9">Promotion</a></li>
-            <li [ngClass]="{active: tabIndex === 10}"><a (click)="tabIndex = 10">Documents</a></li>
+            <li  [ngClass]="{active: tabIndex === 1}"><a (click)="tabIndex = 1">Основне</a></li>
+            <li [ngClass]="{active: tabIndex === 2}"><a (click)="tabIndex = 2">Осіта</a></li>
+            <li [ngClass]="{active: tabIndex === 4}"><a (click)="tabIndex = 4">Службова діяльність</a></li>
+            <li [ngClass]="{active: tabIndex === 3}"><a (click)="tabIndex = 3">Інше</a></li>
+            <li [ngClass]="{active: tabIndex === 5}"><a (click)="tabIndex = 5">Пільги</a></li>
+            <li [ngClass]="{active: tabIndex === 8}"><a (click)="tabIndex = 8">Стягнення заохочення</a></li>
+            <li [ngClass]="{active: tabIndex === 6}"><a (click)="tabIndex = 6">Відпустки</a></li>
+            <li [ngClass]="{active: tabIndex === 7}"><a (click)="tabIndex = 7">Звільнення</a></li>
+            <li [ngClass]="{active: tabIndex === 9}"><a (click)="tabIndex = 9">Просування по службі</a></li>
+            <li [ngClass]="{active: tabIndex === 10}"><a (click)="tabIndex = 10">Документи</a></li>
             <li style="float: right;margin-top: 5px;margin-right: 5%;">
-              <button md-raised-button color="primary" (click)="save()" style="line-height: 30px">save</button>
+              <button md-raised-button color="primary" (click)="save()" style="line-height: 30px">Зберегти</button>
             </li>   
         </ul> 
         <!---->
@@ -51,16 +50,16 @@ export const staffEditHtml = `
           <md-card style="min-height: 450px;background-color: cornsilk;padding: 0 0 0 0;">
             <md-card-content>
                <img *ngIf="avatar" [src]="avatar" style="width: 100%">
-                <div>
-                  <h4>Snoop Dog</h4>
-                  <h5>Lviv, Zelena str. 21/8</h5>
+                <div style="text-align: center;"> 
+                  <h4>Іван Іванович Іванов</h4>
+                  <h5>Львів, вул. Зелена 21/8</h5>
                   <h5>89912</h5>
                   <h5 >+380666666666</h5>
                 </div>
                 <br>
-                 <button md-raised-button color="primary" (click)="delete()">delete</button>
-                 <button md-raised-button color="primary" (click)="close()">back to staff</button>
-                 <input type="file"  (change)="uploadPhoto($event)">
+                 <button style="margin-left: 12%; margin-right: 12%" md-raised-button color="primary" (click)="delete()">Видалити</button>
+                 <button md-raised-button color="primary" (click)="close()">Назад</button>
+                 <!--<input type="file"  (change)="uploadPhoto($event)">-->
             </md-card-content>
           </md-card>
         </div>

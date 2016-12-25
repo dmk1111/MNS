@@ -13,24 +13,24 @@ export class StaffListComponent {
   private staff;
   private column;
   private selectedStaff;
+  private load;
   private open = false;
 
   constructor(public router: Router,
               private userApi: UserApiService,
               private staffAction: StaffAction) {
   }
-
   ngOnInit() {
     this.column = [
-      {name: 'id'},
-      {name: 'Full Name', prop: 'fullName'},
-      {prop: 'biography', name: 'BIO'},
-      {prop: 'categoriesCivilServants', name: 'Category'}
+      {name: '#', prop: 'id'},
+      {name: 'П.І.Б', prop: 'fullName'},
+      {name: 'Біографія', prop: 'biography'},
+      {name: 'Категорії цивільних службовців', prop: 'categoriesCivilServants'}
     ];
     this.getStaff();
   }
   onSelect(event) {
-    this.userApi.getStaff(event.selected[0].staffId)
+    this.load = this.userApi.getStaff(event.selected[0].staffId)
       .subscribe(res => {
         this.selectedStaff = JSON.parse(JSON.stringify(res, undefined, 2));
         this.staffAction.setStaff(this.selectedStaff);

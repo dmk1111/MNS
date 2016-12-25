@@ -52,6 +52,8 @@ import { FileService } from './services/file.service';
 import { SpinnerComponent } from './home/component/spinner/spinner.component';
 import { DeleteStaffComponent } from './home/component/deletedStaff/deleted.staff';
 import { RegionComponent } from './home/region/region.comp';
+import { BusyModule } from 'angular2-busy';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 @NgModule({
   bootstrap: [App],
@@ -76,6 +78,10 @@ import { RegionComponent } from './home/region/region.comp';
     RegionComponent
   ],
   imports: [
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'success' // set defaults here
+    }),
+    BusyModule,
     ToastModule,
     Angular2DataTableModule,
     StoreModule.provideStore({

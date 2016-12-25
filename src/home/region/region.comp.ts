@@ -8,6 +8,7 @@ import { ToastsManager } from 'ng2-toastr';
 })
 export class RegionComponent {
   private regions = [];
+  private region;
   constructor(private regionService: UserApiService,
               private toast: ToastsManager) {
   }

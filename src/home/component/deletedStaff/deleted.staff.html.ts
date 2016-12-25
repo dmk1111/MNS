@@ -1,5 +1,5 @@
 export const deeletedStaffHtml = `
- <h3>Deleted Staff</h3>
+ <h3>Видалений Персонал</h3>
    <div style="margin-bottom: 20px">
     <datatable *ngIf="staff && staff.length"
       class="material"

@@ -1,12 +1,18 @@
 export const regionHtml = `
 <md-card>
   <md-card-content>
+  <div>
     <h3>Регіони</h3>
+    <md-input [(ngModel)]="region" placeholder="Назва регіону"></md-input>
+    <button (click)="addRegion(region)">Додати</button>
+  </div> 
     <md-list>
-         <md-list-item *ngFor="let reg of regions">
-            <h4 md-line>{{doc.name}}</h4>
-            <p md-line class="demo-2"> {{doc.id}} </p>
+     <div *ngFor="let reg of regions" style="width: 20%">
+         <md-list-item >
+            <h4 md-line>{{reg.name}}</h4>
          </md-list-item>
+          <md-divider></md-divider>
+      </div>
     </md-list>
   </md-card-content>
 </md-card>

@@ -10,6 +10,7 @@ const template = require('./home.html');
   styles: [styles]
 })
 export class Home {
+
   constructor(public router: Router) {
   }
 

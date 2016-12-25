@@ -37,6 +37,8 @@
     "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^2.2.1",
     "@types/lodash": "^4.14.40",
+    "angular-confirmation-popover": "^2.0.3",
+    "angular2-busy": "^1.0.2",
     "angular2-data-table": "^1.5.0",
     "angular2-jwt": "0.1.23",
     "angular2-moment": "^1.0.0-beta.rc.1",

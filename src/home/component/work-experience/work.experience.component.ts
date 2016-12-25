@@ -14,6 +14,7 @@ export default class WorkExperienceComponent {
   @Input() data;
   @Input() id;
   private form = [];
+  private load;
   constructor(private action: StaffAction,
               private expApi: WorkExperienceService,
               private toast: ToastsManager) {}
@@ -22,7 +23,7 @@ export default class WorkExperienceComponent {
   }
   del(obj) {
     if (obj.id) {
-      this.expApi.deleteWorkExperience(this.id, obj.id)
+     this.load = this.expApi.deleteWorkExperience(this.id, obj.id)
         .subscribe(res => {
           if (res.success) {
             this.action.delFromArr('workExperiences', obj.id);
