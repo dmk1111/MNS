@@ -12,6 +12,7 @@ export default class EducationStaffComponent {
   @Input() data;
   @Input() id;
   private form;
+  private load;
   constructor(private action: StaffAction, private eduApi: EducationService) {}
   ngOnInit() {
     this.form = this.data.mainEducationBlocks;
@@ -21,11 +22,14 @@ export default class EducationStaffComponent {
   }
   del(obj) {
     if (obj.id) {
-      this.eduApi.deleteEducation(this.id, obj.id)
-        .subscribe(res => {
-          this.action.deleteEducation(obj);
-          this.action.delEduUpdate(obj);
-        });
+      let conf = confirm('Видалити??');
+      if (conf) {
+        this.load = this.eduApi.deleteEducation(this.id, obj.id)
+          .subscribe(res => {
+            this.action.deleteEducation(obj);
+            this.action.delEduUpdate(obj);
+          });
+      }
     } else {
       this.action.deleteEducation(obj);
       this.form = this.form

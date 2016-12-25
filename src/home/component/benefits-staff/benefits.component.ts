@@ -35,14 +35,16 @@ export class BenefitsComponent {
       this.action.delFromUpdateArr('benefits', obj);
       this.form = this.form.filter(el => !_.isEqual(el, obj));
     } else {
-      this.benService.deleteBenefits(this.id, obj.id)
-        .subscribe(res => {
-          if (res.success) {
-            this.toast.success('Успішно видалено');
-            this.action.delFromArr('benefits', obj.id);
-            this.action.delFromUpdateArr('benefits', obj);
-          }
-        });
+      if (confirm('Видалити??')) {
+        this.benService.deleteBenefits(this.id, obj.id)
+          .subscribe(res => {
+            if (res.success) {
+              this.toast.success('Успішно видалено');
+              this.action.delFromArr('benefits', obj.id);
+              this.action.delFromUpdateArr('benefits', obj);
+            }
+          });
+      }
     }
   }
 }

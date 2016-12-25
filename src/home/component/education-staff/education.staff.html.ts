@@ -1,6 +1,6 @@
 //noinspection TsLint
 export const educationStaffHtml = `
-<div class="row">
+<div class="row" [ngBusy]="{busy: load, message: 'Завантаження', backdrop: true}" style="z-index: 99999999">
   <div class="col-md-4 col-xs-6 marginTop" *ngFor="let fom of form;let i = index">
     <md-card>
         <md-card-title><span (click)="del(fom)">X</span></md-card-title>

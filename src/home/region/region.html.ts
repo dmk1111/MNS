@@ -1,5 +1,5 @@
 export const regionHtml = `
-<md-card>
+<md-card [ngBusy]="{busy: load, message: 'Завантаження'}" style="">
   <md-card-content>
   <div>
     <h3>Регіони</h3>

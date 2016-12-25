@@ -30,7 +30,7 @@ export class UserApiService {
       .map(res => res.json());
   }
   setRegion(body) {
-    return this.apiHttp.put('api/region', JSON.stringify(body))
+    return this.apiHttp.post('/api/region', JSON.stringify(body))
       .map(res => res.json());
   }
 }

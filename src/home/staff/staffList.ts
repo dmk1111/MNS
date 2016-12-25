@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { staffListHtml } from './staffList.html';
 import { UserApiService } from '../../services/user.service';
 import { StaffAction } from '../../action/staff.action';
+import { ToastsManager } from 'ng2-toastr';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class StaffListComponent {
 
   constructor(public router: Router,
               private userApi: UserApiService,
+              private toast: ToastsManager,
               private staffAction: StaffAction) {
   }
   ngOnInit() {
@@ -40,9 +42,11 @@ export class StaffListComponent {
       });
   }
   getStaff() {
-    this.userApi.getStaffList().subscribe(res => {
+    this.load = this.userApi.getStaffList().subscribe(res => {
       this.staff = res
         .map(el => Object.assign({}, el.mainStaffDTO, {staffId: el.id}));
+    }, error => {
+      this.toast.error(error);
     });
   }
   openModal() {

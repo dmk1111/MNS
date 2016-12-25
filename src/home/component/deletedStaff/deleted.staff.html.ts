@@ -1,4 +1,5 @@
 export const deeletedStaffHtml = `
+<div [ngBusy]="{busy: load, message: 'Завантаження'}" style="z-index: 9999999"></div>
  <h3>Видалений Персонал</h3>
    <div style="margin-bottom: 20px">
     <datatable *ngIf="staff && staff.length"

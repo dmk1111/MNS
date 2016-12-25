@@ -9,20 +9,30 @@ import { ToastsManager } from 'ng2-toastr';
 export class RegionComponent {
   private regions = [];
   private region;
+  private load;
   constructor(private regionService: UserApiService,
               private toast: ToastsManager) {
   }
   ngOnInit() {
-    this.regionService.getRegions()
+   this.getRegions();
+  }
+  getRegions() {
+    this.load = this.regionService.getRegions()
       .subscribe(res => {
         this.regions = res;
+      }, err => {
+        this.toast.error(err);
       });
   }
   addRegion(region) {
-    this.regionService.setRegion(region)
+    this.regionService.setRegion({name: region})
       .subscribe(res => {
-        if(res.success)
+        if (res.success) {
           this.toast.success('Додано');
+          this.getRegions();
+          region = '';
+          this.region = '';
+        }
       });
   }
 }

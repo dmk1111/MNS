@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { deeletedStaffHtml } from './deleted.staff.html';
 import { UserApiService } from '../../../services/user.service';
+import { ToastsManager } from 'ng2-toastr';
 @Component({
   selector: 'deleted-staff',
   template: deeletedStaffHtml
@@ -8,7 +9,8 @@ import { UserApiService } from '../../../services/user.service';
 export class DeleteStaffComponent {
   private staff = [];
   private column = [];
-  constructor(private staffApi: UserApiService) {}
+  private load;
+  constructor(private staffApi: UserApiService, private toast: ToastsManager) {}
   ngOnInit() {
     this.column = [
       {name: '#', prop: 'id'},
@@ -19,9 +21,11 @@ export class DeleteStaffComponent {
     this.getStaff();
   }
   getStaff() {
-    this.staffApi.getDeletedStaff()
+    this.load = this.staffApi.getDeletedStaff()
       .subscribe(res => {
         this.staff = res.map(el => Object.assign({}, el.mainStaffDTO, {id: el.id}));
+      }, err => {
+        this.toast.error(err);
       });
   }
 }

@@ -80,10 +80,10 @@
   animation-delay: -0.16s;
 }
 .toast {
-  z-index: 9999999999 !important;
+  z-index: 999999999999 !important;
 }
 .toast-top-right {
-  z-index: 9999999999 !important;;
+  z-index: 999999999999 !important;;
 }
 .loader:before,
 .loader:after {
