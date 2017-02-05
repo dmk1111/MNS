@@ -7,12 +7,12 @@ export const educationStaffHtml = `
         <md-card-content>
           <div class="row">
             <div class="col-md-12">
-              <md-input type="text" (change)="onChange($event, 'educationalLevel', i)" [(ngModel)]="fom.educationalLevel" placeholder="educationalLevel"></md-input>
-              <md-input type="text" (change)="onChange($event, 'school', i)" [(ngModel)]="fom.school" placeholder="school"></md-input>
-              <md-input type="text" (change)="onChange($event, 'educationQualificationLevel', i)" [(ngModel)]="fom.educationQualificationLevel" placeholder="educationQualificationLevel"></md-input>
-              <md-input type="text" (change)="onChange($event, 'qualification', i)" [(ngModel)]="fom.qualification" placeholder="qualification"></md-input>
-              <md-input type="text" (change)="onChange($event, 'specialty', i)" [(ngModel)]="fom.specialty" placeholder="specialty"></md-input>
-              <md-input type="text" (change)="onChange($event, 'seriesAndNumberOfDiploma', i)" [(ngModel)]="fom.seriesAndNumberOfDiploma" placeholder="seriesAndNumberOfDiploma"></md-input>
+              <md-input type="text" (change)="onChange($event, 'educationalLevel', i)" [(ngModel)]="fom.educationalLevel" placeholder="Освітний рівень"></md-input>
+              <md-input type="text" (change)="onChange($event, 'school', i)" [(ngModel)]="fom.school" placeholder="Навчальний заклад"></md-input>
+              <md-input type="text" (change)="onChange($event, 'educationQualificationLevel', i)" [(ngModel)]="fom.educationQualificationLevel" placeholder="Освітньо-кваліфікаційний рівень"></md-input>
+              <md-input type="text" (change)="onChange($event, 'qualification', i)" [(ngModel)]="fom.qualification" placeholder="Кваліфікація"></md-input>
+              <md-input type="text" (change)="onChange($event, 'specialty', i)" [(ngModel)]="fom.specialty" placeholder="Спеціальність"></md-input>
+              <md-input type="text" (change)="onChange($event, 'seriesAndNumberOfDiploma', i)" [(ngModel)]="fom.seriesAndNumberOfDiploma" placeholder="Серія та номер диплому"></md-input>
             </div>
             <div class="col-md-12">
             </div>

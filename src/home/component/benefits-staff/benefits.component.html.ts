@@ -10,10 +10,10 @@ export const BenefitsHtml = `
         <md-card-content>
           <div class="row">
             <div class="col-md-12">
-              <md-input type="text" style="width: 100%" (change)="onChange($event, 'name', i)" [(ngModel)]="fom.name" placeholder="Назва"></md-input>
-              <md-input type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дата З"></md-input>
-              <md-input type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата До"></md-input>
-              <md-input type="text" style="width: 100%" (change)="onChange($event, 'order', i)" [(ngModel)]="fom.order" placeholder="Замовлення"></md-input>
+              <md-input type="text" style="width: 100%" (change)="onChange($event, 'name', i)" [(ngModel)]="fom.name" placeholder="Назва пільги"></md-input>
+              <md-input type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дата початку"></md-input>
+              <md-input type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата закінчення"></md-input>
+              <md-input type="text" style="width: 100%" (change)="onChange($event, 'order', i)" [(ngModel)]="fom.order" placeholder="Наказ"></md-input>
               <md-input type="date" style="width: 100%" (change)="onChange($event, 'orderDate', i)" [(ngModel)]="fom.orderDate" placeholder="Дата замовлення"></md-input>
               <md-input type="text" style="width: 100%" (change)="onChange($event, 'certification', i)" [(ngModel)]="fom.certification" placeholder="Сертифікація"></md-input>
               <md-input type="text" style="width: 100%" (change)="onChange($event, 'privilege', i)" [(ngModel)]="fom.privilege" placeholder="Привілегії"></md-input>

@@ -46,15 +46,13 @@ export class StaffEditModalComponent {
   getAvatar() {
     this.fileService.getPhoto(this.store['source']['value'].staff.id)
       .subscribe(res => {
-        this.avatar = res;
+        this.photo = res;
       });
   }
   save() {
     let obj = this.store['source']['value'];
     let finaleObj = {};
     let updateObj = obj.updateStaff;
-    // updateObj.education.mainEducationBlocks = updateObj.education.mainEducationBlocks
-    //   .filter(el => el !== null);
     Object
       .keys(updateObj)
       .forEach(key => {

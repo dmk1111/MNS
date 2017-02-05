@@ -14,7 +14,7 @@ export const staffDocumetHtml = `
       </label>
   </md-card-title>
   <md-card-content>
-    <h3>Documents</h3>
+    <h3>Документи</h3>
     <md-list>
          <md-list-item *ngFor="let doc of docs">
             <md-icon md-list-avatar style="color: blue;cursor: pointer" (click)="downloadDoc(doc)">
