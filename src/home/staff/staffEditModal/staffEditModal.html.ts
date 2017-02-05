@@ -49,7 +49,10 @@ export const staffEditHtml = `
         <div class="col-md-3 col-xs-3" style="position: fixed;left: 74%;">
           <md-card style="min-height: 450px;background-color: cornsilk;padding: 0 0 0 0;">
             <md-card-content>
-               <img *ngIf="avatar" [src]="avatar" style="width: 100%">
+              <label for="image" style="width: 100%">
+                <input type="file"  (change)="uploadPhoto($event)" name="image" id="image" style="display:none;"/>
+                <img *ngIf="avatar" [src]="avatar" style="width: 100%" />
+              </label>
                 <div style="text-align: center;"> 
                   <h4>Іван Іванович Іванов</h4>
                   <h5>Львів, вул. Зелена 21/8</h5>
@@ -59,7 +62,6 @@ export const staffEditHtml = `
                 <br>
                  <button style="margin-left: 12%; margin-right: 12%" md-raised-button color="primary" (click)="delete()">Видалити</button>
                  <button md-raised-button color="primary" (click)="close()">Назад</button>
-                 <!--<input type="file"  (change)="uploadPhoto($event)">-->
             </md-card-content>
           </md-card>
         </div>

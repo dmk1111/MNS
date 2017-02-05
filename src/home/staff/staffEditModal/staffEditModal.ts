@@ -6,12 +6,13 @@ import { Store } from '@ngrx/store';
 import { StaffAction } from '../../../action/staff.action';
 import { ToastsManager } from 'ng2-toastr';
 // import * as _ from 'lodash';
+const modal = require('./modal.css');
 import * as moment from 'moment';
 import { FileService } from '../../../services/file.service';
 @Component({
   selector: 'staffModal',
   template: staffEditHtml,
-  styles: []
+  styles: [modal]
 })
 export class StaffEditModalComponent {
   @Output() onClose = new EventEmitter();
@@ -31,10 +32,10 @@ export class StaffEditModalComponent {
               private userApi: UserApiService) {
   }
   ngOnInit() {
-   this.getAvatar();
     this.unsubscribe.push(this.store.select('staff')
       .subscribe(staff => {
         this.staff = staff;
+        this.getAvatar();
         if (!this.avatar)
           this.avatar = 'img/profile.jpg';
       }));
@@ -43,10 +44,10 @@ export class StaffEditModalComponent {
     this.needUpdate.push(event);
   }
   getAvatar() {
-    // this.fileService.getPhoto(this.store['source']['value'].staff.id)
-    //   .subscribe(res => {
-    //     this.photo = res;
-    //   });
+    this.fileService.getPhoto(this.store['source']['value'].staff.id)
+      .subscribe(res => {
+        this.avatar = res;
+      });
   }
   save() {
     let obj = this.store['source']['value'];

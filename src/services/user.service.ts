@@ -30,8 +30,19 @@ export class UserApiService {
       .map(res => res.json());
   }
   setRegion(body) {
-    return this.apiHttp.post('/api/region', JSON.stringify(body))
+    return this.apiHttp.post('api/region', JSON.stringify(body))
       .map(res => res.json());
+  }
+  getUsers() {
+    return this.apiHttp.get('api/user')
+      .map(res => res.json());
+  }
+  postRole(id, role) {
+    return this.apiHttp.patch('/api/user/' + id + '/role', JSON.stringify({role: role}))
+      .map(res => res.json());
+  }
+  getRoles() {
+    return this.apiHttp.get
   }
 }
 

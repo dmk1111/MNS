@@ -4,3 +4,7 @@
 .temp {
   align-items: center;
 }
+
+.uploadAvatar {
+  opacity: 1;
+}

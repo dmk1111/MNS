@@ -10,6 +10,13 @@ export class AuthGuard implements CanActivate {
 
   canActivate() {
     if (this.auth.isLoggedIn()) {
+      this.auth.me().subscribe(user => {
+        if (user.roleName === 'ROLE_ADMIN') {
+          localStorage.setItem('access', 'admin');
+        } else {
+          localStorage.setItem('access', 'operator');
+        }
+      });
       return true;
     }
 

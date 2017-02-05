@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { ApiHttp } from './http/apiHttp.service';
 import { Observable } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ResponseContentType, Headers } from '@angular/http';
+import { ResponseContentType, Headers, Http } from '@angular/http';
 @Injectable()
 export class FileService {
   private baseUrl = 'http://52.34.34.95:8090';
 
-  constructor(private http: ApiHttp, private sani: DomSanitizer) {
+  constructor(private http: ApiHttp, private sani: DomSanitizer, private htp: Http) {
   }
 
   getDocuments(staffId) {
@@ -72,16 +72,17 @@ export class FileService {
     // return this.http.get('api/staff/' + staffId + '/photo');
     let headers = new Headers;
     headers.append('Content-Type', 'image/jpeg');
-    return this.http.get('api/staff/' + staffId + '/photo', {
+    headers.append('Authorization', 'OAuth ' + localStorage.getItem('access_token'));
+    return this.htp.get('http://52.34.34.95:8090/api/staff/' + staffId + '/photo', {
       headers: headers,
-      responseType: ResponseContentType.Blob
-    }).map(res => {
-      return new Blob([res['_body']], {
-        type: res.headers.get('Content-Type')
-      });
-    }).map(blob => {
-      var urlCreator = window.URL;
-      return this.sani.bypassSecurityTrustUrl(urlCreator.createObjectURL(blob));
     });
+    //   .map(res => {
+    //   return new Blob([res['_body']], {
+    //     type: res.headers.get('Content-Type')
+    //   });
+    // }).map(blob => {
+    //   var urlCreator = window.URL;
+    //   return this.sani.bypassSecurityTrustUrl(urlCreator.createObjectURL(blob));
+    // });
   }
 }

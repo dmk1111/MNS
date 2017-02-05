@@ -14,7 +14,9 @@ export default class EducationStaffComponent {
   @Input() id;
   private form;
   private load;
-  constructor(private action: StaffAction, private eduApi: EducationService, private toast: ToastsManager) {}
+  constructor(private action: StaffAction,
+              private eduApi: EducationService,
+              private toast: ToastsManager) {}
   ngOnInit() {
     this.form = this.data.mainEducationBlocks;
   }

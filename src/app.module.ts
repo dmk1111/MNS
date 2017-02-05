@@ -54,6 +54,7 @@ import { DeleteStaffComponent } from './home/component/deletedStaff/deleted.staf
 import { RegionComponent } from './home/region/region.comp';
 import { BusyModule } from 'angular2-busy';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+import { UsersComponent } from './home/users/users.component';
 
 @NgModule({
   bootstrap: [App],
@@ -62,6 +63,7 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
     Login,
     App,
     StaffListComponent,
+    UsersComponent,
     StaffEditModalComponent,
     BaseStaffComponent,
     EducationStaffComponent,
