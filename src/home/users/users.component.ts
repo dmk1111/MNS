@@ -11,6 +11,8 @@ export class UsersComponent {
   private column = [];
   private settings: Object;
   private load;
+  private showEdit = false;
+  private user = {};
   constructor(private userApi: UserApiService) {}
 
   ngOnInit() {
@@ -34,6 +36,16 @@ export class UsersComponent {
   }
   getUsers() {
     this.load = this.userApi.getUsers()
-      .subscribe(data => { this.users = data; });
+      .subscribe(data => { this.users = data; this.user = this.users[0]; });
+  }
+  onSelect(user) {
+    this.user = user;
+    this.showEdit = true;
+  }
+  handleSelect(event) {
+    this.showEdit = true;
+  }
+  modalClose() {
+    this.showEdit = false;
   }
 }

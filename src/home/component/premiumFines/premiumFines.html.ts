@@ -7,10 +7,10 @@ export const premiumFinesHtml = `
         <md-card-content>
           <div class="row">
             <div class="col-md-12">
-              <md-input type="text" style="width: 100%" (change)="onChange($event, 'name', i)" [(ngModel)]="fom.name" placeholder="Назва"></md-input>
-              <md-input type="text" style="width: 100%" (change)="onChange($event, 'order', i)" [(ngModel)]="fom.order" placeholder="Наказ"></md-input>
-              <md-input type="date" style="width: 100%" (change)="onChange($event, 'orderDate', i)" [(ngModel)]="fom.orderDate" placeholder="orderDate"></md-input>
-              <md-input type="text" style="width: 100%" (change)="onChange($event, 'serialNumber', i)" [(ngModel)]="fom.serialNumber" placeholder="serialNumber"></md-input>
+              <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'name', i)" [(ngModel)]="fom.name" placeholder="Назва">
+              <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'order', i)" [(ngModel)]="fom.order" placeholder="Наказ">
+              <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'orderDate', i)" [(ngModel)]="fom.orderDate" placeholder="orderDate">
+              <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'serialNumber', i)" [(ngModel)]="fom.serialNumber" placeholder="serialNumber">
             </div>
             <div class="col-md-12">
             </div>

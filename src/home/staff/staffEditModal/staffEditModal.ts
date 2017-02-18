@@ -46,7 +46,7 @@ export class StaffEditModalComponent {
   getAvatar() {
     this.fileService.getPhoto(this.store['source']['value'].staff.id)
       .subscribe(res => {
-        this.photo = res;
+        this.avatar = 'data:image/png;base64,' + res['_body'];
       });
   }
   save() {

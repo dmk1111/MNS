@@ -5,7 +5,7 @@ export const staffEditHtml = `
         <!--Top Nav Bar-->
         <ul class="nav nav-tabs" style="width: 100%;background-color: aliceblue;">
             <li  [ngClass]="{active: tabIndex === 1}"><a (click)="tabIndex = 1">Основне</a></li>
-            <li [ngClass]="{active: tabIndex === 2}"><a (click)="tabIndex = 2">Осіта</a></li>
+            <li [ngClass]="{active: tabIndex === 2}"><a (click)="tabIndex = 2">Освіта</a></li>
             <li [ngClass]="{active: tabIndex === 4}"><a (click)="tabIndex = 4">Службова діяльність</a></li>
             <li [ngClass]="{active: tabIndex === 3}"><a (click)="tabIndex = 3">Інше</a></li>
             <li [ngClass]="{active: tabIndex === 5}"><a (click)="tabIndex = 5">Пільги</a></li>

@@ -30,6 +30,7 @@ export class AuthService {
     return localStorage.getItem('access_token') !== null;
   }
   me() {
+    debugger
     return this.apiHttp.get('/api/user/me')
       .map(res => res.json());
   }

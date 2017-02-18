@@ -1,7 +1,7 @@
 export const otherStaffHtml = `
   <div class="row">
     <div class="col-md-3 col-sm-4">
-      <md-input (change)="onChange('birthplace', $event)" type="text" [(ngModel)]="form.birthplace" placeholder="birthplace" [ngModelOptions]="{standalone: true}"></md-input>
+      <input mdInput (change)="onChange('birthplace', $event)" type="text" [(ngModel)]="form.birthplace" placeholder="birthplace" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="col-md-3 col-sm-4">
       <select (change)="onChange('sex', $event)" [(ngModel)]="form.sex" [ngModelOptions]="{standalone: true}">
@@ -10,22 +10,22 @@ export const otherStaffHtml = `
       </select>
     </div>
     <div class="col-md-3 col-sm-4">
-      <md-input (change)="onChange('citizenship', $event)" type="text" [(ngModel)]="form.citizenship" placeholder="citizenship" [ngModelOptions]="{standalone: true}"></md-input>
+      <input mdInput (change)="onChange('citizenship', $event)" type="text" [(ngModel)]="form.citizenship" placeholder="citizenship" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="col-md-3 col-sm-4">
-      <md-input (change)="onChange('seriesAndPassportNumber', $event)" type="text" [(ngModel)]="form.seriesAndPassportNumber" placeholder="seriesAndPassportNumber" [ngModelOptions]="{standalone: true}"></md-input>
+      <input mdInput (change)="onChange('seriesAndPassportNumber', $event)" type="text" [(ngModel)]="form.seriesAndPassportNumber" placeholder="seriesAndPassportNumber" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="col-md-3 col-sm-4">
-      <md-input (change)="onChange('seriesAndNumberOfOfficialIdentification', $event)" type="text" [(ngModel)]="form.seriesAndNumberOfOfficialIdentification" placeholder="seriesAndNumberOfOfficialIdentification" [ngModelOptions]="{standalone: true}"></md-input>
+      <input mdInput (change)="onChange('seriesAndNumberOfOfficialIdentification', $event)" type="text" [(ngModel)]="form.seriesAndNumberOfOfficialIdentification" placeholder="seriesAndNumberOfOfficialIdentification" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="col-md-3 col-sm-4">
-      <md-input (change)="onChange('identificationCode', $event)" type="text" [(ngModel)]="form.identificationCode" placeholder="identificationCode" [ngModelOptions]="{standalone: true}"></md-input>
+      <input mdInput (change)="onChange('identificationCode', $event)" type="text" [(ngModel)]="form.identificationCode" placeholder="identificationCode" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="col-md-3 col-sm-4">
-      <md-input (change)="onChange('placeOfResidence', $event)" type="text" [(ngModel)]="form.placeOfResidence" placeholder="placeOfResidence" [ngModelOptions]="{standalone: true}"></md-input>
+      <input mdInput (change)="onChange('placeOfResidence', $event)" type="text" [(ngModel)]="form.placeOfResidence" placeholder="placeOfResidence" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="col-md-3 col-sm-4">
-      <md-input (change)="onChange('phoneNumbers', $event)" type="text" [(ngModel)]="form.phoneNumbers" placeholder="phoneNumbers" [ngModelOptions]="{standalone: true}"></md-input>
+      <input mdInput (change)="onChange('phoneNumbers', $event)" type="text" [(ngModel)]="form.phoneNumbers" placeholder="phoneNumbers" [ngModelOptions]="{standalone: true}">
     </div>
      <div class="col-md-3 col-sm-4">
       <form action="demo_form.asp" method="get">
@@ -33,7 +33,7 @@ export const otherStaffHtml = `
       </form>
     </div>
     <div class="col-md-3 col-sm-4">
-      <md-input (change)="onChange('wifeHusband', $event)" type="text" [(ngModel)]="form.wifeHusband" placeholder="wifeHusband" [ngModelOptions]="{standalone: true}"></md-input>
+      <input mdInput (change)="onChange('wifeHusband', $event)" type="text" [(ngModel)]="form.wifeHusband" placeholder="wifeHusband" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="col-md-3 col-sm-4">
       <form action="demo_form.asp" method="get">

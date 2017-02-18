@@ -1,18 +1,22 @@
 export const usersHtml = `
 <div [ngBusy]="{busy: load, message: 'Завантаження'}" style="z-index: 9999999"></div>
+<userEdit [user]="user" (onClose)="modalClose()" *ngIf="showEdit"></userEdit>
  
   <!--Table-->
-     <h3>Видалений Персонал</h3>
-       <div style="margin-bottom: 20px">
+     <h3>Користувачі</h3>
+       <div style="margin-bottom: 20px;width: 95%">
         <datatable *ngIf="users && users.length"
           class="material"
           [rows]="users"
-          [columns]="column"
-          [columnMode]="standart"
+          [columnMode]="'force'"
           [headerHeight]="30"
           [footerHeight]="50"
           [rowHeight]="'auto'"
-          [limit]="10">
+          [columns]="column"
+          [selectionType]="'cell'"
+          (select)="handleSelect($event)"
+          [selected]="user"
+          [limit]="5">
         </datatable>
        </div>
 `;
