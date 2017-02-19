@@ -25,7 +25,7 @@ export class CreateStaffModal {
       mainStaffDTO: {
         fullName: this.staff.firstName  + ' ' + this.staff.lastName
       },
-      region: this.regionsObj.find(el => el.id === this.staff.region)
+      regionId: this.staff.region
     };
     this.staffApi.createStaff(obj)
       .subscribe(res => { this.onClose.emit(true); });
