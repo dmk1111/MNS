@@ -1,10 +1,10 @@
 //noinspection TsLint
-export const usersHtml = `
+export const positionHtml = `
 <div [ngBusy]="{busy: load, message: 'Завантаження'}" style="z-index: 9999999"></div>
-<userEdit [user]="user" [regions]="regions" [isCreate]="!!user" (onClose)="save($event)" *ngIf="showEdit"></userEdit>
+<position-modal [position]="position" [isCreate]="!!position" (onClose)="save($event)" *ngIf="showEdit"></position-modal>
  
   <!--Table-->
-     <h3>Користувачі</h3>
+     <h3>Посади</h3>
        <div style="margin-bottom: 20px;width: 95%">
               <!--//create button-->
               <div style="text-align: right; margin-bottom: 5px" >
@@ -13,9 +13,9 @@ export const usersHtml = `
                 </button>
               </div>
 
-        <datatable *ngIf="users && users.length"
+        <datatable *ngIf="positions && positions.length"
           class="material"
-          [rows]="users"
+          [rows]="positions"
           [columnMode]="'force'"
           [headerHeight]="30"
           [footerHeight]="50"

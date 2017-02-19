@@ -1,5 +1,5 @@
 //noinspection TsLint
-export const editUserModal = `
+export const staffCreateModalHtml = `
 <div class="modal-fade"></div>
 <div class="modal show">
   <div class="modal-dialog" >
@@ -13,46 +13,46 @@ export const editUserModal = `
       <div class="modal-body">
       
          <form class="form-horizontal">
-         
-            <div class="form-group">
-              <label class="control-label col-sm-2" for="email">Пошта:</label>
-              <div class="col-sm-10">
-                <input type="email" class="form-control" id="email" [(ngModel)]="user.email" placeholder="Ведіть пошту" [ngModelOptions]="{standalone: true}">
-              </div>
-            </div>
-            
+         <!---->
+            <!--<div class="form-group">-->
+              <!--<label class="control-label col-sm-2" for="email">Пошта:</label>-->
+              <!--<div class="col-sm-10">-->
+                <!--<input type="email" class="form-control" id="email" [(ngModel)]="user.email" placeholder="Ведіть пошту" [ngModelOptions]="{standalone: true}">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!---->
             <div class="form-group">
               <label class="control-label col-sm-2" for="pwd">Імя</label>
               <div class="col-sm-10">          
-                <input type="text" class="form-control" [(ngModel)]="user.firstName" id="pwd" placeholder="Ведіть Імя" [ngModelOptions]="{standalone: true}">
+                <input type="text" class="form-control" [(ngModel)]="staff.firstName" id="pwd" placeholder="Ведіть Імя" [ngModelOptions]="{standalone: true}">
               </div>
             </div>
             
             <div class="form-group">
               <label class="control-label col-sm-2" for="pwd">Прізвище</label>
               <div class="col-sm-10">          
-                <input type="text" class="form-control" id="pwd" [(ngModel)]="user.lastName" placeholder="Ведіть прізвище"[ngModelOptions]="{standalone: true}">
+                <input type="text" class="form-control" id="pwd" [(ngModel)]="staff.lastName" placeholder="Ведіть Прізвище"[ngModelOptions]="{standalone: true}">
               </div>
             </div>
             
             
+            <!--<div class="form-group">-->
+              <!--<label class="control-label col-sm-2" for="pwd">Роль</label>-->
+              <!--<div class="col-sm-10">  -->
+                 <!--<select class="form-control" [(ngModel)]="user.role" [ngModelOptions]="{standalone: true}">-->
+                  <!--<option value="ROLE_OPERATOR">Оператор</option> -->
+                  <!--<option value="ROLE_ADMIN">Адмін</option> -->
+                <!--</select>   -->
+              <!--</div>-->
+            <!--</div>-->
+            <!---->
             <div class="form-group">
-              <label class="control-label col-sm-2" for="pwd">Роль</label>
-              <div class="col-sm-10">  
-                 <select class="form-control" [(ngModel)]="user.role" [ngModelOptions]="{standalone: true}">
-                  <option value="ROLE_OPERATOR">Оператор</option> 
-                  <option value="ROLE_ADMIN">Адмін</option> 
-                </select>   
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label class="control-label col-sm-2" for="pwd">Регіони</label>
+              <label class="control-label col-sm-2" for="pwd">Регіон</label>
               <div class="col-sm-10">          
                 <ng-select
                   [options]="regions"
-                  [multiple]="true"
-                  [(ngModel)]="userRegion"
+                  [multiple]="false"
+                  [(ngModel)]="staff.region"
                   [ngModelOptions]="{standalone: true}"
                   >
                </ng-select>
@@ -64,6 +64,7 @@ export const editUserModal = `
         
       </div>
       <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="deletePosition()" *ngIf="isCreate">Видалити</button>
         <button type="button" class="btn btn-primary" (click)="save()" *ngIf="isCreate">Зберегти</button>
         <button type="button" class="btn btn-primary" (click)="create()" *ngIf="!isCreate">Створити</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Закрити</button>
@@ -71,4 +72,6 @@ export const editUserModal = `
     </div>
   </div>
 </div>
+
+
 `;

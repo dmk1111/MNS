@@ -57,6 +57,10 @@ import { UsersComponent } from './home/users/users.component';
 import { EditUserModal } from './home/users/editUserModal/editUserComponent';
 import { SelectModule } from 'angular2-select';
 import { MaterialModule } from '@angular/material';
+import { PositionService } from './services/position.service';
+import { PositionComponent } from './home/position/position.compoennt';
+import { PositionModal } from './home/position/positionEditModal/positionEdit.component';
+import { CreateStaffModal } from './home/staff/staffCreateModal/staffCreateModal.component';
 @NgModule({
   bootstrap: [App],
   declarations: [
@@ -70,6 +74,8 @@ import { MaterialModule } from '@angular/material';
     EditUserModal,
     EducationStaffComponent,
     OtherStaffComponent,
+    PositionComponent,
+    PositionModal,
     WorkExperienceComponent,
     BenefitsComponent,
     HolidaysComponent,
@@ -77,6 +83,7 @@ import { MaterialModule } from '@angular/material';
     PremiumFinesComponent,
     PromotionComponent,
     DocumentComponent,
+    CreateStaffModal,
     SpinnerComponent,
     DeleteStaffComponent,
     RegionComponent
@@ -108,6 +115,7 @@ import { MaterialModule } from '@angular/material';
     FiredService,
     HolidaysService,
     HospitalService,
+    PositionService,
     OtherService,
     PremiumFineService,
     PromotionService,

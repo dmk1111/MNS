@@ -9,17 +9,45 @@ import { UserApiService } from '../../../services/user.service';
 })
 export class EditUserModal {
   @Input() user: any;
+  @Input() regions;
+  @Input() isCreate: boolean;
   @Output() onClose = new EventEmitter();
-  public regions = [];
+  private userRegion = [];
   constructor(private userService: UserApiService) {}
   ngOnInit() {
-    this.regions = [
-      {value: 1, label: 'test'},
-      {value: 2, label: 'test1'},
-      {value: 3, label: 'test21'},
-    ];
+    if (!this.user)
+      this.user = {};
+    this.regions = this.regions.map(el => {
+      return {value: el.id, label: el.name};
+    });
+    if (this.user.regions) {
+      this.user.role = this.user.roleName;
+      this.userRegion = this.user.regions
+        .map(region => region.id);
+      delete this.user.regions;
+    }
+  }
+  save() {
+    this.userService.saveUser(this.user)
+      .subscribe(res => {
+          this.userService.saveUserRegion(this.user.id, this.userRegion)
+            .subscribe(response => {
+              this.onClose.emit(true);
+            });
+      });
+  }
+  create() {
+    this.user.password = 'admin';
+    this.userService.saveUser(this.user)
+      .subscribe(res => {
+        let userId = res.id;
+          this.userService.saveUserRegion(userId, this.userRegion)
+            .subscribe(response => {
+              this.onClose.emit(true);
+            });
+      });
   }
   close() {
-    this.onClose.emit(null);
+    this.onClose.emit(false);
   }
 }

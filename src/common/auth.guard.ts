@@ -16,11 +16,12 @@ export class AuthGuard implements CanActivate {
         } else {
           localStorage.setItem('access', 'operator');
         }
-      });
+      }, err => { console.log(err); });
       return true;
-    }
 
-    this.router.navigate(['/login']);
-    return false;
+    } else {
+      this.router.navigate(['/login']);
+      return false;
+    }
   }
 }
