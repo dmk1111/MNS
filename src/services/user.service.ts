@@ -41,19 +41,16 @@ export class UserApiService {
     return this.apiHttp.get('api/user')
       .map(res => res.json());
   }
-  // postRole(id, role) {
-  //   return this.apiHttp.patch('/api/user/' + id + '/role', JSON.stringify({role: role}))
-  //     .map(res => res.json());
-  // }
-  // getRoles() {
-  //   return this.apiHttp.get
-  // }
   saveUserRegion(userId, regions) {
     return this.apiHttp.patch(`/api/user/${userId}/regions`, regions)
       .map(res => res.json());
   }
   saveUser(user) {
     return this.apiHttp.put(`/api/user`, user)
+      .map(res => res.json());
+  }
+  deleteUser(id) {
+    return this.apiHttp.delete(`/api/user/`)
       .map(res => res.json());
   }
 }

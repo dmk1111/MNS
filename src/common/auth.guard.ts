@@ -6,22 +6,13 @@ import { AuthService } from '../services/auth.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router, private auth: AuthService) {}
+  constructor(private router: Router, private auth: AuthService) {
+  }
 
   canActivate() {
-    if (this.auth.isLoggedIn()) {
-      this.auth.me().subscribe(user => {
-        if (user.roleName === 'ROLE_ADMIN') {
-          localStorage.setItem('access', 'admin');
-        } else {
-          localStorage.setItem('access', 'operator');
-        }
-      }, err => { console.log(err); });
+    if (this.auth.isLoggedIn())
       return true;
-
-    } else {
-      this.router.navigate(['/login']);
-      return false;
-    }
+    this.router.navigate(['/login']);
+    return false;
   }
 }

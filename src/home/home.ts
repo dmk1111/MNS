@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 const styles = require('./home.css');
 const template = require('./home.html');
@@ -11,11 +12,20 @@ const template = require('./home.html');
 })
 export class Home {
   private isAdmin: boolean = false;
-  constructor(public router: Router) {
+  private access;
+  constructor(public router: Router, private auth: AuthService) {
   }
   ngOnInit() {
-    let access = localStorage.getItem('access');
-    if (access === 'admin')
+    this.auth.me().subscribe(user => {
+      if (user.roleName === 'ROLE_ADMIN') {
+        localStorage.setItem('access', 'admin');
+        this.isAdmin = true;
+      } else {
+        localStorage.setItem('access', 'operator');
+      }
+    }, err => { console.log(err); });
+    this.access = localStorage.getItem('access');
+    if (this.access === 'admin')
       this.isAdmin = true;
   }
   logOut() {

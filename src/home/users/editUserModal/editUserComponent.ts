@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { editUserModal } from './editUserComponentHtml';
 import { UserApiService } from '../../../services/user.service';
+import { ToastsManager } from 'ng2-toastr';
 
 @Component({
   selector: 'userEdit',
@@ -13,7 +14,7 @@ export class EditUserModal {
   @Input() isCreate: boolean;
   @Output() onClose = new EventEmitter();
   private userRegion = [];
-  constructor(private userService: UserApiService) {}
+  constructor(private userService: UserApiService, private toast: ToastsManager) {}
   ngOnInit() {
     if (!this.user)
       this.user = {};
@@ -49,5 +50,14 @@ export class EditUserModal {
   }
   close() {
     this.onClose.emit(false);
+  }
+  deleteUser() {
+    if (confirm('Видалити?')) {
+      this.userService.deleteUser(this.user.id)
+        .subscribe(res => {
+          this.toast.success('Успішно видалено');
+          this.onClose.emit(true);
+        });
+    }
   }
 }

@@ -1,3 +1,4 @@
+//noinspection TsLint
 export const holidaysHtml = `
 
 <div class="row">
@@ -7,11 +8,21 @@ export const holidaysHtml = `
         <md-card-content>
           <div class="row">
             <div class="col-md-12">
-              <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'description', i)" [(ngModel)]="fom.description" placeholder="Опис">
-              <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'holidayPlace', i)" [(ngModel)]="fom.holidayPlace" placeholder="Місце">
-              <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'typeHoliday', i)" [(ngModel)]="fom.typeHoliday" placeholder="Тип">
-              <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дати З">
-              <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата До">
+              <md-input-container>
+               <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'description', i)" [(ngModel)]="fom.description" placeholder="Опис">
+              </md-input-container>
+              <md-input-container>
+                <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'holidayPlace', i)" [(ngModel)]="fom.holidayPlace" placeholder="Місце">
+              </md-input-container>
+              <md-input-container>
+                <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'typeHoliday', i)" [(ngModel)]="fom.typeHoliday" placeholder="Тип">
+              </md-input-container>
+              <md-input-container>
+                <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дати З">
+              </md-input-container>
+              <md-input-container>
+                <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата До">
+              </md-input-container>
             </div>
             <div class="col-md-12">
             </div>

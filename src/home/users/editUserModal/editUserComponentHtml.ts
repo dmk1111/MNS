@@ -64,6 +64,7 @@ export const editUserModal = `
         
       </div>
       <div class="modal-footer">
+        <button type="button" class="btn btn-danger" style="float: left" (click)="deleteUser()" *ngIf="isCreate">Видалити</button>
         <button type="button" class="btn btn-primary" (click)="save()" *ngIf="isCreate">Зберегти</button>
         <button type="button" class="btn btn-primary" (click)="create()" *ngIf="!isCreate">Створити</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Закрити</button>
