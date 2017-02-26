@@ -7,10 +7,16 @@ export const promotionsHtml = `
         <md-card-content>
           <div class="row">
             <div>
-              <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'companyName', i)" [(ngModel)]="fom.companyName" placeholder="companyName">
-              <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="fromDate">
-              <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="toDate">
-            </div>
+                                 <md-input-container>
+ <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'companyName', i)" [(ngModel)]="fom.companyName" placeholder="companyName">
+                                  </md-input-container>
+                                 <md-input-container>
+<input mdInput type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="fromDate">
+                                 </md-input-container>
+                                  <md-input-container>
+<input mdInput type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="toDate">
+                              </md-input-container>
+ </div>
             <div class="col-md-12">
             </div>
           </div>

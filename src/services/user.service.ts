@@ -25,7 +25,7 @@ export class UserApiService {
       .map(res => res.json());
   }
   createStaff(staff) {
-    return this.apiHttp.post('/api/staff', staff)
+    return this.apiHttp.post('api/staff', staff)
       .map(res => res.json());
   }
 
@@ -50,7 +50,11 @@ export class UserApiService {
       .map(res => res.json());
   }
   deleteUser(id) {
-    return this.apiHttp.delete(`/api/user/`)
+    return this.apiHttp.delete(`/api/user/${id}`)
+      .map(res => res.json());
+  }
+  deleteRegion(id) {
+    return this.apiHttp.delete(`api/region/${id}`)
       .map(res => res.json());
   }
 }

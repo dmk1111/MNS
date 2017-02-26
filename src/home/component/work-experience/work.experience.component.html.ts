@@ -14,10 +14,16 @@ export const WorkExperienceHtml = `
         <md-card-content>
           <!--<div class="row">-->
             <!--<div class="col-md-12">-->
-              <input mdInput type="textarea" style="width: 100%" (change)="onChange($event, 'orgName', i)" [(ngModel)]="fom.orgName" ><md-placeholder >Коментар</md-placeholder>
-              <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дата початку">
-              <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата закінченя">
-            <!--</div>-->
+                                              <md-input-container>
+ <input mdInput type="textarea" style="width: 100%" (change)="onChange($event, 'orgName', i)" [(ngModel)]="fom.orgName" ><md-placeholder >Коментар</md-placeholder>
+                                                         </md-input-container>
+                                  <md-input-container>
+  <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дата початку">
+                                                                </md-input-container>
+                           <md-input-container>
+  <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата закінченя">
+                                                         </md-input-container>
+ <!--</div>-->
             <!--<div class="col-md-12">-->
             <!--</div>-->
           <!--</div>-->

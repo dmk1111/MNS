@@ -62,7 +62,7 @@ export class PositionComponent {
   ngOnInit() {
     this.column = [
       {name: '#', prop: 'id'},
-      {name: 'Імя', prop: 'code'},
+      {name: 'Код', prop: 'code'},
       {name: 'Імя', prop: 'comment'},
     ];
     this.getPositions();

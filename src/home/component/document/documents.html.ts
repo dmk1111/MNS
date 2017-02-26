@@ -8,13 +8,13 @@ export const staffDocumetHtml = `
       overflow: hidden;
       z-index: -1;">
       <!--<my-spinner [isRunning]="isRequesting"></my-spinner>-->
-      <md-progress-circle
-              class="example-margin"
-              [color]="primary"
-              [mode]="indeterminate"
-              [value]="50"
-              >
-      </md-progress-circle>
+      <!--<md-progress-circle-->
+              <!--class="example-margin"-->
+              <!--[color]="primary"-->
+              <!--[mode]="indeterminate"-->
+              <!--[value]="50"-->
+              <!--&gt;-->
+      <!--</md-progress-circle>-->
       <label *ngIf="!isRequesting" for="f1" style="float: right">
           <i class="material-icons" style="font-size: 48px;
     color: blue;">file_upload</i>

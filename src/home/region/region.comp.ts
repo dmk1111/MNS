@@ -35,4 +35,11 @@ export class RegionComponent {
         }
       });
   }
+  deleteRegion(r) {
+    this.regionService.deleteRegion(r.id)
+      .subscribe(res => {
+        this.toast.success('Додано');
+        this.regions.filter(reg => reg.id !== r.id);
+      });
+  }
 }
