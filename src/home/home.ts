@@ -23,6 +23,7 @@ export class Home {
       } else {
         localStorage.setItem('access', 'operator');
       }
+      localStorage.setItem('regions', JSON.stringify(user.regions));
     }, err => { console.log(err); });
     this.access = localStorage.getItem('access');
     if (this.access === 'admin')

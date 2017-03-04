@@ -22,7 +22,7 @@ export const staffEditHtml = `
         
         <!--Content-->
       <div style="background: aliceblue;padding-top: 20px;min-height: 100%;overflow: auto;min-height: 800px;height: 100%">
-      <div class="row">
+      <div class="row" style="min-height: 1000px">
       
         <!--Left Comntent Card-->
         <div class="col-md-9 col-xs-9">

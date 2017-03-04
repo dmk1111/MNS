@@ -11,13 +11,15 @@ export class CreateStaffModal {
   @Output() onClose = new EventEmitter();
   private regionsObj;
   private staff;
-
+  private serRegions: Array<Object>;
   constructor(private staffApi: UserApiService) {}
   ngOnInit() {
     this.regionsObj = this.regions;
-    this.regions = this.regions.map(el => {
-      return {value: el.id, label: el.name};
-    });
+    this.serRegions = JSON.parse(localStorage.getItem('regions'));
+    this.regions = this.regions
+      .map(el => {
+        return {value: el.id, label: el.name};
+      });
     this.staff = {};
   }
   create() {
