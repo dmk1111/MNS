@@ -67,7 +67,6 @@ export const staffUpdateReducer: ActionReducer<any> = (state = Object.assign({},
       }
       return Object.assign({}, state);
     case 'SET_UPDATE_HOSPITAL':
-      debugger
       if (state['hospitals'][action.payload.index]) {
         state['hospitals'][action.payload.index] = Object.assign(
           {},
