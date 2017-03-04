@@ -17,7 +17,7 @@ export class EditUserModal {
   constructor(private userService: UserApiService, private toast: ToastsManager) {}
   ngOnInit() {
     if (!this.user)
-      this.user = {};
+      this.user = { role: 'ROLE_OPERATOR'};
     this.regions = this.regions.map(el => {
       return {value: el.id, label: el.name};
     });
@@ -29,24 +29,33 @@ export class EditUserModal {
     }
   }
   save() {
-    this.userService.saveUser(this.user)
-      .subscribe(res => {
+    if (this.userRegion && this.userRegion.length) {
+      this.userService.saveUser(this.user)
+        .subscribe(res => {
           this.userService.saveUserRegion(this.user.id, this.userRegion)
             .subscribe(response => {
+              this.toast.success('Успішно збережено')
               this.onClose.emit(true);
             });
-      });
+        });
+    } else {
+      this.toast.error('Користувач повинен мати хочаб один регіон')
+    }
   }
   create() {
-    this.user.password = 'admin';
-    this.userService.saveUser(this.user)
-      .subscribe(res => {
-        let userId = res.id;
+    if (this.userRegion && this.userRegion.length) {
+      this.userService.saveUser(this.user)
+        .subscribe(res => {
+          let userId = res.id;
           this.userService.saveUserRegion(userId, this.userRegion)
             .subscribe(response => {
+              this.toast.success('Успішно створено')
               this.onClose.emit(true);
             });
-      });
+        });
+    } else {
+      this.toast.error('Користувач повинен мати хочаб один регіон')
+    }
   }
   close() {
     this.onClose.emit(false);

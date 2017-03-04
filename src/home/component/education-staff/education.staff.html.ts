@@ -36,7 +36,7 @@ export const educationStaffHtml = `
   <md-card (click)="addEdu()" style="height: 309px">
         <md-card-content>
           <div class="row">
-            <span>Add</span>
+            <span>Додати</span>
             <div class="col-md-12">
             </div>
           </div>

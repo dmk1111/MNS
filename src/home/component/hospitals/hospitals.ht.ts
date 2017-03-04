@@ -30,7 +30,7 @@ export const hospitalView = `
   <md-card style="height: 309px" (click)="add()">
 <md-card-content>
 <div class="row">
-  ADd
+  Додати
   <div class="col-md-12">
   </div>
   </div>

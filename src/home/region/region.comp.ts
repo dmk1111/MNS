@@ -36,10 +36,13 @@ export class RegionComponent {
       });
   }
   deleteRegion(r) {
-    this.regionService.deleteRegion(r.id)
-      .subscribe(res => {
-        this.toast.success('Додано');
-        this.regions.filter(reg => reg.id !== r.id);
-      });
+    if (confirm('Видалити регіон?')) {
+      this.regionService.deleteRegion(r.id)
+        .subscribe(res => {
+          this.toast.success('Видалено');
+          this.getRegions();
+          // this.regions.filter(reg => reg.id !== r.id);
+        });
+    }
   }
 }

@@ -14,10 +14,10 @@ export const premiumFinesHtml = `
  <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'order', i)" [(ngModel)]="fom.order" placeholder="Наказ">
                                           </md-input-container>
  <md-input-container>
-   <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'orderDate', i)" [(ngModel)]="fom.orderDate" placeholder="orderDate">
+   <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'orderDate', i)" [(ngModel)]="fom.orderDate" placeholder="Дата">
                                       </md-input-container>
    <md-input-container>
-     <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'serialNumber', i)" [(ngModel)]="fom.serialNumber" placeholder="serialNumber">
+     <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'serialNumber', i)" [(ngModel)]="fom.serialNumber" placeholder="Серійний номер">
                     </md-input-container>
     </div>
             <div class="col-md-12">
@@ -30,7 +30,7 @@ export const premiumFinesHtml = `
   <md-card style="height: 309px" (click)="add()">
         <md-card-content>
           <div class="row">
-            ADD
+            Додати
             <div class="col-md-12">
             </div>
           </div>
