@@ -23,7 +23,7 @@ export const usersHtml = `
           [columns]="column"
           [selectionType]="'cell'"
           (select)="handleSelect($event)"
-          [limit]="5">
+          [limit]="25">
         </datatable>
        </div>
 `;
