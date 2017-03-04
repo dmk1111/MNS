@@ -44,7 +44,7 @@ export class Login {
         this.router.navigate(['home']);
       }, err => {
         err = err.json();
-        this.toast.error(err.error, err.error_description);
+        this.toast.error('Не вірний пароль або логін');
       });
     }
   }
