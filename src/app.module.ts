@@ -61,6 +61,7 @@ import { PositionService } from './services/position.service';
 import { PositionComponent } from './home/position/position.compoennt';
 import { PositionModal } from './home/position/positionEditModal/positionEdit.component';
 import { CreateStaffModal } from './home/staff/staffCreateModal/staffCreateModal.component';
+import { HospitalsComponent } from './home/component/hospitals/hostital.component';
 @NgModule({
   bootstrap: [App],
   declarations: [
@@ -85,6 +86,7 @@ import { CreateStaffModal } from './home/staff/staffCreateModal/staffCreateModal
     DocumentComponent,
     CreateStaffModal,
     SpinnerComponent,
+    HospitalsComponent,
     DeleteStaffComponent,
     RegionComponent
   ],

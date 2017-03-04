@@ -7,6 +7,7 @@ const initState = {
     workExperiences: [],
     benefits: [],
     holidays: [],
+    hospitals: [],
     premiumFines: [],
     promotions: []
   };
@@ -17,6 +18,7 @@ const cleatState = {
   workExperiences: [],
   benefits: [],
   holidays: [],
+  hospitals: [],
   premiumFines: [],
   promotions: []
 };
@@ -55,10 +57,25 @@ export const staffUpdateReducer: ActionReducer<any> = (state = Object.assign({},
         action.payload.value);
       return Object.assign({}, state);
     case 'SET_UPDATE_HOLIDAYS':
-      state['holidays'][action.payload.index] = Object.assign(
-        {},
-        state['holidays'][action.payload.index],
-        action.payload.value);
+      if (state['holidays'][action.payload.index]) {
+        state['holidays'][action.payload.index] = Object.assign(
+          {},
+          state['holidays'][action.payload.index],
+          action.payload.value);
+      } else {
+        state.holidays.push(action.payload.value);
+      }
+      return Object.assign({}, state);
+    case 'SET_UPDATE_HOSPITAL':
+      debugger
+      if (state['hospitals'][action.payload.index]) {
+        state['hospitals'][action.payload.index] = Object.assign(
+          {},
+          state['hospitals'][action.payload.index],
+          action.payload.value);
+      } else {
+        state.hospitals.push(action.payload.value);
+      }
       return Object.assign({}, state);
     case 'SET_UPDATE_PROMOTION':
       state['promotions'][action.payload.index] = Object.assign(

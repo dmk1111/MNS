@@ -338,6 +338,101 @@ export const baseStaffHtml = `
     
     </div>
     
+    <!--third-->
+    <div class="col-xs-12" style="margin-top: 10px">
+    
+      <md-card>
+        <div class="row">
+            
+            <div class="row">
+              <div class="col-xs-5 lable">Прийняття присяги   -   </div>
+              <div class="col-xs-6">
+                <md-input-container style="width: 80%">
+                  <input
+                    mdInput
+                    (change)="onChange('dateSwear', $event)"
+                    type="date"
+                    placeholder="Дата"
+                    [ngModelOptions]="{standalone: true}" 
+                    [(ngModel)]="data.dateSwear">
+                </md-input-container>
+              </div>
+            </div>   
+            
+             <div class="row">
+              <div class="col-xs-5 lable">Дата останьої атестації -   </div>
+              <div class="col-xs-6">
+                <md-input-container style="width: 80%">
+                  <input
+                    mdInput
+                    (change)="onChange('lastCertification', $event)"
+                    type="date"
+                    placeholder="Дата"
+                    [ngModelOptions]="{standalone: true}" 
+                    [(ngModel)]="data.lastCertification">
+                </md-input-container>
+              </div>
+            </div> 
+            
+             <div class="row">
+              <div class="col-xs-5 lable">Висновок атестації   -   </div>
+              <div class="col-xs-6">
+                <md-input-container style="width: 80%">
+                  <input
+                    mdInput
+                    (change)="onChange('concludedCertification', $event)"
+                    type="text"
+                    [ngModelOptions]="{standalone: true}" 
+                    [(ngModel)]="data.concludedCertification">
+                </md-input-container>
+              </div>
+            </div> 
+            
+             <div class="row">
+              <div class="col-xs-5 lable">Кадровий резерв на посаду   -   </div>
+              <div class="col-xs-6">
+                <md-input-container style="width: 80%">
+                  <input
+                    mdInput
+                    (change)="onChange('personnelProvisionForPost', $event)"
+                    type="text"
+                    [ngModelOptions]="{standalone: true}" 
+                    [(ngModel)]="data.personnelProvisionForPost">
+                </md-input-container>
+              </div>
+            </div> 
+            
+             <div class="row">
+              <div class="col-xs-5 lable">Загальний стаж роботи  -   </div>
+              <div class="col-xs-6">
+                <md-input-container style="width: 80%">
+                  <input
+                    mdInput
+                    type="date"
+                    placeholder="Дата"
+                    >
+                </md-input-container>
+              </div>
+            </div> 
+            
+             <div class="row">
+              <div class="col-xs-5 lable">Стаж служби   -   </div>
+              <div class="col-xs-6">
+                <md-input-container style="width: 80%">
+                  <input
+                    mdInput
+                    type="date"
+                    placeholder="Дата"
+                   >
+                </md-input-container>
+              </div>
+            </div> 
+            
+         </div>
+      </md-card>
+      
+    </div>
+    
   </div>
 </form>
 `;

@@ -11,6 +11,7 @@ export const staffEditHtml = `
             <li [ngClass]="{active: tabIndex === 5}"><a (click)="tabIndex = 5">Пільги</a></li>
             <li [ngClass]="{active: tabIndex === 8}"><a (click)="tabIndex = 8">Стягнення заохочення</a></li>
             <li [ngClass]="{active: tabIndex === 6}"><a (click)="tabIndex = 6">Відпустки</a></li>
+            <li [ngClass]="{active: tabIndex === 11}"><a (click)="tabIndex = 11">Лікарняні</a></li>
             <li [ngClass]="{active: tabIndex === 7}"><a (click)="tabIndex = 7">Звільнення</a></li>
             <li [ngClass]="{active: tabIndex === 9}"><a (click)="tabIndex = 9">Просування по службі</a></li>
             <li [ngClass]="{active: tabIndex === 10}"><a (click)="tabIndex = 10">Документи</a></li>
@@ -22,7 +23,7 @@ export const staffEditHtml = `
         
         <!--Content-->
       <div style="background: aliceblue;padding-top: 20px;min-height: 100%;overflow: auto;min-height: 800px;height: 100%">
-      <div class="row" style="min-height: 1000px">
+      <div class="row" style="min-height: 1300px">
       
         <!--Left Comntent Card-->
         <div class="col-md-9 col-xs-9">
@@ -40,6 +41,7 @@ export const staffEditHtml = `
                  <staff-premium-fines *ngIf="tabIndex === 8" [data]="staff.premiumFines"></staff-premium-fines>
                  <staff-promotion *ngIf="tabIndex === 9" [data]="staff.promotions"></staff-promotion>
                  <staff-document *ngIf="tabIndex === 10" [id]="staff.id"></staff-document>
+                 <hospitals *ngIf="tabIndex === 11" [id]="staff.id" [data]="staff.hospitals"></hospitals>
               </md-card-content>  
               
             </md-card>  
