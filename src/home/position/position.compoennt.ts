@@ -63,7 +63,7 @@ export class PositionComponent {
     this.column = [
       {name: '#', prop: 'id'},
       {name: 'Код', prop: 'code'},
-      {name: 'Імя', prop: 'comment'},
+      {name: 'Назва', prop: 'comment'},
     ];
     this.getPositions();
   }
