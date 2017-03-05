@@ -12,21 +12,30 @@ export const WorkExperienceHtml = `
           >X</span>
         </md-card-title>
         <md-card-content>
-          <!--<div class="row">-->
-            <!--<div class="col-md-12">-->
-                                              <md-input-container>
- <input mdInput type="textarea" style="width: 100%" (change)="onChange($event, 'orgName', i)" [(ngModel)]="fom.orgName" ><md-placeholder >Коментар</md-placeholder>
-                                                         </md-input-container>
-                                  <md-input-container>
-  <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дата початку">
-                                                                </md-input-container>
-                           <md-input-container>
-  <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата закінченя">
-                                                         </md-input-container>
- <!--</div>-->
-            <!--<div class="col-md-12">-->
-            <!--</div>-->
-          <!--</div>-->
+              <div class="row">
+                <div class="col-xs-4">
+                
+                    <div class="col-xs-12">
+                       <md-input-container>
+                                 <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дата початку">
+                        </md-input-container>
+                    </div>  
+                    
+                    <div class="col-xs-12">
+                        <md-input-container>
+                                <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата закінченя">
+                         </md-input-container>
+                    </div>  
+                    
+                </div>   
+                 
+                <div class="col-xs-8">
+                     <!--<md-input-container>-->
+                          <textarea  rows="5" cols="50"  style="width: 100%" (change)="onChange($event, 'orgName', i)" [(ngModel)]="fom.orgName" placeholder="Коментар" ></textarea>
+                       <!--</md-input-container>-->
+                </div>
+              
+              </div>
         </md-card-content>
     </md-card>
   </div>

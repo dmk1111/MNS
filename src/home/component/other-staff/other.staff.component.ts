@@ -11,19 +11,6 @@ export default class OtherStaffComponent {
   private form;
   constructor(private action: StaffAction) {}
   ngOnInit() {
-    this.form = {
-      "birthplace" : "amsterdaaaaaamnaaqqq",
-      "sex" : "admin",
-      "citizenship" : "q.qwe.qwe",
-      "seriesAndPassportNumber" : "admin",
-      "seriesAndNumberOfOfficialIdentification" : "re432432342342",
-      "identificationCode" : "dsfa2123123123123132",
-      "placeOfResidence" : "jghfgdsafgds",
-      "phoneNumbers" : "admin",
-      "maritalStatus" : "hdfssdds",
-      "wifeHusband" : "aaaaaaaaaaaaaaaaa",
-      "children" : "jgfghgdsa"
-    };
     this.form = Object.assign({}, this.data);
   }
   onChange(key, event) {
