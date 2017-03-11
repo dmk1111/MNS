@@ -62,8 +62,14 @@ export const staffEditHtml = `
                   <h5 >+380666666666</h5>
                 </div>
                 <br>
-                 <button style="margin-left: 12%; margin-right: 12%" md-raised-button color="primary" (click)="delete()">Видалити</button>
-                 <button md-raised-button color="primary" (click)="close()">Назад</button>
+                <div class="row">
+                  <div class="col-xs-12" style="text-align: center; margin-bottom: 5px">               
+                    <button md-raised-button color="primary" (click)="close()">Назад до списку</button>
+                  </div>
+                   <div class="col-xs-12" style="text-align: center;margin-bottom: 5px">               
+                    <button md-raised-button color="warn" (click)="delete()">Видалити персону</button>
+                  </div>
+                </div>
             </md-card-content>
           </md-card>
         </div>

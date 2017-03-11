@@ -85,22 +85,24 @@ export class StaffEditModalComponent {
       .subscribe(res => {
         this.toast.success('успішно збережено');
         this.action.clearUpdateObj();
-        this.onClose.emit(null);
+        // this.onClose.emit(null);
       }, err => {
         this.toast.error('Error');
       });
   }
   delete() {
-    let obj = this.store['source']['value'];
-    this.load = this.userApi.deleteStaff(obj.staff.id)
-      .subscribe(res => {
-        this.toast.success('Delete success');
-        this.onClose.emit(true);
-      });
+    if (confirm('Видалити*??')) {
+      let obj = this.store['source']['value'];
+      this.load = this.userApi.deleteStaff(obj.staff.id)
+        .subscribe(res => {
+          this.toast.success('Delete success');
+          this.onClose.emit(true);
+        });
+    }
   }
   close() {
     this.action.clearUpdateObj();
-    this.onClose.emit();
+    this.onClose.emit(true);
   }
   ngOnDestroy() {
     this.unsubscribe.forEach(el => el.unsubscribe());
