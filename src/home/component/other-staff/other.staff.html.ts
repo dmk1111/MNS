@@ -18,9 +18,9 @@ export const otherStaffHtml = `
               </div>
             </div>  
             
-            <div class="row">
-              <div class="col-xs-5 lable">Місце народження   -   </div>
-              <div class="col-xs-6">
+            <div class="row" style="margin-bottom: 22px">
+              <div class="col-xs-5 lable">Стать  -   </div>
+              <div class="col-xs-6" style="margin-bottom: 10px">
                 <select (change)="onChange('sex', $event)" [(ngModel)]="form.sex" [ngModelOptions]="{standalone: true}">
                    <option value="male">Чоловік</option>
                 <option value="female">Жінка</option>

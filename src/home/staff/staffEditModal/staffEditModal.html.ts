@@ -7,13 +7,13 @@ export const staffEditHtml = `
             <li  [ngClass]="{active: tabIndex === 1}"><a (click)="tabIndex = 1">Основне</a></li>
             <li [ngClass]="{active: tabIndex === 2}"><a (click)="tabIndex = 2">Освіта</a></li>
             <li [ngClass]="{active: tabIndex === 4}"><a (click)="tabIndex = 4">Службова діяльність</a></li>
-            <li [ngClass]="{active: tabIndex === 3}"><a (click)="tabIndex = 3">Інше</a></li>
             <li [ngClass]="{active: tabIndex === 5}"><a (click)="tabIndex = 5">Пільги</a></li>
             <li [ngClass]="{active: tabIndex === 8}"><a (click)="tabIndex = 8">Стягнення заохочення</a></li>
             <li [ngClass]="{active: tabIndex === 6}"><a (click)="tabIndex = 6">Відпустки</a></li>
             <li [ngClass]="{active: tabIndex === 11}"><a (click)="tabIndex = 11">Лікарняні</a></li>
+            <li [ngClass]="{active: tabIndex === 3}"><a (click)="tabIndex = 3">Інше</a></li>
             <li [ngClass]="{active: tabIndex === 7}"><a (click)="tabIndex = 7">Звільнення</a></li>
-            <li [ngClass]="{active: tabIndex === 9}"><a (click)="tabIndex = 9">Просування по службі</a></li>
+            <!--<li [ngClass]="{active: tabIndex === 9}"><a (click)="tabIndex = 9">Просування по службі</a></li>-->
             <li [ngClass]="{active: tabIndex === 10}"><a (click)="tabIndex = 10">Документи</a></li>
             <li style="float: right;margin-top: 5px;margin-right: 5%;">
               <button md-raised-button color="primary" (click)="save()" style="line-height: 30px">Зберегти</button>
@@ -23,7 +23,7 @@ export const staffEditHtml = `
         
         <!--Content-->
       <div style="background: aliceblue;padding-top: 20px;min-height: 100%;overflow: auto;min-height: 800px;height: 100%">
-      <div class="row" style="min-height: 1300px">
+      <div class="row" style="min-height: 1700px">
       
         <!--Left Comntent Card-->
         <div class="col-md-9 col-xs-9">

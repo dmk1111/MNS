@@ -8,6 +8,21 @@ export const baseStaffHtml = `
       <md-card>
         <div class="row">
         
+        <!--Nazva stryktyrnogo pidrozdily-->
+        <div class="row">
+          <div class="col-xs-3 lable">Назва структурного підрозділу   -   </div>
+          <div class="col-xs-9">
+            <md-input-container style="width: 80%">
+              <input
+                mdInput
+                (change)="onChange('nazvaStryktyrnogoPidrozdily', $event)"
+                [type]="text"
+                [ngModelOptions]="{standalone: true}" 
+                [(ngModel)]="data.nazvaStryktyrnogoPidrozdily">
+            </md-input-container>
+          </div>
+        </div>
+        
         <!--Spec zvanja-->
         <div class="row">
           <div class="col-xs-3 lable">Спецзвання   -   </div>
@@ -271,7 +286,7 @@ export const baseStaffHtml = `
           <div class="row">
             
             <div class="row">
-              <div class="col-xs-5 lable">Прийняття присяги   -   </div>
+              <div class="col-xs-5 lable">Прийняття присяги державного службовця   -   </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -345,16 +360,17 @@ export const baseStaffHtml = `
         <div class="row">
             
             <div class="row">
-              <div class="col-xs-5 lable">Прийняття присяги   -   </div>
+              <div class="col-xs-5 lable">Штатно посадова категорія   -   </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
                     mdInput
-                    (change)="onChange('dateSwear', $event)"
-                    type="date"
-                    placeholder="Дата"
+                    (change)="onChange('StatnoPosadovaCategoriya', $event)"
+                    type="text"
+                    disabled="true"
+                    placeholder="Категорія"
                     [ngModelOptions]="{standalone: true}" 
-                    [(ngModel)]="data.dateSwear">
+                    [(ngModel)]="data.StatnoPosadovaCategoriya">
                 </md-input-container>
               </div>
             </div>   
@@ -429,10 +445,97 @@ export const baseStaffHtml = `
             </div> 
             
          </div>
+         
       </md-card>
       
     </div>
     
+    <!--4 kart-->
+    <div class="col-xs-8" style="margin-top: 10px">
+      
+      <md-card>
+      
+           <div class="row">
+         
+             <div class="row">
+              <div class="col-xs-5 lable">Вік   -   </div>
+              <div class="col-xs-6">
+                <md-input-container style="width: 80%">
+                  <input
+                    mdInput
+                    type="date"
+                    placeholder="Вік"
+                    disabled="true"
+                   >
+                </md-input-container>
+              </div>
+            </div> 
+            
+             <div class="row">
+              <div class="col-xs-5 lable">Вислуга    -   </div>
+              <div class="col-xs-6">
+                <md-input-container style="width: 80%">
+                  <input
+                    mdInput
+                    type="date"
+                    placeholder="Вислуга "
+                    disabled="true"
+                   >
+                </md-input-container>
+              </div>
+            </div> 
+            
+             <div class="row">
+              <div class="col-xs-5 lable">У званні   -   </div>
+              <div class="col-xs-6">
+                <md-input-container style="width: 80%">
+                  <input
+                    mdInput
+                    type="date"
+                    placeholder="У званні"
+                    disabled="true"
+                   >
+                </md-input-container>
+              </div>
+            </div> 
+            
+             <div class="row">
+              <div class="col-xs-5 lable">У посад   -   </div>
+              <div class="col-xs-6">
+                <md-input-container style="width: 80%">
+                  <input
+                    mdInput
+                    type="date"
+                    placeholder="У посад"
+                    disabled="true"
+                   >
+                </md-input-container>
+              </div>
+            </div> 
+            
+             <div class="row">
+              <div class="col-xs-5 lable">Біографічна довідка   -   </div>
+              <div class="col-xs-6">
+                <md-input-container style="width: 80%">
+                  <textarea
+                    mdTextareaAutosize
+                    mdInput
+                    type="text"
+                    maxRows="5"
+                    (change)="onChange('biography', $event)"
+                    [ngModelOptions]="{standalone: true}" 
+                    [(ngModel)]="data.biography"
+                    placeholder="Біографічна довідка"
+                   ></textarea>
+                </md-input-container>
+              </div>
+            </div> 
+         
+        </div>
+      
+      </md-card>
+    
+    </div>
   </div>
 </form>
 `;
