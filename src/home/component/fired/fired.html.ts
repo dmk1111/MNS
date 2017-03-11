@@ -6,7 +6,7 @@ export const firedHtml = `
      <div class="row">
                 <div class="col-xs-5 lable">Дата наказу про звільнення   -   </div>
                 <div class="col-xs-6">
-                  <md-input-container style="width: 80%">
+                  <md-input-container style="width: 100%">
                     <input
                       mdInput
                       (change)="onChange('dateFiring', $event)"
@@ -21,7 +21,7 @@ export const firedHtml = `
               <div class="row">
                 <div class="col-xs-5 lable">Номер наказу про звільнення  -   </div>
                 <div class="col-xs-6">
-                  <md-input-container style="width: 80%">
+                  <md-input-container style="width: 100%">
                     <input
                       mdInput
                       (change)="onChange('orderNumber', $event)"
@@ -36,7 +36,7 @@ export const firedHtml = `
                <div class="row">
                 <div class="col-xs-5 lable">Пункт (стаття) звільнення  -   </div>
                 <div class="col-xs-6">
-                  <md-input-container style="width: 80%">
+                  <md-input-container style="width: 100%">
                     <input
                       mdInput
                       (change)="onChange('article', $event)"
@@ -51,7 +51,7 @@ export const firedHtml = `
               <div class="row">
                 <div class="col-xs-5 lable">Остання займана посада  -   </div>
                 <div class="col-xs-6">
-                  <md-input-container style="width: 80%">
+                  <md-input-container style="width: 100%">
                     <input
                       mdInput
                       (change)="onChange('lastPosition', $event)"
@@ -67,7 +67,7 @@ export const firedHtml = `
                <div class="row">
                 <div class="col-xs-5 lable">Спеціальне звання  -   </div>
                 <div class="col-xs-6">
-                  <md-input-container style="width: 80%">
+                  <md-input-container style="width: 100%">
                     <input
                       mdInput
                       (change)="onChange('specialRank', $event)"
@@ -83,7 +83,7 @@ export const firedHtml = `
               <div class="row">
                 <div class="col-xs-5 lable">Військовий облік  -   </div>
                 <div class="col-xs-6">
-                  <md-input-container style="width: 80%">
+                  <md-input-container style="width: 100%">
                     <input
                       mdInput
                       (change)="onChange('militaryAccount', $event)"
@@ -131,27 +131,50 @@ export const firedHtml = `
            <div class="row">
                 <div class="col-xs-5 lable">Висновок  -   </div>
                 <div class="col-xs-6">
-                  <md-input-container style="width: 80%">
-                    <input
+                  <md-input-container style="width: 100%">
+                    <textarea
                       mdInput
+                      mdTextareaAutosize
+                      minRows="1"
+                      maxRows="6"
                       (change)="onChange('conclusion', $event)"
                       type="text"
                       placeholder="Висновок"
                       [ngModelOptions]="{standalone: true}" 
-                      [(ngModel)]="form.conclusion">
+                      [(ngModel)]="form.conclusion"></textarea>
                   </md-input-container>
+                </div>
+              </div> 
+              
+              
+              <div class="row">
+                <div class="col-xs-5 lable" style="margin-top: 9px">Вислуга років на службі    -   </div>
+                <div class="col-xs-6">
+                  
+                   <div class="col-xs-3">
+                        <md-input-container>
+                          <input mdInput type="number" style="width: 100%" min="0" (change)="onChange('VuslugaYear', $event)" [(ngModel)]="form.VuslugaYear" placeholder="РР">
+                        </md-input-container>
+                    </div>
+                    
+                    <div class="col-xs-3">
+                        <md-input-container>
+                          <input mdInput type="number" style="width: 100%" min="0" max="12" (change)="onChange('Vuslugamonth', $event)" [(ngModel)]="form.Vuslugamonth" placeholder="ММ">
+                        </md-input-container>
+                    </div>
+                    
+                    <div class="col-xs-3">
+                        <md-input-container>
+                          <input mdInput type="number" style="width: 100%" min="0" max="31" (change)="onChange('VuslugaDay', $event)" [(ngModel)]="form.VuslugaDay" placeholder="ДД">
+                        </md-input-container>
+                    </div>
+                  
                 </div>
               </div> 
           
           
   </md-card>
   
-  
-  <md-card>
-      
-      Вислуга років на службі  
-        
-  </md-card>
     
     <!--<div class="col-md-3 col-sm-4">-->
       <!--<md-input-container>-->
