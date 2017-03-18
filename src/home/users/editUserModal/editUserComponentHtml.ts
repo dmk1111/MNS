@@ -35,7 +35,7 @@ export const editUserModal = `
               </div>
             </div>
             
-             <div class="form-group" *ngIf="!isCreate">
+             <div class="form-group">
               <label class="control-label col-sm-2" for="pwd">Пароль</label>
               <div class="col-sm-10">          
                 <input type="password" class="form-control" id="pwd" [(ngModel)]="user.password" placeholder="Ведіть пароль"[ngModelOptions]="{standalone: true}">

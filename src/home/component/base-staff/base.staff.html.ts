@@ -91,6 +91,10 @@ export const baseStaffHtml = `
                 <input
                   mdInput
                   type="text"
+                  (change)="onChange('study', $event)"
+                  [ngModelOptions]="{standalone: true}"
+                   placeholder="Освіта"
+                  [(ngModel)]="data.study"
                  >
               </md-input-container>
             </div>
@@ -149,6 +153,9 @@ export const baseStaffHtml = `
                     mdInput
                     type="text"
                     placeholder="Номер"
+                    (change)="onChange('numberPurpose', $event)"
+                    [ngModelOptions]="{standalone: true}"
+                    [(ngModel)]="data.numberPurpose"
                     >
                 </md-input-container>
               </div>
@@ -166,6 +173,9 @@ export const baseStaffHtml = `
                     mdInput
                     type="text"
                     placeholder="Номер"
+                    (change)="onChange('contractNumber', $event)"
+                    [ngModelOptions]="{standalone: true}"
+                    [(ngModel)]="data.contractNumber"
                     >
                 </md-input-container>
               </div>
@@ -254,10 +264,10 @@ export const baseStaffHtml = `
                             <input
                               mdInput
                               type="date"
-                              (change)="onChange('exemptionDate', $event)"
+                              (change)="onChange('inCommandDate', $event)"
                               [ngModelOptions]="{standalone: true}"
                                placeholder="Дата наказу"
-                              [(ngModel)]="data.exemptionDate">
+                              [(ngModel)]="data.inCommandDate">
                           </md-input-container>
                      </div>
                       <div class="col-xs-5">
@@ -267,8 +277,8 @@ export const baseStaffHtml = `
                             type="text"
                             placeholder="Номер наказу"
                             [ngModelOptions]="{standalone: true}"
-                            (change)="onChange('exemptionNumOrder', $event)"
-                            [(ngModel)]="data.exemptionNumOrder"
+                            (change)="onChange('inCommandNumber', $event)"
+                            [(ngModel)]="data.inCommandNumber"
                             >
                         </md-input-container>
                       </div>
@@ -426,6 +436,7 @@ export const baseStaffHtml = `
                     mdInput
                     type="date"
                     placeholder="Дата"
+                    disabled="true"
                     >
                 </md-input-container>
               </div>
@@ -439,6 +450,7 @@ export const baseStaffHtml = `
                     mdInput
                     type="date"
                     placeholder="Дата"
+                    disabled="true"
                    >
                 </md-input-container>
               </div>

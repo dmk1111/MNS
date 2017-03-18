@@ -127,11 +127,11 @@ export const otherStaffHtml = `
                 <md-input-container style="width: 80%">
                   <input
                     mdInput
-                    (change)="onChange('maritalalStatus', $event)"
+                    (change)="onChange('maritalStatus', $event)"
                     type="text"
                     placeholder="Сімейний стан"
                     [ngModelOptions]="{standalone: true}" 
-                    [(ngModel)]="form.maritalalStatus">
+                    [(ngModel)]="form.maritalStatus">
                 </md-input-container>
               </div>
         </div>

@@ -46,7 +46,7 @@ export class UserApiService {
       .map(res => res.json());
   }
   saveUser(user) {
-    return this.apiHttp.put(`/api/user`, user)
+    return this.apiHttp.put(`api/user`, user)
       .map(res => res.json());
   }
   deleteUser(id) {

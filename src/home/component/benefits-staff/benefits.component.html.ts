@@ -25,7 +25,7 @@ export const BenefitsHtml = `
               </md-input-container>
               
               <md-input-container style="width: 100%">
-                <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'order', i)" [(ngModel)]="fom.order" placeholder="Наказ">
+                <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'orderPerson', i)" [(ngModel)]="fom.orderPerson" placeholder="Хто віддав наказ">
               </md-input-container>
               
               <md-input-container style="width: 100%">
@@ -37,7 +37,7 @@ export const BenefitsHtml = `
               </md-input-container>
               
               <md-input-container style="width: 100%"> 
-                  <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'PosSerialNumber', i)" [(ngModel)]="fom.PosSerialNumber" placeholder="Посвідчення серія номер">
+                  <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'certification', i)" [(ngModel)]="fom.certification" placeholder="Посвідчення серія номер">
               </md-input-container>
               
               <div>
@@ -46,19 +46,19 @@ export const BenefitsHtml = `
                    
                   <div class="col-xs-4" >
                       <md-input-container>
-                        <input mdInput type="number" style="width: 100%" min="0" (change)="onChange($event, 'VuslugaYear', i)" [(ngModel)]="fom.VuslugaYear" placeholder="РР">
+                        <input mdInput type="number" style="width: 100%" min="0" (change)="onChange($event, 'benefitWorksYears', i)" [(ngModel)]="fom.benefitWorksYears" placeholder="РР">
                       </md-input-container>
                   </div>
                   
                   <div class="col-xs-4">
                       <md-input-container>
-                        <input mdInput type="number" style="width: 100%" min="0" max="12" (change)="onChange($event, 'Vuslugamonth', i)" [(ngModel)]="fom.Vuslugamonth" placeholder="ММ">
+                        <input mdInput type="number" style="width: 100%" min="0" max="12" (change)="onChange($event, 'benefitWorksMonths', i)" [(ngModel)]="fom.benefitWorksMonths" placeholder="ММ">
                       </md-input-container>
                   </div>
                   
                   <div class="col-xs-4">
                       <md-input-container>
-                        <input mdInput type="number" style="width: 100%" min="0" max="31" (change)="onChange($event, 'VuslugaDay', i)" [(ngModel)]="fom.VuslugaDay" placeholder="ДД">
+                        <input mdInput type="number" style="width: 100%" min="0" max="31" (change)="onChange($event, 'benefitWorksDays', i)" [(ngModel)]="fom.benefitWorksDays" placeholder="ДД">
                       </md-input-container>
                   </div>
               </div>

@@ -40,7 +40,7 @@ export class CreateStaffModal {
           this.onClose.emit(true);
         });
     } else {
-      this.toast.error('Виберіть регіон')
+      this.toast.error('Виберіть регіон');
     }
   }
   close() {

@@ -10,25 +10,33 @@ import { Response } from '@angular/http';
 export class DocumentComponent {
   @Input() id;
   public isRequesting = false;
+  public tabIndex = 1;
   private docs = [];
+  private uploadFileName = '';
   constructor(private toast: ToastsManager,
               private fileApi: FileService) {}
   ngOnInit() {
-    this.getDocs();
+    this.getDocs(1);
   }
-  getDocs() {
-    this.fileApi.getDocuments(this.id)
+  getDocs(index) {
+    this.docs = [];
+    this.fileApi.getDocuments(this.id, index)
       .subscribe(res => {
         this.docs = res;
       });
   }
+  handleTab(index) {
+    this.tabIndex = index;
+    this.getDocs(index);
+  }
   handle(file) {
     this.isRequesting = true;
-    this.fileApi.uploadDocument(file.target.files[0], this.id)
+    this.fileApi.uploadDocument(file.target.files[0], this.id, this.tabIndex, this.uploadFileName)
       .subscribe(res => {
         if (res.success) {
-          this.getDocs();
+          this.getDocs(this.tabIndex);
           this.isRequesting = false;
+          this.uploadFileName = '';
           this.toast.success('Успішно завантажено');
         }
       }, err => {
@@ -45,5 +53,13 @@ export class DocumentComponent {
     var blob = new Blob([data], { type: 'text/csv' });
     var url = window.URL.createObjectURL(blob);
     window.open(url);
+  }
+  deleteDocument(docId) {
+    if (confirm('Видалити?')) {
+      this.fileApi.deleteDocument(this.id, docId).subscribe(res => {
+        this.toast.success('Успішно видалено');
+        this.getDocs(this.tabIndex);
+      });
+    }
   }
 }
