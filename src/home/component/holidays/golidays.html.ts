@@ -8,21 +8,34 @@ export const holidaysHtml = `
         <md-card-content>
           <div class="row">
             <div class="col-md-12">
-              <md-input-container>
-               <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'description', i)" [(ngModel)]="fom.description" placeholder="Опис">
+              
+               <md-input-container>
+                <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'typeHoliday', i)" [(ngModel)]="fom.typeHoliday" placeholder="Вид">
               </md-input-container>
+              
               <md-input-container>
-                <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'holidayPlace', i)" [(ngModel)]="fom.holidayPlace" placeholder="Місце">
+                <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'holidayPlace', i)" [(ngModel)]="fom.year" placeholder="Рік">
               </md-input-container>
-              <md-input-container>
-                <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'typeHoliday', i)" [(ngModel)]="fom.typeHoliday" placeholder="Тип">
+              
+               <md-input-container>
+                <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'holidayPlace', i)" [(ngModel)]="fom.duration" placeholder="Тривалість">
               </md-input-container>
+             
               <md-input-container>
                 <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дати З">
               </md-input-container>
               <md-input-container>
                 <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата До">
               </md-input-container>
+              
+              <md-input-container>
+                <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'holidayPlace', i)" [(ngModel)]="fom.holidayPlace" placeholder="Місце">
+              </md-input-container>
+              
+              <md-input-container>
+               <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'description', i)" [(ngModel)]="fom.description" placeholder="Коментар">
+              </md-input-container>
+              
             </div>
             <div class="col-md-12">
             </div>
