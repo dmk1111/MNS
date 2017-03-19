@@ -33,7 +33,7 @@ export const premiumFinesHtml = `
                          </md-input-container>
                          
                           <md-input-container>
-                           <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'comment', i)" [(ngModel)]="fom.comment" placeholder="Коментарій">
+                           <textarea mdTextareaAutosize mdInput maxRows="5" type="text" style="width: 100%" (change)="onChange($event, 'comment', i)" [(ngModel)]="fom.comment" placeholder="Коментарій"></textarea>
                          </md-input-container>
              </div>
              
