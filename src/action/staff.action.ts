@@ -117,6 +117,15 @@ export class StaffAction {
       }
     });
   }
+  setUpdatePremiumFined2(value, index) {
+    this.store.dispatch({
+      type: 'SET_UPDATE_P_FINES2',
+      payload: {
+        index: index,
+        value: value
+      }
+    });
+  }
   setUpdatePromotion(value, index) {
     this.store.dispatch({
       type: 'SET_UPDATE_PROMOTION',

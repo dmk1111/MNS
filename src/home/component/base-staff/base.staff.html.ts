@@ -327,17 +327,24 @@ export const baseStaffHtml = `
             
             <div class="row">
               <div class="col-xs-5 lable">Категорія   -   </div>
-              <div class="col-xs-6">
+              <div class="col-xs-6" style="margin-top: 2%">
               
-                <md-input-container style="width: 80%">
-                  <input
-                    mdInput
-                    (change)="onChange('categoriesCivilServants', $event)"
-                    type="text"
-                    maxlength="1"
+                <select style="width: 54%" (change)="onChange('categoriesCivilServants', $event)"
                     [ngModelOptions]="{standalone: true}" 
                     [(ngModel)]="data.categoriesCivilServants">
-                </md-input-container>
+                  <option value="A">A</option>   
+                  <option value="B">B</option>   
+                  <option value="C">C</option>   
+                </select>
+                <!--<md-input-container style="width: 80%">-->
+                  <!--<input-->
+                    <!--mdInput-->
+                    <!--(change)="onChange('categoriesCivilServants', $event)"-->
+                    <!--type=""-->
+                    <!--maxlength="1"-->
+                    <!--[ngModelOptions]="{standalone: true}" -->
+                    <!--[(ngModel)]="data.categoriesCivilServants">-->
+                <!--</md-input-container>-->
                 
               </div>
             </div>

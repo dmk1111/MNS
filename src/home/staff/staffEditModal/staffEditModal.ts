@@ -9,6 +9,7 @@ import { ToastsManager } from 'ng2-toastr';
 const modal = require('./modal.css');
 import * as moment from 'moment';
 import { FileService } from '../../../services/file.service';
+import { premiumFinesHtml } from '../../component/premiumFines/premiumFines.html';
 @Component({
   selector: 'staffModal',
   template: staffEditHtml,
@@ -81,6 +82,18 @@ export class StaffEditModalComponent {
           }
         }
       });
+    debugger
+    if (finaleObj['premiumFinesS'] && finaleObj['premiumFinesS'].length) {
+      finaleObj['premiumFines'] = finaleObj['premiumFinesS'];
+      delete finaleObj['premiumFinesS'];
+      if (finaleObj['premiumFinesZ'] && finaleObj['premiumFinesZ'].length) {
+        finaleObj['premiumFines'] = finaleObj['premiumFines'].concat(finaleObj['premiumFinesZ']);
+        delete finaleObj['premiumFinesZ'];
+      }
+    } else if (finaleObj['premiumFinesZ'] && finaleObj['premiumFinesZ'].length) {
+      finaleObj['premiumFines'] = finaleObj['premiumFinesZ'];
+    }
+    debugger
     this.load = this.userApi.saveStaff(obj.staff.id, finaleObj)
       .subscribe(res => {
         this.toast.success('успішно збережено');
