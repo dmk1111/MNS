@@ -15,15 +15,15 @@ export const WorkExperienceHtml = `
               <div class="row">
                 <div class="col-xs-4">
                 
-                    <div class="col-xs-12">
+                    <div class="col-xs-6">
                        <md-input-container>
-                                 <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дата початку">
+                                 <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="з">
                         </md-input-container>
                     </div>  
                     
-                    <div class="col-xs-12">
+                    <div class="col-xs-6">
                         <md-input-container>
-                                <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата закінченя">
+                                <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="по">
                          </md-input-container>
                     </div>  
                     

@@ -13,8 +13,7 @@ const template = require('./home.html');
 export class Home {
   private isAdmin: boolean = false;
   private access;
-  constructor(public router: Router, private auth: AuthService) {
-  }
+  constructor(public router: Router, private auth: AuthService) {}
   ngOnInit() {
     this.auth.me().subscribe(user => {
       if (user.roleName === 'ROLE_ADMIN') {

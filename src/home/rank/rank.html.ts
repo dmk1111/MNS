@@ -1,7 +1,7 @@
 //noinspection TsLint
-export const positionHtml = `
-<div [ngBusy]="{busy: load, message: 'Завантаження'}" style="z-index: 9999999"></div>
-<position-modal [position]="position" [isCreate]="!!position" (onClose)="save($event)" *ngIf="showEdit"></position-modal>
+export const rankHtml = `
+  <!--<div [ngBusy]="{busy: load, message: 'Завантаження'}" style="z-index: 9999999"></div>-->
+  <rank-modal [rank]="rank" [isCreate]="!!rank" (onClose)="save($event)" *ngIf="showEdit"></rank-modal>
  
   <!--Table-->
      <h3>Посади</h3>
@@ -13,9 +13,9 @@ export const positionHtml = `
                 </button>
               </div>
 
-        <datatable *ngIf="positions && positions.length"
+        <datatable *ngIf="ranks && ranks.length"
           class="material"
-          [rows]="positions"
+          [rows]="ranks"
           [columns]="column"
           [columnMode]="'force'"
           [headerHeight]="30"
@@ -26,4 +26,9 @@ export const positionHtml = `
           [limit]="5">
         </datatable>
        </div>
+       
+       
+       
+       
+       
 `;
