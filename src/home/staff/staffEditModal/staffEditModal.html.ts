@@ -3,7 +3,8 @@ export const staffEditHtml = `
     <div [ngBusy]="{busy: load, message: 'Завантаження', backdrop: true}" class="modal" style="display: block; z-index: 999999" >
       <div class="modal-content" style="width: 100%;z-index: 9999;height: 100%"> 
         <!--Top Nav Bar-->
-        <ul class="nav nav-tabs" style="width: 100%;background-color: aliceblue;">
+        <ul class="nav nav-tabs vertical-menu" >
+            <li><img src="http://www.dsns.gov.ua/src/8.png"/> </li>
             <li  [ngClass]="{active: tabIndex === 1}"><a (click)="tabIndex = 1">Основне</a></li>
             <li [ngClass]="{active: tabIndex === 2}"><a (click)="tabIndex = 2">Освіта</a></li>
             <li [ngClass]="{active: tabIndex === 4}"><a (click)="tabIndex = 4">Службова діяльність</a></li>
@@ -15,7 +16,7 @@ export const staffEditHtml = `
             <li [ngClass]="{active: tabIndex === 7}"><a (click)="tabIndex = 7">Звільнення</a></li>
             <!--<li [ngClass]="{active: tabIndex === 9}"><a (click)="tabIndex = 9">Просування по службі</a></li>-->
             <li [ngClass]="{active: tabIndex === 10}"><a (click)="tabIndex = 10">Документи</a></li>
-            <li style="float: right;margin-top: 5px;margin-right: 5%;">
+            <li class="save">
               <button md-raised-button color="primary" (click)="save()" style="line-height: 30px">Зберегти</button>
             </li>   
         </ul> 
@@ -23,7 +24,7 @@ export const staffEditHtml = `
         
         
         <!--Content-->
-      <div style="background: aliceblue;padding-top: 20px;min-height: 100%;overflow: auto;min-height: 800px;height: 100%">
+      <div class="content">
       <div class="row" style="min-height: 1700px">
       
         <!--Left Comntent Card-->
@@ -54,10 +55,10 @@ export const staffEditHtml = `
         </div>
         
         <!--Right Content Card (User Profile)-->
-        <div class="col-md-3 col-xs-3" style="position: fixed;left: 74%;">
-          <md-card style="min-height: 450px;background-color: cornsilk;padding: 0 0 0 0;">
+        <div class="col-md-3 col-xs-3 user">
+          <md-card style="min-height: 450px; background-color: cornsilk; padding: 10px;">
             <md-card-content>
-              <h4>Іван Іванович Іванов</h4>
+              <h4 class="username">Іван Іванович Іванов</h4>
               <label for="image" style="width: 100%">
                 <input type="file"  (change)="uploadPhoto($event)" name="image" id="image" style="display:none;"/>
                 <img *ngIf="avatar" [src]="avatar" style="width: 60%" />
