@@ -56,7 +56,7 @@ export const staffEditHtml = `
         
         <!--Right Content Card (User Profile)-->
         <div class="col-md-3 col-xs-3 user">
-          <md-card style="min-height: 450px; padding: 10px;">
+          <md-card style="min-height: 450px; background-color:white; opacity: 0.8; padding: 10px;">
             <md-card-content>
               <h4 class="username">Іван Іванович Іванов</h4>
               <label for="image" style="width: 100%">

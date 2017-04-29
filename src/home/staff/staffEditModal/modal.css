@@ -4,15 +4,16 @@ a {
 
 /* override background color for the component */
 .modal-content {
-  background-color: aliceblue;
+  background-color: #02083A;
 }
 
 .vertical-menu {
   width: 200px;
-  background-color: aliceblue;
+  background-color: #02083A;
   float: left;
   margin: 20px;
-  box-shadow: 0px 2px 10px rgba(0,0,0,0.25);
+  box-shadow: 0px 2px 10px rgba(255,255,255,0.25);
+  border: none;
 }
 
 .vertical-menu li {
@@ -22,6 +23,13 @@ a {
 
 .vertical-menu li a {
   border: none;
+  color: white;
+}
+
+.vertical-menu li.active a, .vertical-menu li a:hover, .vertical-menu li a:focus {
+  color: #02083A;
+  border: none;
+  border-radius: 0;
 }
 
 .save button{
@@ -49,7 +57,7 @@ button:hover {
 }
 
 .content {
-  background-color: aliceblue;
+  background-color: #02083A;
   padding-top: 20px;
   min-height: 100%;
   overflow: auto;
