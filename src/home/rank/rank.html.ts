@@ -1,10 +1,10 @@
 //noinspection TsLint
-export const usersHtml = `
-<div [ngBusy]="{busy: load, message: 'Завантаження'}" style="z-index: 9999999"></div>
-<userEdit [user]="user" [regions]="regions" [isCreate]="!!user" (onClose)="save($event)" *ngIf="showEdit"></userEdit>
+export const rankHtml = `
+  <!--<div [ngBusy]="{busy: load, message: 'Завантаження'}" style="z-index: 9999999"></div>-->
+  <rank-modal [rank]="rank" [isCreate]="!!rank" (onClose)="save($event)" *ngIf="showEdit"></rank-modal>
  
   <!--Table-->
-     <h3>Користувачі</h3>
+     <h3>Посади</h3>
        <div style="margin-bottom: 20px;width: 95%">
               <!--//create button-->
               <div style="text-align: right; margin-bottom: 5px" >
@@ -13,17 +13,22 @@ export const usersHtml = `
                 </button>
               </div>
 
-        <datatable *ngIf="users && users.length"
+        <datatable *ngIf="ranks && ranks.length"
           class="material"
-          [rows]="users"
+          [rows]="ranks"
+          [columns]="column"
           [columnMode]="'force'"
           [headerHeight]="30"
           [footerHeight]="50"
           [rowHeight]="'auto'"
-          [columns]="column"
           [selectionType]="'cell'"
           (select)="handleSelect($event)"
-          [limit]="25">
+          [limit]="5">
         </datatable>
        </div>
+       
+       
+       
+       
+       
 `;

@@ -7,7 +7,10 @@ const initState = {
     workExperiences: [],
     benefits: [],
     holidays: [],
+    hospitals: [],
     premiumFines: [],
+    premiumFinesS: [],
+    premiumFinesZ: [],
     promotions: []
   };
 const cleatState = {
@@ -17,7 +20,10 @@ const cleatState = {
   workExperiences: [],
   benefits: [],
   holidays: [],
+  hospitals: [],
   premiumFines: [],
+  premiumFinesS: [],
+  premiumFinesZ: [],
   promotions: []
 };
 export const staffUpdateReducer: ActionReducer<any> = (state = Object.assign({}, initState), action: Action) => {
@@ -49,16 +55,36 @@ export const staffUpdateReducer: ActionReducer<any> = (state = Object.assign({},
         action.payload.value);
       return Object.assign({}, state);
     case 'SET_UPDATE_P_FINES':
-      state['premiumFines'][action.payload.index] = Object.assign(
+      state['premiumFinesS'][action.payload.index] = Object.assign(
         {},
-        state['premiumFines'][action.payload.index],
+        state['premiumFinesS'][action.payload.index],
+        action.payload.value);
+      return Object.assign({}, state);
+    case 'SET_UPDATE_P_FINES2':
+      state['premiumFinesZ'][action.payload.index] = Object.assign(
+        {},
+        state['premiumFinesZ'][action.payload.index],
         action.payload.value);
       return Object.assign({}, state);
     case 'SET_UPDATE_HOLIDAYS':
-      state['holidays'][action.payload.index] = Object.assign(
-        {},
-        state['holidays'][action.payload.index],
-        action.payload.value);
+      if (state['holidays'][action.payload.index]) {
+        state['holidays'][action.payload.index] = Object.assign(
+          {},
+          state['holidays'][action.payload.index],
+          action.payload.value);
+      } else {
+        state.holidays.push(action.payload.value);
+      }
+      return Object.assign({}, state);
+    case 'SET_UPDATE_HOSPITAL':
+      if (state['hospitals'][action.payload.index]) {
+        state['hospitals'][action.payload.index] = Object.assign(
+          {},
+          state['hospitals'][action.payload.index],
+          action.payload.value);
+      } else {
+        state.hospitals.push(action.payload.value);
+      }
       return Object.assign({}, state);
     case 'SET_UPDATE_PROMOTION':
       state['promotions'][action.payload.index] = Object.assign(
@@ -83,6 +109,8 @@ export const staffUpdateReducer: ActionReducer<any> = (state = Object.assign({},
         benefits: [],
         holidays: [],
         premiumFines: [],
+        premiumFinesS: [],
+        premiumFinesZ: [],
         promotions: []
       };
       return Object.assign({}, state);

@@ -22,7 +22,7 @@ export class ApiHttp extends Http {
 
   public baseUrl: string = 'http://52.34.34.95:8090';
 
-  constructor(backend: ConnectionBackend,
+  constructor(backend: ConnectionBackend, public http: Http,
               defaultOptions: RequestOptions) {
     super(backend, defaultOptions);
   }
@@ -37,7 +37,7 @@ export class ApiHttp extends Http {
 
     options = this.prepareOptions(options);
 
-    return super.request(`${this.baseUrl}/${url}`, options);
+    return this.http.request(`${this.baseUrl}/${url}`, options);
   }
 
   /**
@@ -47,7 +47,7 @@ export class ApiHttp extends Http {
 
     options = this.prepareOptions(options);
 
-    return super.get(`${this.baseUrl}/${url}`, options);
+    return this.http.get(`${this.baseUrl}/${url}`, options);
   }
 
   /**
@@ -58,7 +58,7 @@ export class ApiHttp extends Http {
 
     options = this.prepareOptions(options);
 
-    return super.post(`${this.baseUrl}${url}`, body, options);
+    return this.http.post(`${this.baseUrl}/${url}`, body, options);
   }
 
   /**
@@ -69,7 +69,7 @@ export class ApiHttp extends Http {
 
     options = this.prepareOptions(options);
 
-    return super.put(`${this.baseUrl}/${url}`, body, options);
+    return this.http.put(`${this.baseUrl}/${url}`, body, options);
   }
   /**
    * Performs a request with `delete` http method.
@@ -79,7 +79,7 @@ export class ApiHttp extends Http {
 
     options = this.prepareOptions(options);
 
-    return super.delete(`${this.baseUrl}/${url}`, options);
+    return this.http.delete(`${this.baseUrl}/${url}`, options);
   }
 
   /**
@@ -90,7 +90,7 @@ export class ApiHttp extends Http {
 
     options = this.prepareOptions(options);
 
-    return super.patch(`${this.baseUrl}/${url}`, body, options);
+    return this.http.patch(`${this.baseUrl}/${url}`, body, options);
   }
 
   /**
@@ -100,7 +100,7 @@ export class ApiHttp extends Http {
 
     options = this.prepareOptions(options);
 
-    return super.head(`${this.baseUrl}/${url}`, options);
+    return this.http.head(`${this.baseUrl}/${url}`, options);
   }
 
   /**
@@ -128,9 +128,9 @@ export class ApiHttp extends Http {
 
 export const API_HTTP_PROVIDERS: any[] = [
   { provide: ApiHttp,
-    useFactory: (xhrBackend, requestOptions) =>
-      new ApiHttp(xhrBackend, requestOptions),
-    deps: [XHRBackend, RequestOptions]
+    useFactory: (xhrBackend, http, requestOptions) =>
+      new ApiHttp(xhrBackend, http, requestOptions),
+    deps: [XHRBackend, Http, RequestOptions]
   },
   BrowserXhr,
   { provide: RequestOptions, useClass: BaseRequestOptions},

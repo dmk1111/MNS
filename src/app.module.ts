@@ -15,7 +15,6 @@ import { routes } from './app.routes';
 import { AuthService } from './services/auth.service';
 import { UserApiService } from './services/user.service';
 import { ToastModule } from 'ng2-toastr';
-import { MaterialModule } from '@angular/material';
 import { API_HTTP_PROVIDERS } from './services/http/apiHttp.service';
 import { CustomBrowserXhr } from './services/http/CustomXHR';
 import { Angular2DataTableModule } from 'angular2-data-table';
@@ -55,7 +54,16 @@ import { RegionComponent } from './home/region/region.comp';
 import { BusyModule } from 'angular2-busy';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { UsersComponent } from './home/users/users.component';
-
+import { EditUserModal } from './home/users/editUserModal/editUserComponent';
+import { SelectModule } from 'angular2-select';
+import { MaterialModule } from '@angular/material';
+import { PositionService } from './services/position.service';
+import { PositionComponent } from './home/position/position.compoennt';
+import { PositionModal } from './home/position/positionEditModal/positionEdit.component';
+import { CreateStaffModal } from './home/staff/staffCreateModal/staffCreateModal.component';
+import { HospitalsComponent } from './home/component/hospitals/hostital.component';
+import { RankComponent } from './home/rank/rank.component';
+import { RankEditModal } from './home/rank/rankEditModal/rankEditModal';
 @NgModule({
   bootstrap: [App],
   declarations: [
@@ -66,8 +74,11 @@ import { UsersComponent } from './home/users/users.component';
     UsersComponent,
     StaffEditModalComponent,
     BaseStaffComponent,
+    EditUserModal,
     EducationStaffComponent,
     OtherStaffComponent,
+    PositionComponent,
+    PositionModal,
     WorkExperienceComponent,
     BenefitsComponent,
     HolidaysComponent,
@@ -75,22 +86,27 @@ import { UsersComponent } from './home/users/users.component';
     PremiumFinesComponent,
     PromotionComponent,
     DocumentComponent,
+    CreateStaffModal,
     SpinnerComponent,
+    HospitalsComponent,
     DeleteStaffComponent,
-    RegionComponent
+    RegionComponent,
+    RankComponent,
+    RankEditModal
   ],
   imports: [
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'success' // set defaults here
     }),
     BusyModule,
-    ToastModule,
+    ToastModule.forRoot(),
+    SelectModule,
     Angular2DataTableModule,
     StoreModule.provideStore({
       staff: staffReducer,
       updateStaff: staffUpdateReducer
     }),
-    MaterialModule.forRoot(),
+    MaterialModule,
     HttpModule, BrowserModule, FormsModule,
     RouterModule.forRoot(routes, {
       useHash: true
@@ -105,6 +121,7 @@ import { UsersComponent } from './home/users/users.component';
     FiredService,
     HolidaysService,
     HospitalService,
+    PositionService,
     OtherService,
     PremiumFineService,
     PromotionService,

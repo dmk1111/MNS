@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastsManager } from 'ng2-toastr';
 
 const template = require('./app.html');
 
@@ -9,5 +10,7 @@ const template = require('./app.html');
 })
 
 export class App {
-  constructor(public router: Router) {}
+  constructor(public router: Router, public toastr: ToastsManager, vRef: ViewContainerRef) {
+    this.toastr.setRootViewContainerRef(vRef);
+  }
 }

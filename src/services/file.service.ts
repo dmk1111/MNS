@@ -10,8 +10,23 @@ export class FileService {
   constructor(private http: ApiHttp, private sani: DomSanitizer, private htp: Http) {
   }
 
-  getDocuments(staffId) {
-    return this.http.get(`api/staff/${staffId}/staffDoc`)
+  getDocuments(staffId, index) {
+    let url = `api/staff/${staffId}/`;
+    switch (index) {
+      case 1 :
+        url = `${url}staffDoc`;
+        break;
+      case 2:
+        url = `${url}lustration`;
+        break;
+      case 3:
+        url = `${url}specPerevirka`;
+        break;
+      case 4:
+        url = `${url}deklaration`;
+        break;
+    }
+    return this.http.get(url)
       .map(res => res.json());
   }
 
@@ -19,16 +34,19 @@ export class FileService {
     return this.http.get(`api/staff/${staffId}/staffDoc/${docId}`);
   }
 
-  deleteDocument(staffId, id) {
+  deleteDocument(staffId, docId) {
+    return this.http.delete(`api/staff/${staffId}/staffDoc/${docId}`)
+      .map(res => res.json());
   }
 
-  uploadDocument(file, staffId) {
+  uploadDocument(file, staffId, index, name) {
     return Observable.create(observer => {
       let formData: FormData = new FormData(),
         xhr: XMLHttpRequest = new XMLHttpRequest();
 
       //Set Request auth header
       formData.append('file', file);
+      formData.append('name', name);
 
       xhr.onreadystatechange = () => {
         if (xhr.readyState === 4) {
@@ -39,7 +57,23 @@ export class FileService {
           }
         }
       };
-      xhr.open('PUT', `${this.baseUrl}/api/staff/${staffId}/staffDoc`, true);
+      let url = `${this.baseUrl}/api/staff/${staffId}/`;
+
+      switch (index) {
+        case 1 :
+          url = `${url}staffDoc`;
+          break;
+        case 2:
+          url = `${url}lustration`;
+          break;
+        case 3:
+          url = `${url}specPerevirka`;
+          break;
+        case 4:
+          url = `${url}deklaration`;
+          break;
+      }
+      xhr.open('PUT', url, true);
       xhr.setRequestHeader('Authorization', 'OAuth ' + localStorage.getItem('access_token'));
       xhr.send(formData);
     });

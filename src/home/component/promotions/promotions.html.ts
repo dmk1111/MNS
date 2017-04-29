@@ -7,10 +7,16 @@ export const promotionsHtml = `
         <md-card-content>
           <div class="row">
             <div>
-              <md-input type="text" style="width: 100%" (change)="onChange($event, 'companyName', i)" [(ngModel)]="fom.companyName" placeholder="companyName"></md-input>
-              <md-input type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="fromDate"></md-input>
-              <md-input type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="toDate"></md-input>
-            </div>
+                                 <md-input-container>
+ <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'companyName', i)" [(ngModel)]="fom.companyName" placeholder="Назва компанії">
+                                  </md-input-container>
+                                 <md-input-container>
+<input mdInput type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дата з">
+                                 </md-input-container>
+                                  <md-input-container>
+<input mdInput type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата по">
+                              </md-input-container>
+ </div>
             <div class="col-md-12">
             </div>
           </div>
@@ -21,7 +27,7 @@ export const promotionsHtml = `
   <md-card style="height: 309px" (click)="add()">
         <md-card-content>
           <div class="row">
-            ADD
+            Додати
             <div class="col-md-12">
             </div>
           </div>

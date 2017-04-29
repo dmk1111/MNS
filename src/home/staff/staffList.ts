@@ -14,7 +14,9 @@ export class StaffListComponent {
   private staff;
   private column;
   private selectedStaff;
+  private regions = [];
   private load;
+  private showCreate = false;
   private open = false;
 
   constructor(public router: Router,
@@ -29,6 +31,11 @@ export class StaffListComponent {
       {name: 'Біографія', prop: 'biography'},
       {name: 'Категорії цивільних службовців', prop: 'categoriesCivilServants'}
     ];
+    this.userApi.getRegions()
+      .subscribe(
+        res => { this.regions = res; },
+        error => { this.toast.error('OOps'); }
+      );
     this.getStaff();
   }
   onSelect(event) {
@@ -57,5 +64,14 @@ export class StaffListComponent {
       this.getStaff();
     }
     this.open = false;
+  }
+  modalClose(event) {
+    if (event) {
+      this.getStaff();
+    }
+    this.showCreate = false;
+  }
+  openCreate() {
+    this.showCreate = true;
   }
 }

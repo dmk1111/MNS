@@ -70,6 +70,25 @@ export class StaffAction {
       }
     });
   }
+  setUpdateHospital(value, index) {
+    this.store.dispatch({
+      type: 'SET_UPDATE_HOSPITAL',
+      payload: {
+        index: index,
+        value: value
+      }
+    });
+  }
+  setStaffHospital(key, value, index) {
+    this.store.dispatch({
+      type: 'SET_STAFF_HOSPITAL',
+      payload: {
+        index: index,
+        key: key,
+        value: value
+      }
+    });
+  }
   setStaffHolidays(key, value, index) {
     this.store.dispatch({
       type: 'SET_STAFF_HOLIDAYS',
@@ -92,6 +111,15 @@ export class StaffAction {
   setUpdatePremiumFined(value, index) {
     this.store.dispatch({
       type: 'SET_UPDATE_P_FINES',
+      payload: {
+        index: index,
+        value: value
+      }
+    });
+  }
+  setUpdatePremiumFined2(value, index) {
+    this.store.dispatch({
+      type: 'SET_UPDATE_P_FINES2',
       payload: {
         index: index,
         value: value
@@ -167,6 +195,15 @@ export class StaffAction {
   delFromUpdateArr(key, obj) {
     this.store.dispatch({
       type: 'DELETE_UPDATE_FROM_ARR',
+      payload: {
+        key: key,
+        id: obj
+      }
+    });
+  }
+  delFromUpdateArr2(key, obj) {
+    this.store.dispatch({
+      type: 'DELETE_UPDATE_FROM_ARR2',
       payload: {
         key: key,
         id: obj

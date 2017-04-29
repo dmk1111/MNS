@@ -9,6 +9,7 @@ import { ToastsManager } from 'ng2-toastr';
 const modal = require('./modal.css');
 import * as moment from 'moment';
 import { FileService } from '../../../services/file.service';
+import { premiumFinesHtml } from '../../component/premiumFines/premiumFines.html';
 @Component({
   selector: 'staffModal',
   template: staffEditHtml,
@@ -22,6 +23,7 @@ export class StaffEditModalComponent {
   private staff;
   private avatar;
   private load;
+  private title: string;
   private photo;
 
   constructor(public router: Router,
@@ -35,6 +37,7 @@ export class StaffEditModalComponent {
     this.unsubscribe.push(this.store.select('staff')
       .subscribe(staff => {
         this.staff = staff;
+        this.title = `${this.staff.mainStaff.position}, назва структурного підрозділу, призначено наказом  №${this.staff.mainStaff.numberPurpose} від ${this.staff.mainStaff.dateNumberPurpose}`;
         this.getAvatar();
         if (!this.avatar)
           this.avatar = 'img/profile.jpg';
@@ -46,7 +49,7 @@ export class StaffEditModalComponent {
   getAvatar() {
     this.fileService.getPhoto(this.store['source']['value'].staff.id)
       .subscribe(res => {
-        this.photo = res;
+        this.avatar = 'data:image/png;base64,' + res['_body'];
       });
   }
   save() {
@@ -81,26 +84,38 @@ export class StaffEditModalComponent {
           }
         }
       });
+    if (finaleObj['premiumFinesS'] && finaleObj['premiumFinesS'].length) {
+      finaleObj['premiumFines'] = finaleObj['premiumFinesS'];
+      delete finaleObj['premiumFinesS'];
+      if (finaleObj['premiumFinesZ'] && finaleObj['premiumFinesZ'].length) {
+        finaleObj['premiumFines'] = finaleObj['premiumFines'].concat(finaleObj['premiumFinesZ']);
+        delete finaleObj['premiumFinesZ'];
+      }
+    } else if (finaleObj['premiumFinesZ'] && finaleObj['premiumFinesZ'].length) {
+      finaleObj['premiumFines'] = finaleObj['premiumFinesZ'];
+    }
     this.load = this.userApi.saveStaff(obj.staff.id, finaleObj)
       .subscribe(res => {
         this.toast.success('успішно збережено');
         this.action.clearUpdateObj();
-        this.onClose.emit(null);
+        // this.onClose.emit(null);
       }, err => {
         this.toast.error('Error');
       });
   }
   delete() {
-    let obj = this.store['source']['value'];
-    this.load = this.userApi.deleteStaff(obj.staff.id)
-      .subscribe(res => {
-        this.toast.success('Delete success');
-        this.onClose.emit(true);
-      });
+    if (confirm('Видалити*??')) {
+      let obj = this.store['source']['value'];
+      this.load = this.userApi.deleteStaff(obj.staff.id)
+        .subscribe(res => {
+          this.toast.success('Delete success');
+          this.onClose.emit(true);
+        });
+    }
   }
   close() {
     this.action.clearUpdateObj();
-    this.onClose.emit();
+    this.onClose.emit(true);
   }
   ngOnDestroy() {
     this.unsubscribe.forEach(el => el.unsubscribe());

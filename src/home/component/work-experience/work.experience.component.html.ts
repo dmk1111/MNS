@@ -12,15 +12,30 @@ export const WorkExperienceHtml = `
           >X</span>
         </md-card-title>
         <md-card-content>
-          <!--<div class="row">-->
-            <!--<div class="col-md-12">-->
-              <md-input type="textarea" style="width: 100%" (change)="onChange($event, 'orgName', i)" [(ngModel)]="fom.orgName" ><md-placeholder >Коментар</md-placeholder></md-input>
-              <md-input type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дата початку"></md-input>
-              <md-input type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата закінченя"></md-input>
-            <!--</div>-->
-            <!--<div class="col-md-12">-->
-            <!--</div>-->
-          <!--</div>-->
+              <div class="row">
+                <div class="col-xs-4">
+                
+                    <div class="col-xs-6">
+                       <md-input-container>
+                                 <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="з">
+                        </md-input-container>
+                    </div>  
+                    
+                    <div class="col-xs-6">
+                        <md-input-container>
+                                <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="по">
+                         </md-input-container>
+                    </div>  
+                    
+                </div>   
+                 
+                <div class="col-xs-8">
+                     <!--<md-input-container>-->
+                          <textarea  rows="5" cols="50"  style="width: 100%" (change)="onChange($event, 'orgName', i)" [(ngModel)]="fom.orgName" placeholder="Коментар" ></textarea>
+                       <!--</md-input-container>-->
+                </div>
+              
+              </div>
         </md-card-content>
     </md-card>
   </div>
