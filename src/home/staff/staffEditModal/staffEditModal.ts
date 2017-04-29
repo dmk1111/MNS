@@ -23,6 +23,7 @@ export class StaffEditModalComponent {
   private staff;
   private avatar;
   private load;
+  private title: string;
   private photo;
 
   constructor(public router: Router,
@@ -36,6 +37,7 @@ export class StaffEditModalComponent {
     this.unsubscribe.push(this.store.select('staff')
       .subscribe(staff => {
         this.staff = staff;
+        this.title = `${this.staff.mainStaff.position}, назва структурного підрозділу, призначено наказом  №${this.staff.mainStaff.numberPurpose} від ${this.staff.mainStaff.dateNumberPurpose}`;
         this.getAvatar();
         if (!this.avatar)
           this.avatar = 'img/profile.jpg';
@@ -82,7 +84,6 @@ export class StaffEditModalComponent {
           }
         }
       });
-    debugger
     if (finaleObj['premiumFinesS'] && finaleObj['premiumFinesS'].length) {
       finaleObj['premiumFines'] = finaleObj['premiumFinesS'];
       delete finaleObj['premiumFinesS'];
@@ -93,7 +94,6 @@ export class StaffEditModalComponent {
     } else if (finaleObj['premiumFinesZ'] && finaleObj['premiumFinesZ'].length) {
       finaleObj['premiumFines'] = finaleObj['premiumFinesZ'];
     }
-    debugger
     this.load = this.userApi.saveStaff(obj.staff.id, finaleObj)
       .subscribe(res => {
         this.toast.success('успішно збережено');

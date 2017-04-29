@@ -155,13 +155,18 @@ export const otherStaffHtml = `
               <div class="col-xs-5 lable">Діти  -   </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
-                  <input
+                  <textarea
+                    mdTextareaAutosize
                     mdInput
+                    mdAutosizeMaxRows="10"
+                    mdAutosizeMinRows="2"
+                    maxRows="10"
+                    minRows="3"
                     (change)="onChange('children', $event)"
                     type="text"
-                    placeholder="Діти)"
+                    placeholder="Діти"
                     [ngModelOptions]="{standalone: true}" 
-                    [(ngModel)]="form.children">
+                    [(ngModel)]="form.children"></textarea>
                 </md-input-container>
               </div>
         </div>

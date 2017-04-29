@@ -28,6 +28,11 @@ export const staffEditHtml = `
         <!--Left Comntent Card-->
         <div class="col-md-9 col-xs-9">
            <md-card style="background-color: cornsilk;min-height: 800px">
+           
+           <!--Card title-->
+           <md-card-title>{{ title }}</md-card-title>
+           
+           <!--Card COntent-->
             <md-card-content>
                 
                 <!--Base Tab-->
@@ -51,14 +56,12 @@ export const staffEditHtml = `
         <div class="col-md-3 col-xs-3" style="position: fixed;left: 74%;">
           <md-card style="min-height: 450px;background-color: cornsilk;padding: 0 0 0 0;">
             <md-card-content>
+              <h4>Іван Іванович Іванов</h4>
               <label for="image" style="width: 100%">
                 <input type="file"  (change)="uploadPhoto($event)" name="image" id="image" style="display:none;"/>
-                <img *ngIf="avatar" [src]="avatar" style="width: 100%" />
+                <img *ngIf="avatar" [src]="avatar" style="width: 60%" />
               </label>
                 <div style="text-align: center;"> 
-                  <h4>Іван Іванович Іванов</h4>
-                  <h5>Львів, вул. Зелена 21/8</h5>
-                  <h5>89912</h5>
                   <h5 >+380666666666</h5>
                 </div>
                 <br>

@@ -442,7 +442,7 @@ export const baseStaffHtml = `
                   <input
                     mdInput
                     type="date"
-                    placeholder="Дата"
+                    placeholder="Дата з якої обчислювати"
                     disabled="true"
                     >
                 </md-input-container>
@@ -456,7 +456,7 @@ export const baseStaffHtml = `
                   <input
                     mdInput
                     type="date"
-                    placeholder="Дата"
+                    placeholder="Дата з якої обчислювати"
                     disabled="true"
                    >
                 </md-input-container>
@@ -483,7 +483,7 @@ export const baseStaffHtml = `
                   <input
                     mdInput
                     type="date"
-                    placeholder="Вік"
+                    placeholder="Дата народження"
                     disabled="true"
                    >
                 </md-input-container>
@@ -497,7 +497,7 @@ export const baseStaffHtml = `
                   <input
                     mdInput
                     type="date"
-                    placeholder="Вислуга "
+                    placeholder="Дата з якої обчислювати"
                     disabled="true"
                    >
                 </md-input-container>
@@ -511,7 +511,7 @@ export const baseStaffHtml = `
                   <input
                     mdInput
                     type="date"
-                    placeholder="У званні"
+                    placeholder="Дата з якої обчислювати"
                     disabled="true"
                    >
                 </md-input-container>
@@ -519,13 +519,13 @@ export const baseStaffHtml = `
             </div> 
             
              <div class="row">
-              <div class="col-xs-5 lable">У посад   -   </div>
+              <div class="col-xs-5 lable">У посаді   -   </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
                     mdInput
                     type="date"
-                    placeholder="У посад"
+                    placeholder="Дата з якої обчислювати"
                     disabled="true"
                    >
                 </md-input-container>
