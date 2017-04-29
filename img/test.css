@@ -1,5 +1,6 @@
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-  background-color: cornsilk;
+  background-color: white;
+  opacity: 0.8;
 }
 .marginTop {
   margin-top: 10px !important;

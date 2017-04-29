@@ -29,6 +29,10 @@ a {
   margin: 10px auto;
 }
 
+button:hover {
+  opacity: 0.8;
+}
+
 .user {
   position: fixed;
   right: 1%;
