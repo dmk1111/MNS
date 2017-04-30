@@ -214,14 +214,13 @@ export const baseStaffHtml = `
     
     
     <!--dtuga kartka-->
-    <div class="col-xs-12">
       
-      <div class="col-xs-6" style="padding: 0;margin-top: 10px">
+      <div class="col-xs-12">
         <md-card>
           <div class="row">
 
             <!--Spec zvanja-->
-            <div class="col-xs-12 lable" style="margin-bottom: 6px">Звільнений зі служби цівільного захисту</div>
+            <div class="col-xs-12 lable">Звільнений зі служби цівільного захисту</div>
               <div class="row">
                 <!--<div class="col-xs-3 lable">дата та номер наказу </div>-->
                 <!--<div class="col-xs-9">-->
@@ -254,7 +253,7 @@ export const baseStaffHtml = `
               </div>
               
                <!--Kerivnuk-->
-                <div class="col-xs-12 lable" style="margin-bottom: 6px">У розпорядженні відповідального керівника</div>
+                <div class="col-xs-12 lable">У розпорядженні відповідального керівника</div>
                   <div class="row">
                     <!--<div class="col-xs-3 lable">дата та номер наказу </div>-->
                     <!--<div class="col-xs-9">-->
@@ -291,7 +290,7 @@ export const baseStaffHtml = `
         </md-card>      
       </div>
       
-      <div class="col-xs-6" Style="padding: 0;margin-top: 10px">
+      <div class="col-xs-12">
         <md-card>
           <div class="row">
             
@@ -326,8 +325,8 @@ export const baseStaffHtml = `
             </div>
             
             <div class="row">
-              <div class="col-xs-5 lable">Категорія    </div>
-              <div class="col-xs-6" style="margin-top: 2%">
+              <div class="col-xs-5">Категорія    </div>
+              <div class="col-xs-6">
               
                 <select class="mdl-selectfield" (change)="onChange('categoriesCivilServants', $event)"
                     [ngModelOptions]="{standalone: true}" 
@@ -350,7 +349,7 @@ export const baseStaffHtml = `
             </div>
             
             <div class="row">
-              <div class="col-xs-5 lable">Група оплати праці -</div>
+              <div class="col-xs-5 lable">Група оплати праці </div>
               <div class="col-xs-6">
               
                 <md-input-container style="width: 80%">
@@ -368,10 +367,9 @@ export const baseStaffHtml = `
         </md-card>
       </div>
     
-    </div>
     
     <!--third-->
-    <div class="col-xs-12" style="margin-top: 10px">
+    <div class="col-xs-12">
     
       <md-card>
         <div class="row">
@@ -470,7 +468,7 @@ export const baseStaffHtml = `
     </div>
     
     <!--4 kart-->
-    <div class="col-xs-8" style="margin-top: 10px">
+    <div class="col-xs-12">
       
       <md-card>
       
