@@ -2,7 +2,7 @@ a {
   cursor: pointer;
 }
 
-/* override background color for the component */
+/* use background color because there is no background picture at the moment */
 .modal-content {
   background-color: #02083A;
 }

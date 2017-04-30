@@ -3,8 +3,6 @@
   opacity: 0.8;
 }
 
-
-
 .marginTop {
   margin-top: 10px !important;
 }
@@ -129,10 +127,9 @@
 select {
   font-family: inherit;
   background-color: transparent;
-  width: 100%;
+  /*width: 100%;*/
   padding: 4px 0;
   font-size: 16px;
-  color: rgba(0,0,0, 0.26);
   border: none;
   border-bottom: 1px solid rgba(0,0,0, 0.12);
 }
@@ -143,32 +140,6 @@ select:focus {
 }
 
 /* Hide label */
-.mdl-selectfield label {
+select label {
   display: none;
-}
-
-/* Use custom arrow */
-.mdl-selectfield select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.mdl-selectfield {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  position: relative;
-}
-.mdl-selectfield:after {
-  position: absolute;
-  top: 0.75em;
-  right: 0.5em;
-  /* Styling the down arrow */
-  width: 0;
-  height: 0;
-  padding: 0;
-  content: '';
-  border-left: .25em solid transparent;
-  border-right: .25em solid transparent;
-  border-top: 0.375em solid rgba(0,0,0, 0.12);
-  pointer-events: none;
 }

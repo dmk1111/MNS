@@ -7,8 +7,8 @@ import { Input, Component, Output, EventEmitter } from '@angular/core';
   template: baseStaffHtml,
   styles: [`
       .lable {
-        text-align: center;
-        margin-top: 2%;
+        text-align: left;
+        margin-top: 1em;
       }
   `]
 })
