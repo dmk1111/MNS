@@ -8,7 +8,7 @@ export const WorkExperienceHtml = `
     <md-card>
         <md-card-title>
           <span 
-            (click)="del(fom);"
+            (click)="del(fom);" title="Видалити"
           ><md-icon class="delete-icon">highlight_off</md-icon></span>
         </md-card-title>
         <md-card-content>
@@ -39,7 +39,6 @@ export const WorkExperienceHtml = `
         </md-card-content>
     </md-card>
   </div>
-  <div class="col-md-12 col-xs-12" style="margin-top: 10px">
   <div class="col-xs-12">
     <button md-raised-button color="primary" class="col-xs-12" (click)="addExp()">Додати</button>
   </div>

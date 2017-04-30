@@ -180,3 +180,7 @@ textarea {
 .center-text {
   text-align: center;
 }
+
+a:hover {
+  cursor: pointer;
+}

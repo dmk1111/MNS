@@ -3,7 +3,7 @@ export const educationStaffHtml = `
 <div class="row" [ngBusy]="{busy: load, message: 'Завантаження', backdrop: true}" style="z-index: 99999999">
   <div class="col-xs-12 marginTop" *ngFor="let fom of form;let i = index">
     <md-card>
-        <md-card-title><span (click)="del(fom)"><md-icon class="delete-icon">highlight_off</md-icon></span></md-card-title>
+        <md-card-title><span (click)="del(fom)" title="Видалити"><md-icon class="delete-icon">highlight_off</md-icon></span></md-card-title>
         <md-card-content>
           <div class="row">
             <div class="col-md-12">

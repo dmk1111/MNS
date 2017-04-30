@@ -63,7 +63,8 @@ export const staffDocumetHtml = `
                         [disabled]="true"
                        >
                   </md-input-container>
-                  <span (click)="deleteDocument(doc.id)" style="cursor: pointer">X</span>
+                  <span (click)="deleteDocument(doc.id)" title="Видалити">
+                  <md-icon class="delete-icon">highlight_off</md-icon></span>
                 </h4>
                </md-list-item>
           </md-list>

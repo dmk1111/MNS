@@ -4,7 +4,7 @@ export const otherStaffHtml = `
     <div class="row">
     
          <div class="row">
-              <div class="col-xs-5 lable">Місце народження   -   </div>
+              <div class="col-xs-5 lable">Місце народження    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -19,7 +19,7 @@ export const otherStaffHtml = `
             </div>  
             
             <div class="row" style="margin-bottom: 22px">
-              <div class="col-xs-5 lable">Стать  -   </div>
+              <div class="col-xs-5 lable">Стать   </div>
               <div class="col-xs-6" style="margin-bottom: 10px">
                 <select (change)="onChange('sex', $event)" [(ngModel)]="form.sex" [ngModelOptions]="{standalone: true}">
                    <option value="male">Чоловік</option>
@@ -30,7 +30,7 @@ export const otherStaffHtml = `
             
             
             <div class="row">
-              <div class="col-xs-5 lable">Громадянство   -   </div>
+              <div class="col-xs-5 lable">Громадянство    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -45,7 +45,7 @@ export const otherStaffHtml = `
             </div>  
             
             <div class="row">
-              <div class="col-xs-5 lable">Серія та номер паспорту   -   </div>
+              <div class="col-xs-5 lable">Серія та номер паспорту    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -61,7 +61,7 @@ export const otherStaffHtml = `
        
        
        <div class="row">
-              <div class="col-xs-5 lable">Серія та номер службового посвідчення   -   </div>
+              <div class="col-xs-5 lable">Серія та номер службового посвідчення    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -76,7 +76,7 @@ export const otherStaffHtml = `
         </div>
         
          <div class="row">
-              <div class="col-xs-5 lable">Ідентифікаційний код   -   </div>
+              <div class="col-xs-5 lable">Ідентифікаційний код    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -91,7 +91,7 @@ export const otherStaffHtml = `
         </div>
             
             <div class="row">
-              <div class="col-xs-5 lable">Місце проживання   -   </div>
+              <div class="col-xs-5 lable">Місце проживання    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -107,7 +107,7 @@ export const otherStaffHtml = `
         
         
         <div class="row">
-              <div class="col-xs-5 lable">Номер телефонів   -   </div>
+              <div class="col-xs-5 lable">Номер телефонів    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -122,7 +122,7 @@ export const otherStaffHtml = `
         </div>
         
         <div class="row">
-              <div class="col-xs-5 lable">Сімейний стан  -   </div>
+              <div class="col-xs-5 lable">Сімейний стан   </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -137,7 +137,7 @@ export const otherStaffHtml = `
         </div>
      
      <div class="row">
-              <div class="col-xs-5 lable">Дружина (чоловік)  -   </div>
+              <div class="col-xs-5 lable">Дружина (чоловік)   </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -152,7 +152,7 @@ export const otherStaffHtml = `
         </div>
           
           <div class="row">
-              <div class="col-xs-5 lable">Діти  -   </div>
+              <div class="col-xs-5 lable">Діти   </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <textarea
