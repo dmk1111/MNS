@@ -14,7 +14,7 @@ export const WorkExperienceHtml = `
         <md-card-content>
               <div class="row">
                 <div class="col-xs-4">
-                
+                <p class="center-text">Період</p>
                     <div class="col-xs-6">
                        <md-input-container>
                                  <input mdInput type="date" style="width: 95%; float: left" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="з">

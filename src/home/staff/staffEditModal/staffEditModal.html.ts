@@ -17,7 +17,7 @@ export const staffEditHtml = `
             <!--<li [ngClass]="{active: tabIndex === 9}"><a (click)="tabIndex = 9">Просування по службі</a></li>-->
             <li [ngClass]="{active: tabIndex === 10}"><a (click)="tabIndex = 10">Документи</a></li>
             <li class="save">
-              <button md-raised-button color="primary" (click)="save()" style="line-height: 30px">Зберегти</button>
+              <button md-raised-button color="primary" (click)="save()">Зберегти</button>
             </li>   
         </ul> 
         <!---->
@@ -56,11 +56,11 @@ export const staffEditHtml = `
         
         <!--Right Content Card (User Profile)-->
         <div class="col-md-3 col-xs-3 user">
-          <md-card style="min-height: 450px; background-color:white; opacity: 0.8; padding: 10px;">
+          <md-card>
             <md-card-content>
               <h4 class="username">Іван Іванович Іванов</h4>
-              <label for="image" style="width: 100%">
-                <input type="file"  (change)="uploadPhoto($event)" name="image" id="image" style="display:none;"/>
+              <label for="image">
+                <input type="file"  (change)="uploadPhoto($event)" name="image" id="image"/>
                 <img *ngIf="avatar" [src]="avatar" style="width: 60%" />
               </label>
                 <div style="text-align: center;"> 
@@ -68,10 +68,10 @@ export const staffEditHtml = `
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-xs-12" style="text-align: center; margin-bottom: 5px">               
+                  <div class="col-xs-12">               
                     <button md-raised-button color="primary" (click)="close()">Назад до списку</button>
                   </div>
-                   <div class="col-xs-12" style="text-align: center;margin-bottom: 5px">               
+                   <div class="col-xs-12">               
                     <button md-raised-button color="warn" (click)="delete()">Видалити персону</button>
                   </div>
                 </div>
