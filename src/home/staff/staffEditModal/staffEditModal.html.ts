@@ -27,15 +27,15 @@ export const staffEditHtml = `
       <div class="content">
       <div class="row" style="min-height: 1700px">
       
-        <!--Left Comntent Card-->
+        <!--Left Content Card-->
         <div class="col-md-9 col-xs-9">
-           <md-card style="background-color:white; opacity: 0.8;min-height: 800px">
+           <md-card class="modal-inner-content">
            
            <!--Card title-->
            <md-card-title>{{ title }}</md-card-title>
            
            <!--Card Content-->
-            <md-card-content>
+            <md-card-content >
                 
                 <!--Base Tab-->
                 <base-staff *ngIf="tabIndex === 1" [data]="staff.mainStaff"></base-staff>

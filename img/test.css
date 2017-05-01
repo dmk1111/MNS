@@ -184,3 +184,8 @@ textarea {
 a:hover {
   cursor: pointer;
 }
+
+.modal-inner-content {
+  background-color:lightgray !important;
+  opacity: 0.8;
+}
