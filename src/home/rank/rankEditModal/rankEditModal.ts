@@ -18,25 +18,25 @@ export class RankEditModal {
     }
   }
   save() {
-    this.positionApi.savePosition(this.rank)
+    this.positionApi.saveRank(this.rank)
       .subscribe(res => {
         this.onClose.emit(true);
       });
   }
   create() {
-    this.positionApi.createPosition(this.rank)
+    this.positionApi.createRank(this.rank)
       .subscribe(res => {
         this.onClose.emit(true);
       });
   }
   deletePosition() {
-    // if (confirm('Видалити?')) {
-    //   this.positionApi.deletePosition(this.rank.id)
-    //     .subscribe(res => {
-    //       this.toast.success('Успішно видалено');
-    //       this.onClose.emit(true);
-    //     });
-    // }
+    if (confirm('Видалити?')) {
+      this.positionApi.deleteRank(this.rank.id)
+        .subscribe(res => {
+          this.toast.success('Успішно видалено');
+          this.onClose.emit(true);
+        });
+    }
   }
   close() {
     this.onClose.emit(false);
