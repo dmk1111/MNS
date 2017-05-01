@@ -53,6 +53,10 @@ button:hover {
   margin: 5px auto;
 }
 
+.vertical-menu li img {
+  padding: 20px;
+}
+
 .user img:hover {
   cursor: pointer;
 }

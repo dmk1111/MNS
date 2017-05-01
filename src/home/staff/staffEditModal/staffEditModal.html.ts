@@ -4,7 +4,7 @@ export const staffEditHtml = `
       <div class="modal-content" style="width: 100%;z-index: 9999;height: 100%"> 
         <!--Top Nav Bar-->
         <ul class="nav nav-tabs vertical-menu" >
-            <li><img src="http://www.dsns.gov.ua/src/8.png"/> </li>
+            <li><img src="../../../img/logo.png"/> </li>
             <li  [ngClass]="{active: tabIndex === 1}"><a (click)="tabIndex = 1">Основне</a></li>
             <li [ngClass]="{active: tabIndex === 2}"><a (click)="tabIndex = 2">Освіта</a></li>
             <li [ngClass]="{active: tabIndex === 4}"><a (click)="tabIndex = 4">Службова діяльність</a></li>
