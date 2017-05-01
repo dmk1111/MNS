@@ -3,37 +3,38 @@ export const staffEditHtml = `
     <div [ngBusy]="{busy: load, message: 'Завантаження', backdrop: true}" class="modal" style="display: block; z-index: 999999" >
       <div class="modal-content" style="width: 100%;z-index: 9999;height: 100%"> 
         <!--Top Nav Bar-->
-        <ul class="nav nav-tabs" style="width: 100%;background-color: aliceblue;">
+        <ul class="nav nav-tabs vertical-menu" >
+            <li><img src="http://www.dsns.gov.ua/src/8.png"/> </li>
             <li  [ngClass]="{active: tabIndex === 1}"><a (click)="tabIndex = 1">Основне</a></li>
             <li [ngClass]="{active: tabIndex === 2}"><a (click)="tabIndex = 2">Освіта</a></li>
             <li [ngClass]="{active: tabIndex === 4}"><a (click)="tabIndex = 4">Службова діяльність</a></li>
             <li [ngClass]="{active: tabIndex === 5}"><a (click)="tabIndex = 5">Пільги</a></li>
-            <li [ngClass]="{active: tabIndex === 8}"><a (click)="tabIndex = 8">Стягнення заохочення</a></li>
+            <li [ngClass]="{active: tabIndex === 8}"><a (click)="tabIndex = 8">Стягнення / заохочення</a></li>
             <li [ngClass]="{active: tabIndex === 6}"><a (click)="tabIndex = 6">Відпустки</a></li>
             <li [ngClass]="{active: tabIndex === 11}"><a (click)="tabIndex = 11">Лікарняні</a></li>
             <li [ngClass]="{active: tabIndex === 3}"><a (click)="tabIndex = 3">Інше</a></li>
             <li [ngClass]="{active: tabIndex === 7}"><a (click)="tabIndex = 7">Звільнення</a></li>
             <!--<li [ngClass]="{active: tabIndex === 9}"><a (click)="tabIndex = 9">Просування по службі</a></li>-->
             <li [ngClass]="{active: tabIndex === 10}"><a (click)="tabIndex = 10">Документи</a></li>
-            <li style="float: right;margin-top: 5px;margin-right: 5%;">
-              <button md-raised-button color="primary" (click)="save()" style="line-height: 30px">Зберегти</button>
+            <li class="save">
+              <button md-raised-button color="primary" (click)="save()">Зберегти</button>
             </li>   
         </ul> 
         <!---->
         
         
         <!--Content-->
-      <div style="background: aliceblue;padding-top: 20px;min-height: 100%;overflow: auto;min-height: 800px;height: 100%">
+      <div class="content">
       <div class="row" style="min-height: 1700px">
       
         <!--Left Comntent Card-->
         <div class="col-md-9 col-xs-9">
-           <md-card style="background-color: cornsilk;min-height: 800px">
+           <md-card style="background-color:white; opacity: 0.8;min-height: 800px">
            
            <!--Card title-->
            <md-card-title>{{ title }}</md-card-title>
            
-           <!--Card COntent-->
+           <!--Card Content-->
             <md-card-content>
                 
                 <!--Base Tab-->
@@ -54,12 +55,12 @@ export const staffEditHtml = `
         </div>
         
         <!--Right Content Card (User Profile)-->
-        <div class="col-md-3 col-xs-3" style="position: fixed;left: 74%;">
-          <md-card style="min-height: 450px;background-color: cornsilk;padding: 0 0 0 0;">
+        <div class="col-md-3 col-xs-3 user">
+          <md-card>
             <md-card-content>
-              <h4>Іван Іванович Іванов</h4>
-              <label for="image" style="width: 100%">
-                <input type="file"  (change)="uploadPhoto($event)" name="image" id="image" style="display:none;"/>
+              <h4 class="username">Іван Іванович Іванов</h4>
+              <label for="image">
+                <input type="file"  (change)="uploadPhoto($event)" name="image" id="image"/>
                 <img *ngIf="avatar" [src]="avatar" style="width: 60%" />
               </label>
                 <div style="text-align: center;"> 
@@ -67,10 +68,10 @@ export const staffEditHtml = `
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-xs-12" style="text-align: center; margin-bottom: 5px">               
+                  <div class="col-xs-12">               
                     <button md-raised-button color="primary" (click)="close()">Назад до списку</button>
                   </div>
-                   <div class="col-xs-12" style="text-align: center;margin-bottom: 5px">               
+                   <div class="col-xs-12">               
                     <button md-raised-button color="warn" (click)="delete()">Видалити персону</button>
                   </div>
                 </div>

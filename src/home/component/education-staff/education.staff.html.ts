@@ -1,9 +1,9 @@
 //noinspection TsLint
 export const educationStaffHtml = `
 <div class="row" [ngBusy]="{busy: load, message: 'Завантаження', backdrop: true}" style="z-index: 99999999">
-  <div class="col-md-4 col-xs-6 marginTop" *ngFor="let fom of form;let i = index">
+  <div class="col-xs-12 marginTop" *ngFor="let fom of form;let i = index">
     <md-card>
-        <md-card-title><span (click)="del(fom)">X</span></md-card-title>
+        <md-card-title><span (click)="del(fom)" title="Видалити"><md-icon class="delete-icon">highlight_off</md-icon></span></md-card-title>
         <md-card-content>
           <div class="row">
             <div class="col-md-12">
@@ -13,15 +13,15 @@ export const educationStaffHtml = `
               </md-input-container >
               
               <md-input-container style="width: 100%">
-                <input mdTextareaAutosize mdInput type="text" maxRows="5" minRows="1" (change)="onChange($event, 'school', i)" [(ngModel)]="fom.school" placeholder="Навчальний заклад">
+                <input mdInput type="text" (change)="onChange($event, 'school', i)" [(ngModel)]="fom.school" placeholder="Навчальний заклад">
               </md-input-container>
               
               <md-input-container style="width: 100%">
-                <textarea mdTextareaAutosize mdInput type="text" maxRows="5" minRows="1" (change)="onChange($event, 'qualification', i)" [(ngModel)]="fom.qualification" placeholder="Кваліфікація"></textarea>
+                <input mdInput type="text" (change)="onChange($event, 'qualification', i)" [(ngModel)]="fom.qualification" placeholder="Кваліфікація">
               </md-input-container>
               
               <md-input-container style="width: 100%">
-                <textarea mdTextareaAutosize mdInput type="text" maxRows="5" minRows="1" (change)="onChange($event, 'specialty', i)" [(ngModel)]="fom.specialty" placeholder="Спеціальність"></textarea>
+                <input mdInput type="text" (change)="onChange($event, 'specialty', i)" [(ngModel)]="fom.specialty" placeholder="Спеціальність">
               </md-input-container>
              
              <md-input-container style="width: 100%">
@@ -33,22 +33,11 @@ export const educationStaffHtml = `
              </md-input-container>
             
             </div>
-            <div class="col-md-12">
-            </div>
           </div>
         </md-card-content>
     </md-card>
   </div>
-  <div class="col-md-4 col-xs-6" style="margin-top: 10px">
-  <md-card (click)="addEdu()" style="height: 309px">
-        <md-card-content>
-          <div class="row">
-            <span>Додати</span>
-            <div class="col-md-12">
-            </div>
-          </div>
-        </md-card-content>
-    </md-card>
+  <div class="col-xs-12">
+    <button md-raised-button color="primary" class="col-xs-12" (click)="addEdu()">Додати</button>
   </div>
-</div>
 `;

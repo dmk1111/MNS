@@ -2,42 +2,42 @@
 export const BenefitsHtml = `
 
 <div class="row">
-  <div class="col-md-4 col-xs-6 marginTop" *ngFor="let fom of form;let i = index">
+  <div class="col-xs-12 marginTop" *ngFor="let fom of form;let i = index">
     <md-card>
         <md-card-title>
-          <span (click)="del(fom)">X</span>
+          <span (click)="del(fom)" title="Видалити"><md-icon class="delete-icon">highlight_off</md-icon></span>
         </md-card-title>
         <md-card-content>
           <div class="row">
             <div class="col-md-12">
             
-              <md-input-container style="width: 100%">
-                <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'name', i)" [(ngModel)]="fom.name" placeholder="Назва пільги">
+              <md-input-container class="col-md-12">
+                <input mdInput type="text" (change)="onChange($event, 'name', i)" [(ngModel)]="fom.name" placeholder="Назва пільги">
               </md-input-container>
               
-              <md-input-container style="width: 100%">
-                <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дата початку">
+              <md-input-container class="col-md-6">
+                <input mdInput type="date" (change)="onChange($event, 'fromDate', i)" [(ngModel)]="fom.fromDate" placeholder="Дата початку">
                </md-input-container>
 
               
-              <md-input-container style="width: 100%">
-                <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата закінчення">
+              <md-input-container class="col-md-6">
+                <input mdInput type="date" (change)="onChange($event, 'toDate', i)" [(ngModel)]="fom.toDate" placeholder="Дата закінчення">
               </md-input-container>
               
-              <md-input-container style="width: 100%">
-                <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'orderPerson', i)" [(ngModel)]="fom.orderPerson" placeholder="Хто віддав наказ">
+              <md-input-container class="col-md-12">
+                <input mdInput type="text" (change)="onChange($event, 'orderPerson', i)" [(ngModel)]="fom.orderPerson" placeholder="Хто віддав наказ">
               </md-input-container>
               
-              <md-input-container style="width: 100%">
-                <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'orderDate', i)" [(ngModel)]="fom.orderDate" placeholder="Дата наказу">
+              <md-input-container class="col-md-12">
+                <input mdInput type="date" (change)="onChange($event, 'orderDate', i)" [(ngModel)]="fom.orderDate" placeholder="Дата наказу">
               </md-input-container>
               
-              <md-input-container style="width: 100%">
-                <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'orderNumber', i)" [(ngModel)]="fom.orderNumber" placeholder="Номер наказу">
+              <md-input-container class="col-md-12">
+                <input mdInput type="text" (change)="onChange($event, 'orderNumber', i)" [(ngModel)]="fom.orderNumber" placeholder="Номер наказу">
               </md-input-container>
               
-              <md-input-container style="width: 100%"> 
-                  <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'certification', i)" [(ngModel)]="fom.certification" placeholder="Посвідчення серія номер">
+              <md-input-container class="col-md-12"> 
+                  <input mdInput type="text" (change)="onChange($event, 'certification', i)" [(ngModel)]="fom.certification" placeholder="Посвідчення серія номер">
               </md-input-container>
               
               <div>
@@ -45,41 +45,42 @@ export const BenefitsHtml = `
                    
                    
                   <div class="col-xs-4" >
-                      <md-input-container>
-                        <input mdInput type="number" style="width: 100%" min="0" (change)="onChange($event, 'benefitWorksYears', i)" [(ngModel)]="fom.benefitWorksYears" placeholder="РР">
-                      </md-input-container>
+                      
                   </div>
                   
                   <div class="col-xs-4">
                       <md-input-container>
-                        <input mdInput type="number" style="width: 100%" min="0" max="12" (change)="onChange($event, 'benefitWorksMonths', i)" [(ngModel)]="fom.benefitWorksMonths" placeholder="ММ">
+                        <input mdInput type="number" min="0" (change)="onChange($event, 'benefitWorksYears', i)" [(ngModel)]="fom.benefitWorksYears" placeholder="РР">
+                      </md-input-container>
+                      <md-input-container>
+                        <input mdInput type="number" min="0" max="12" (change)="onChange($event, 'benefitWorksMonths', i)" [(ngModel)]="fom.benefitWorksMonths" placeholder="ММ">
+                      </md-input-container>
+                      <md-input-container>
+                        <input mdInput type="number" min="0" max="31" (change)="onChange($event, 'benefitWorksDays', i)" [(ngModel)]="fom.benefitWorksDays" placeholder="ДД">
                       </md-input-container>
                   </div>
                   
                   <div class="col-xs-4">
-                      <md-input-container>
-                        <input mdInput type="number" style="width: 100%" min="0" max="31" (change)="onChange($event, 'benefitWorksDays', i)" [(ngModel)]="fom.benefitWorksDays" placeholder="ДД">
-                      </md-input-container>
                   </div>
               </div>
               <!--<md-input-container>-->
-                <!--<input mdInput type="date" style="width: 100%" (change)="onChange($event, 'orderDate', i)" [(ngModel)]="fom.orderDate" placeholder="Дата замовлення">-->
+                <!--<input mdInput type="date" (change)="onChange($event, 'orderDate', i)" [(ngModel)]="fom.orderDate" placeholder="Дата замовлення">-->
               <!--</md-input-container>-->
               <!---->
               <!--<md-input-container>-->
-                <!--<input mdInput type="text" style="width: 100%" (change)="onChange($event, 'certification', i)" [(ngModel)]="fom.certification" placeholder="Сертифікація">-->
+                <!--<input mdInput type="text" (change)="onChange($event, 'certification', i)" [(ngModel)]="fom.certification" placeholder="Сертифікація">-->
               <!--</md-input-container>-->
               <!---->
               <!--<md-input-container>-->
-                <!--<input mdInput type="text" style="width: 100%" (change)="onChange($event, 'privilege', i)" [(ngModel)]="fom.privilege" placeholder="Привілегії">-->
+                <!--<input mdInput type="text" (change)="onChange($event, 'privilege', i)" [(ngModel)]="fom.privilege" placeholder="Привілегії">-->
               <!--</md-input-container>-->
               <!---->
               <!--<md-input-container>-->
-                <!--<input mdInput type="text" style="width: 100%" (change)="onChange($event, 'actsAndComments', i)" [(ngModel)]="fom.actsAndComments" placeholder="Акти і коментарії">-->
+                <!--<input mdInput type="text" (change)="onChange($event, 'actsAndComments', i)" [(ngModel)]="fom.actsAndComments" placeholder="Акти і коментарії">-->
               <!--</md-input-container>-->
               <!---->
               <!--<md-input-container>-->
-                <!--<input mdInput type="text" style="width: 100%" (change)="onChange($event, 'otherInfo', i)" [(ngModel)]="fom.otherInfo" placeholder="Інше">-->
+                <!--<input mdInput type="text" (change)="onChange($event, 'otherInfo', i)" [(ngModel)]="fom.otherInfo" placeholder="Інше">-->
               <!--</md-input-container>-->
               
             </div>
@@ -89,16 +90,8 @@ export const BenefitsHtml = `
         </md-card-content>
     </md-card>
   </div>
-  <div class="col-md-4 col-xs-6" style="margin-top: 10px">
-  <md-card style="height: 309px" (click)="addBenefits()">
-        <md-card-content>
-          <div class="row">
-            ДОДАТИ
-            <div class="col-md-12">
-            </div>
-          </div>
-        </md-card-content>
-    </md-card>
+  <div class="col-xs-12">
+    <button md-raised-button color="primary" class="col-xs-12" (click)="addBenefits()">Додати</button>
   </div>
 </div>
   `

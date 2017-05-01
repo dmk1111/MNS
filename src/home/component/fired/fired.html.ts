@@ -4,7 +4,7 @@ export const firedHtml = `
   <md-card>
   
      <div class="row">
-                <div class="col-xs-5 lable">Дата наказу про звільнення   -   </div>
+                <div class="col-xs-5 lable">Дата наказу про звільнення    </div>
                 <div class="col-xs-6">
                   <md-input-container style="width: 100%">
                     <input
@@ -19,7 +19,7 @@ export const firedHtml = `
               </div>  
               
               <div class="row">
-                <div class="col-xs-5 lable">Номер наказу про звільнення  -   </div>
+                <div class="col-xs-5 lable">Номер наказу про звільнення   </div>
                 <div class="col-xs-6">
                   <md-input-container style="width: 100%">
                     <input
@@ -34,7 +34,7 @@ export const firedHtml = `
               </div>  
               
                <div class="row">
-                <div class="col-xs-5 lable">Пункт (стаття) звільнення  -   </div>
+                <div class="col-xs-5 lable">Пункт (стаття) звільнення   </div>
                 <div class="col-xs-6">
                   <md-input-container style="width: 100%">
                     <input
@@ -49,7 +49,7 @@ export const firedHtml = `
               </div> 
               
               <div class="row">
-                <div class="col-xs-5 lable">Остання займана посада  -   </div>
+                <div class="col-xs-5 lable">Остання займана посада   </div>
                 <div class="col-xs-6">
                   <md-input-container style="width: 100%">
                     <input
@@ -65,7 +65,7 @@ export const firedHtml = `
               
               
                <div class="row">
-                <div class="col-xs-5 lable">Спеціальне звання  -   </div>
+                <div class="col-xs-5 lable">Спеціальне звання   </div>
                 <div class="col-xs-6">
                   <md-input-container style="width: 100%">
                     <input
@@ -81,7 +81,7 @@ export const firedHtml = `
               
               
               <div class="row">
-                <div class="col-xs-5 lable">Військовий облік  -   </div>
+                <div class="col-xs-5 lable">Військовий облік   </div>
                 <div class="col-xs-6">
                   <md-input-container style="width: 100%">
                     <input
@@ -97,7 +97,7 @@ export const firedHtml = `
               
               
          <div class="row">
-            <div class="col-xs-5 lable">Довідка ЦЛЕК (ЛЕК) (свідоцтво) - </div>
+            <div class="col-xs-5 lable">Довідка ЦЛЕК (ЛЕК) (свідоцтво)</div>
             <div class="col-xs-7" style="padding: 0">
             
               <div class="col-xs-6">
@@ -129,7 +129,7 @@ export const firedHtml = `
           
           
            <div class="row">
-                <div class="col-xs-5 lable">Висновок  -   </div>
+                <div class="col-xs-5 lable">Висновок   </div>
                 <div class="col-xs-6">
                   <md-input-container style="width: 100%">
                     <textarea
@@ -148,7 +148,7 @@ export const firedHtml = `
               
               
               <div class="row">
-                <div class="col-xs-5 lable" style="margin-top: 9px">Вислуга років на службі    -   </div>
+                <div class="col-xs-5 lable" style="margin-top: 9px">Вислуга років на службі     </div>
                 <div class="col-xs-6">
                   
                    <div class="col-xs-3">

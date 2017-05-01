@@ -10,7 +10,7 @@ export const baseStaffHtml = `
         
         <!--Nazva stryktyrnogo pidrozdily-->
         <div class="row">
-          <div class="col-xs-3 lable">Назва структурного підрозділу   -   </div>
+          <div class="col-xs-3 lable">Назва структурного підрозділу  </div>
           <div class="col-xs-9">
             <md-input-container style="width: 80%">
               <input
@@ -25,7 +25,7 @@ export const baseStaffHtml = `
         
         <!--Spec zvanja-->
         <div class="row">
-          <div class="col-xs-3 lable">Спецзвання   -   </div>
+          <div class="col-xs-3 lable">Спецзвання </div>
           <div class="col-xs-9">
             <md-input-container style="width: 80%">
               <input
@@ -40,7 +40,7 @@ export const baseStaffHtml = `
          
          <!--PIB-->
           <div class="row">
-            <div class="col-xs-3 lable">ПІБ   -   </div>
+            <div class="col-xs-3 lable">ПІБ    </div>
             <div class="col-xs-9">
               <md-input-container style="width: 80%">
                 <input
@@ -55,7 +55,7 @@ export const baseStaffHtml = `
           
          <!--DOB-->
           <div class="row">
-            <div class="col-xs-3 lable">Дата народження   -   </div>
+            <div class="col-xs-3 lable">Дата народження    </div>
             <div class="col-xs-9">
               <md-input-container style="width: 80%">
                 <input
@@ -70,7 +70,7 @@ export const baseStaffHtml = `
           
           <!--position-->
           <div class="row">
-            <div class="col-xs-3 lable">Посада   -   </div>
+            <div class="col-xs-3 lable">Посада    </div>
             <div class="col-xs-9">
               <md-input-container style="width: 80%">
                 <input
@@ -85,7 +85,7 @@ export const baseStaffHtml = `
           
           <!--Освіта-->
           <div class="row">
-            <div class="col-xs-3 lable">Освіта   -   </div>
+            <div class="col-xs-3 lable">Освіта    </div>
             <div class="col-xs-9">
               <md-input-container style="width: 80%">
                 <input
@@ -102,7 +102,7 @@ export const baseStaffHtml = `
           
           <!--Спец звання-->
           <div class="row">
-            <div class="col-xs-3 lable">Дата та номер присвоєня спецзвання - </div>
+            <div class="col-xs-3 lable">Дата та номер присвоєня спецзвання</div>
             <div class="col-xs-9">
             
               <div class="col-xs-6">
@@ -133,7 +133,7 @@ export const baseStaffHtml = `
           
           <!--Призначення -->
           <div class="row">
-            <div class="col-xs-3 lable">Дата та номер призначення - </div>
+            <div class="col-xs-3 lable">Дата та номер призначення</div>
             <div class="col-xs-9">
             
               <div class="col-xs-6">
@@ -164,7 +164,7 @@ export const baseStaffHtml = `
           </div>
           
           <div class="row">
-            <div class="col-xs-3 lable">Контракт -  </div>
+            <div class="col-xs-3 lable">Контракт </div>
             <div class="col-xs-9">
             
             <div class="col-xs-4">
@@ -214,16 +214,15 @@ export const baseStaffHtml = `
     
     
     <!--dtuga kartka-->
-    <div class="col-xs-12">
       
-      <div class="col-xs-6" style="padding: 0;margin-top: 10px">
+      <div class="col-xs-12">
         <md-card>
           <div class="row">
 
             <!--Spec zvanja-->
-            <div class="col-xs-12 lable" style="margin-bottom: 6px">Звільнений зі служби цівільного захисту</div>
+            <div class="col-xs-12 lable">Звільнений зі служби цівільного захисту</div>
               <div class="row">
-                <!--<div class="col-xs-3 lable">дата та номер наказу -  </div>-->
+                <!--<div class="col-xs-3 lable">дата та номер наказу </div>-->
                 <!--<div class="col-xs-9">-->
                   
                   <div class="col-xs-7">
@@ -254,9 +253,9 @@ export const baseStaffHtml = `
               </div>
               
                <!--Kerivnuk-->
-                <div class="col-xs-12 lable" style="margin-bottom: 6px">У розпорядженні відповідального керівника</div>
+                <div class="col-xs-12 lable">У розпорядженні відповідального керівника</div>
                   <div class="row">
-                    <!--<div class="col-xs-3 lable">дата та номер наказу -  </div>-->
+                    <!--<div class="col-xs-3 lable">дата та номер наказу </div>-->
                     <!--<div class="col-xs-9">-->
                       
                       <div class="col-xs-7">
@@ -291,12 +290,12 @@ export const baseStaffHtml = `
         </md-card>      
       </div>
       
-      <div class="col-xs-6" Style="padding: 0;margin-top: 10px">
+      <div class="col-xs-12">
         <md-card>
           <div class="row">
             
             <div class="row">
-              <div class="col-xs-5 lable">Прийняття присяги державного службовця   -   </div>
+              <div class="col-xs-5 lable">Прийняття присяги державного службовця    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -311,7 +310,7 @@ export const baseStaffHtml = `
             </div>
             
             <div class="row">
-              <div class="col-xs-5 lable">Ранг  -   </div>
+              <div class="col-xs-5 lable">Ранг   </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -326,10 +325,10 @@ export const baseStaffHtml = `
             </div>
             
             <div class="row">
-              <div class="col-xs-5 lable">Категорія   -   </div>
-              <div class="col-xs-6" style="margin-top: 2%">
+              <div class="col-xs-5">Категорія    </div>
+              <div class="col-xs-6">
               
-                <select style="width: 54%" (change)="onChange('categoriesCivilServants', $event)"
+                <select class="mdl-selectfield" (change)="onChange('categoriesCivilServants', $event)"
                     [ngModelOptions]="{standalone: true}" 
                     [(ngModel)]="data.categoriesCivilServants">
                   <option value="A">A</option>   
@@ -350,7 +349,7 @@ export const baseStaffHtml = `
             </div>
             
             <div class="row">
-              <div class="col-xs-5 lable">Група оплати праці -</div>
+              <div class="col-xs-5 lable">Група оплати праці </div>
               <div class="col-xs-6">
               
                 <md-input-container style="width: 80%">
@@ -368,16 +367,15 @@ export const baseStaffHtml = `
         </md-card>
       </div>
     
-    </div>
     
     <!--third-->
-    <div class="col-xs-12" style="margin-top: 10px">
+    <div class="col-xs-12">
     
       <md-card>
         <div class="row">
             
             <div class="row">
-              <div class="col-xs-5 lable">Штатно посадова категорія   -   </div>
+              <div class="col-xs-5 lable">Штатно посадова категорія    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -393,7 +391,7 @@ export const baseStaffHtml = `
             </div>   
             
              <div class="row">
-              <div class="col-xs-5 lable">Дата останьої атестації -   </div>
+              <div class="col-xs-5 lable">Дата останьої атестації  </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -408,7 +406,7 @@ export const baseStaffHtml = `
             </div> 
             
              <div class="row">
-              <div class="col-xs-5 lable">Висновок атестації   -   </div>
+              <div class="col-xs-5 lable">Висновок атестації    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -422,7 +420,7 @@ export const baseStaffHtml = `
             </div> 
             
              <div class="row">
-              <div class="col-xs-5 lable">Кадровий резерв на посаду   -   </div>
+              <div class="col-xs-5 lable">Кадровий резерв на посаду    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -436,7 +434,7 @@ export const baseStaffHtml = `
             </div> 
             
              <div class="row">
-              <div class="col-xs-5 lable">Загальний стаж роботи  -   </div>
+              <div class="col-xs-5 lable">Загальний стаж роботи   </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -450,7 +448,7 @@ export const baseStaffHtml = `
             </div> 
             
              <div class="row">
-              <div class="col-xs-5 lable">Стаж служби   -   </div>
+              <div class="col-xs-5 lable">Стаж служби    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -470,14 +468,14 @@ export const baseStaffHtml = `
     </div>
     
     <!--4 kart-->
-    <div class="col-xs-8" style="margin-top: 10px">
+    <div class="col-xs-12">
       
       <md-card>
       
            <div class="row">
          
              <div class="row">
-              <div class="col-xs-5 lable">Вік   -   </div>
+              <div class="col-xs-5 lable">Вік    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -491,7 +489,7 @@ export const baseStaffHtml = `
             </div> 
             
              <div class="row">
-              <div class="col-xs-5 lable">Вислуга    -   </div>
+              <div class="col-xs-5 lable">Вислуга     </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -505,7 +503,7 @@ export const baseStaffHtml = `
             </div> 
             
              <div class="row">
-              <div class="col-xs-5 lable">У званні   -   </div>
+              <div class="col-xs-5 lable">У званні    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -519,7 +517,7 @@ export const baseStaffHtml = `
             </div> 
             
              <div class="row">
-              <div class="col-xs-5 lable">У посаді   -   </div>
+              <div class="col-xs-5 lable">У посаді    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <input
@@ -533,7 +531,7 @@ export const baseStaffHtml = `
             </div> 
             
              <div class="row">
-              <div class="col-xs-5 lable">Біографічна довідка   -   </div>
+              <div class="col-xs-5 lable">Біографічна довідка    </div>
               <div class="col-xs-6">
                 <md-input-container style="width: 80%">
                   <textarea

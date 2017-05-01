@@ -1,9 +1,13 @@
 export const promotionsHtml = `
 
 <div class="row">
-  <div class="col-md-4 col-xs-6 col-lg-3 marginTop" *ngFor="let fom of form;let i = index">
+  <div class="col-xs-12 marginTop" *ngFor="let fom of form;let i = index">
     <md-card>
-        <md-card-title *ngIf="!fom.id"><span (click)="del(fom)">X</span></md-card-title>
+        <md-card-title *ngIf="!fom.id">
+          <span (click)="del(fom)" title="Видалити">
+            <md-icon class="delete-icon">highlight_off</md-icon>
+          </span>
+        </md-card-title>
         <md-card-content>
           <div class="row">
             <div>
@@ -23,16 +27,9 @@ export const promotionsHtml = `
         </md-card-content>
     </md-card>
   </div>
-  <div class="col-md-4 col-xs-6" style="margin-top: 10px">
-  <md-card style="height: 309px" (click)="add()">
-        <md-card-content>
-          <div class="row">
-            Додати
-            <div class="col-md-12">
-            </div>
-          </div>
-        </md-card-content>
-    </md-card>
-  </div>
+  
+    <div class="col-xs-12">
+        <button md-raised-button color="primary" class="col-xs-12" (click)="add()">Додати</button>
+    </div>
 </div>
 `;
