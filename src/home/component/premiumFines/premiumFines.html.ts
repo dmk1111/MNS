@@ -1,7 +1,7 @@
 //noinspection TsLint
 export const premiumFinesHtml = `
 
- <ul class="nav nav-tabs" style="width: 100%">
+ <ul class="nav nav-tabs">
             <li  [ngClass]="{active: tabIndex === 1}"><a (click)="sort(1)">Стягнення</a></li>
             <li [ngClass]="{active: tabIndex === 2}"><a (click)="sort(2)">Заохочення</a></li>
     </ul> 
@@ -19,23 +19,23 @@ export const premiumFinesHtml = `
             <div class="col-md-12">
                          
                          <md-input-container class="col-xs-12">
-                            <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'name', i)" [(ngModel)]="fom.name" placeholder="Назва">
+                            <input mdInput type="text" (change)="onChange($event, 'name', i)" [(ngModel)]="fom.name" placeholder="Назва">
                           </md-input-container>
                           
                           <md-input-container class="col-xs-12">
-                             <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'order', i)" [(ngModel)]="fom.order" placeholder="Хто відав наказ">
+                             <input mdInput type="text" (change)="onChange($event, 'order', i)" [(ngModel)]="fom.order" placeholder="Хто відав наказ">
                           </md-input-container>
  
                            <md-input-container class="col-xs-12">
-                             <input mdInput type="date" style="width: 100%" (change)="onChange($event, 'orderDate', i)" [(ngModel)]="fom.orderDate" placeholder="Дата наказу">
+                             <input mdInput type="date" (change)="onChange($event, 'orderDate', i)" [(ngModel)]="fom.orderDate" placeholder="Дата наказу">
                           </md-input-container>
  
                          <md-input-container class="col-xs-12">
-                           <input mdInput type="text" style="width: 100%" (change)="onChange($event, 'serialNumber', i)" [(ngModel)]="fom.serialNumber" placeholder="Номер наказу">
+                           <input mdInput type="text" (change)="onChange($event, 'serialNumber', i)" [(ngModel)]="fom.serialNumber" placeholder="Номер наказу">
                          </md-input-container>
                          
                           <md-input-container class="col-xs-12">
-                           <textarea mdTextareaAutosize mdInput maxRows="5" type="text" style="width: 100%" (change)="onChange($event, 'comment', i)" [(ngModel)]="fom.comment" placeholder="Коментарій"></textarea>
+                           <textarea mdTextareaAutosize mdInput maxRows="5" type="text" (change)="onChange($event, 'comment', i)" [(ngModel)]="fom.comment" placeholder="Коментар"></textarea>
                          </md-input-container>
              </div>
              

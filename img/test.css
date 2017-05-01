@@ -189,3 +189,11 @@ a:hover {
   background-color:lightgray !important;
   opacity: 0.8;
 }
+
+body {
+  background-color: #02083A;
+}
+
+.datatable-body-cell {
+  cursor: pointer;
+}

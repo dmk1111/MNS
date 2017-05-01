@@ -1,34 +1,36 @@
 <div class="container-fluid">
   <!-- Static navbar -->
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#" style="cursor: auto">MNS</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="active" routerLink="staff" routerLinkActive="active" style="cursor: pointer"><a>Кадри</a></li>
-          <li *ngIf="isAdmin" routerLink="deletedStaff" routerLinkActive="active" style="cursor: pointer"><a>Видалені кадри</a></li>
-          <li *ngIf="isAdmin" routerLink="region" routerLinkActive="active" style="cursor: pointer"><a>Регіони</a></li>
-          <li *ngIf="isAdmin" routerLink="rank" routerLinkActive="active" style="cursor: pointer"><a>Звання</a></li>
-          <li *ngIf="isAdmin" routerLink="position" routerLinkActive="active" style="cursor: pointer"><a>Посади</a></li>
-          <li *ngIf="isAdmin" routerLink="users" routerLinkActive="active" style="cursor: pointer"><a>Користувачі</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a (click)="logOut()" style="cursor: pointer">Вихід</a> </li>
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div><!--/.container-fluid -->
-  </nav>
+  <a class="thumbnail col-xs-12 col-md-2" href="#"><img src="../../img/logo%20cropped.png"> </a>
+  <div class="container col-xs-12 col-md-10">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active" routerLink="staff" routerLinkActive="active"><a>Кадри</a></li>
+            <li *ngIf="isAdmin" routerLink="deletedStaff" routerLinkActive="active"><a>Видалені кадри</a></li>
+            <li *ngIf="isAdmin" routerLink="region" routerLinkActive="active"><a>Регіони</a></li>
+            <li *ngIf="isAdmin" routerLink="rank" routerLinkActive="active"><a>Звання</a></li>
+            <li *ngIf="isAdmin" routerLink="position" routerLinkActive="active"><a>Посади</a></li>
+            <li *ngIf="isAdmin" routerLink="users" routerLinkActive="active"><a>Користувачі</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a (click)="logOut()">Вихід</a> </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div><!--/.container-fluid -->
+    </nav>
+  </div>
 
   <!-- Main component for a primary marketing message or call to action -->
-  <div class="jumbotron">
+  <div class="jumbotron col-xs-12">
     <router-outlet></router-outlet>
   </div>
 
