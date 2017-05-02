@@ -29,7 +29,7 @@ export const educationStaffHtml = `
              </md-input-container>
             
              <md-input-container style="width: 100%">
-                  <textarea mdTextareaAutosize mdInput maxRows="5" type="text" (change)="onChange($event, 'educationQualificationLevel', i)" [(ngModel)]="fom.educationQualificationLevel" placeholder="Освітньо-кваліфікаційний рівень"></textarea>
+                  <textarea mdTextareaAutosize mdInput  mdAutosizeMinRows="1" mdAutosizeMaxRows="10" type="text" (change)="onChange($event, 'educationQualificationLevel', i)" [(ngModel)]="fom.educationQualificationLevel" placeholder="Освітньо-кваліфікаційний рівень"></textarea>
              </md-input-container>
             
             </div>

@@ -48,8 +48,8 @@ export const BenefitsHtml = `
                       
                   </div>
                   
-                  <div class="col-xs-4">
-                      <md-input-container>
+                  <div class="col-xs-6">
+                      <md-input-container style="width: 30%">
                         <input mdInput type="number" min="0" (change)="onChange($event, 'benefitWorksYears', i)" [(ngModel)]="fom.benefitWorksYears" placeholder="РР">
                       </md-input-container>
                       <md-input-container>

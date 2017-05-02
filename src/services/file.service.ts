@@ -10,7 +10,7 @@ export class FileService {
   constructor(private http: ApiHttp, private sani: DomSanitizer, private htp: Http) {
   }
   editDocName(id, name) {
-    return this.http.put(`api/document/edit/name/${id}`, JSON.stringify({ name : name }));
+    return this.http.put(`/api/staff/document/edit/name/.${id}`, JSON.stringify({ name : name }));
   }
   getDocuments(staffId, index) {
     let url = `api/staff/${staffId}/`;

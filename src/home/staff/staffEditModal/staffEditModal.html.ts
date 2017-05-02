@@ -64,7 +64,37 @@ export const staffEditHtml = `
                 <img *ngIf="avatar" [src]="avatar" style="width: 60%" />
               </label>
                 <div style="text-align: center;"> 
-                  <h5 >+380666666666</h5>
+                
+                <!--phone edit-->
+                  <div>
+                     <md-input-container (click)="userBar.showEdit = true" style="width: 80%">
+                      <input 
+                        mdInput
+                        type="text"
+                        placeholder="моб. номер"
+                        (change)="onPhoneChange($event)"
+                        [value]="userBar.phone"
+                        [disabled]="!userBar.showEdit"
+                       >
+                  </md-input-container>
+                    <!--+<input type="" [value]="userBar.phone" (change)="onPhoneChange($event)" [disabled]="!userBar.showEdit" (click)="userBar.showEdit = true" >-->
+                  </div>
+                     
+                   <!--Region edit -->
+                  <div class="form-group" *ngIf="regions">
+                    <label class="control-label col-sm-2" for="pwd">Регіон</label>
+                    <div class="col-sm-10">          
+                      <ng-select
+                        [options]="regions"
+                        [multiple]="false"
+                        (selected)="regionChange($event)"
+                        [(ngModel)]="userRegion"
+                        [ngModelOptions]="{standalone: true}"
+                        >
+                     </ng-select>
+                    </div>
+                 </div>
+                     
                 </div>
                 <br>
                 <div class="row">

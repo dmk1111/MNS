@@ -9,7 +9,6 @@ import { ToastsManager } from 'ng2-toastr';
 const modal = require('./modal.css');
 import * as moment from 'moment';
 import { FileService } from '../../../services/file.service';
-import { premiumFinesHtml } from '../../component/premiumFines/premiumFines.html';
 @Component({
   selector: 'staffModal',
   template: staffEditHtml,
@@ -25,6 +24,9 @@ export class StaffEditModalComponent {
   private load;
   private title: string;
   private photo;
+  private regions;
+  private userRegion: any[];
+  private userBar: {region: any, phone: string, showEdit?: boolean, regionShow?: boolean } = { region: '', phone: ''};
 
   constructor(public router: Router,
               private action: StaffAction,
@@ -37,11 +39,43 @@ export class StaffEditModalComponent {
     this.unsubscribe.push(this.store.select('staff')
       .subscribe(staff => {
         this.staff = staff;
+        this.userApi.getRegions()
+          .subscribe(
+            res => {
+              this.regions = res.map(el => {
+                return {value: el.id, label: el.name};
+              });
+            },
+            error => { this.toast.error('OOps'); }
+          );
+        this.userBar = {
+          phone: this.staff.mainStaff.phoneNumber,
+          region: `${this.staff.region.id}`,
+          showEdit: true
+        };
+        this.userRegion = [this.staff.region.id];
         this.title = `${this.staff.mainStaff.position}, назва структурного підрозділу, призначено наказом  №${this.staff.mainStaff.numberPurpose} від ${this.staff.mainStaff.dateNumberPurpose}`;
         this.getAvatar();
         if (!this.avatar)
           this.avatar = 'img/profile.jpg';
       }));
+  }
+  regionChange(event) {
+    let newRegion = event;
+    this.userApi.saveStaff(this.staff.id, { region: { id: newRegion.value, name: newRegion.label}})
+      .subscribe(res => {
+        this.toast.success('Регіон змінено');
+        this.userRegion = [ newRegion.value ];
+      });
+
+  }
+  onPhoneChange(event) {
+    this.userBar.phone = event.target.value;
+    this.userApi.saveStaff(this.staff.id, { mainStaff: { phoneNumber: this.userBar.phone } })
+      .subscribe(res => {
+        this.toast.success('Успішно збережено');
+        this.userBar.showEdit = false;
+      });
   }
   updateArr(event) {
     this.needUpdate.push(event);
