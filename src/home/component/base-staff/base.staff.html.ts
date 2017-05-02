@@ -168,7 +168,7 @@ export const baseStaffHtml = `
             <div class="col-xs-9">
             
             <div class="col-xs-4">
-                <md-input-container style="width: 100%">
+                <md-input-container >
                   <input
                     mdInput
                     type="text"
@@ -220,7 +220,7 @@ export const baseStaffHtml = `
           <div class="row">
 
             <!--Spec zvanja-->
-            <div class="col-xs-12 lable">Звільнений зі служби цівільного захисту</div>
+            <div class="col-xs-12 lable">Звільнений зі служби цивільного захисту</div>
               <div class="row">
                 <!--<div class="col-xs-3 lable">дата та номер наказу </div>-->
                 <!--<div class="col-xs-9">-->
@@ -237,7 +237,7 @@ export const baseStaffHtml = `
                       </md-input-container>
                  </div>
                   <div class="col-xs-5">
-                    <md-input-container style="width: 100%">
+                    <md-input-container >
                       <input
                         mdInput
                         type="text"
@@ -270,7 +270,7 @@ export const baseStaffHtml = `
                           </md-input-container>
                      </div>
                       <div class="col-xs-5">
-                        <md-input-container style="width: 100%">
+                        <md-input-container >
                           <input
                             mdInput
                             type="text"

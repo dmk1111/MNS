@@ -8,3 +8,12 @@
 .uploadAvatar {
   opacity: 1;
 }
+
+nav {
+  margin-top: 10px;
+}
+
+.thumbnail {
+  background-color: transparent;
+  border: none;
+}
