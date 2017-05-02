@@ -49,18 +49,18 @@ export const staffDocumetHtml = `
       <!--Document-->
       <div>
            <md-list>
-               <md-list-item *ngFor="let doc of docs">
+               <md-list-item *ngFor="let doc of docs;let i = index">
                   <md-icon md-list-avatar style="color: blue;cursor: pointer" (click)="downloadDoc(doc)">
                   file_download</md-icon>
                   <h4 md-line>
-                    <md-input-container (click)="doc.disambled = true" style="width: 40%">
+                    <md-input-container (click)="enableEdit(i)" style="width: 40%">
                       <input
                         mdInput
                         type="text"
                         placeholder="Назва"
                         (change)="saveDocName(doc)"
-                        [(ngModel)]="doc.name"
-                        [disabled]="true"
+                        [value]="doc.name"
+                        [disabled]="!doc.disambled"
                        >
                   </md-input-container>
                   <span (click)="deleteDocument(doc.id)" title="Видалити">

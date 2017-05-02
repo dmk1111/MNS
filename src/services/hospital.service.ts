@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {ApiHttp} from './http/apiHttp.service';
 @Injectable()
-
 export class HospitalService {
   constructor(public apiHttp: ApiHttp) {}
   postHospital(id, body) {

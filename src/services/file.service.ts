@@ -9,7 +9,9 @@ export class FileService {
 
   constructor(private http: ApiHttp, private sani: DomSanitizer, private htp: Http) {
   }
-
+  editDocName(id, name) {
+    return this.http.put(`api/document/edit/name/${id}`, JSON.stringify({ name : name }));
+  }
   getDocuments(staffId, index) {
     let url = `api/staff/${staffId}/`;
     switch (index) {
@@ -110,13 +112,5 @@ export class FileService {
     return this.htp.get('http://52.34.34.95:8090/api/staff/' + staffId + '/photo', {
       headers: headers,
     });
-    //   .map(res => {
-    //   return new Blob([res['_body']], {
-    //     type: res.headers.get('Content-Type')
-    //   });
-    // }).map(blob => {
-    //   var urlCreator = window.URL;
-    //   return this.sani.bypassSecurityTrustUrl(urlCreator.createObjectURL(blob));
-    // });
   }
 }

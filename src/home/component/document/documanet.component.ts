@@ -62,4 +62,22 @@ export class DocumentComponent {
       });
     }
   }
+  saveDocName(doc) {
+    this.fileApi.editDocName(doc.id, doc.name)
+      .subscribe(res => {
+        this.toast.success('Імя файлу успішно змінено');
+        doc.disambled = false;
+      }, error => {
+        this.toast.error('Не вдалось змінити назву файлу(');
+        debugger
+        doc.name = doc.oldName;
+      });
+  }
+  enableEdit(i) {
+    this.docs.forEach(el => {
+      el.disambled = false;
+    });
+    this.docs[i].disambled = true;
+    this.docs[i].oldName = `${this.docs[i].name}`;
+  }
 }

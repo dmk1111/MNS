@@ -47,4 +47,7 @@ export class BenefitsComponent {
       }
     }
   }
+  ngOnDestroy() {
+    confirm('Really');
+  }
 }
