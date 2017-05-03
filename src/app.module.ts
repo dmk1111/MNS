@@ -64,6 +64,7 @@ import { CreateStaffModal } from './home/staff/staffCreateModal/staffCreateModal
 import { HospitalsComponent } from './home/component/hospitals/hostital.component';
 import { RankComponent } from './home/rank/rank.component';
 import { RankEditModal } from './home/rank/rankEditModal/rankEditModal';
+import { MenuComponent } from './home/menu/menu.component';
 @NgModule({
   bootstrap: [App],
   declarations: [
@@ -92,7 +93,8 @@ import { RankEditModal } from './home/rank/rankEditModal/rankEditModal';
     DeleteStaffComponent,
     RegionComponent,
     RankComponent,
-    RankEditModal
+    RankEditModal,
+    MenuComponent
   ],
   imports: [
     ConfirmationPopoverModule.forRoot({

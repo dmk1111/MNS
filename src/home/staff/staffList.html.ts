@@ -3,7 +3,9 @@ export const staffListHtml = `
   <div style="position: relative;" [ngBusy]="{busy: load, message: 'Завантаження'}"></div>
   <create-staff [regions]="regions" (onClose)="modalClose($event)" *ngIf="showCreate"></create-staff>
   
+  
   <h3 >Персонал</h3>
+  <div (click)="goTo('menu')" style="cursor: pointer">Назад</div>
    <div style="margin-bottom: 20px" >
      <div style="text-align: right; margin-bottom: 5px" >
                   <button md-mini-fab class="example-fab" (click)="openCreate()">

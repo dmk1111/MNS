@@ -8,6 +8,7 @@ import { RegionComponent } from './home/region/region.comp';
 import { UsersComponent } from './home/users/users.component';
 import { PositionComponent } from './home/position/position.compoennt';
 import { RankComponent } from './home/rank/rank.component';
+import { MenuComponent } from './home/menu/menu.component';
 
 export const routes: Routes = [
   { path: '',       redirectTo: 'home', pathMatch: 'full' },
@@ -15,7 +16,8 @@ export const routes: Routes = [
   { path: 'home',
     component: Home,
     children: [
-      { path: '', redirectTo: 'staff', pathMatch: 'full' },
+      { path: '', redirectTo: 'menu', pathMatch: 'full' },
+      { path: 'menu',  component: MenuComponent },
       { path: 'staff',  component: StaffListComponent },
       { path: 'deletedStaff',  component: DeleteStaffComponent },
       { path: 'region',  component: RegionComponent },

@@ -38,6 +38,9 @@ export class StaffListComponent {
       );
     this.getStaff();
   }
+  goTo(to) {
+    this.router.navigate(['home/menu']);
+  }
   onSelect(event) {
     this.load = this.userApi.getStaff(event.selected[0].staffId)
       .subscribe(res => {

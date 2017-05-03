@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 const styles = require('./home.css');
-const template = require('./home.html');
+const template = require('./index.html');
 
 @Component({
   selector: 'home',
