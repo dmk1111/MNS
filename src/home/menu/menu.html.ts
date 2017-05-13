@@ -8,8 +8,8 @@ export const menuHtml = `
     <div class="buttons-container">
         <button class="button-gradient" (click)="goTo('position-book')">ШТАТНО-ПОСАДОВІ КНИГИ</button>
         <button class="button-gradient" [disabled]="true">ЗВІТИ</button>
-        <button class="button-gradient" (click)="goTo('staff')" [disabled]="true">ПЕРСОНАЛЬНІ ДАНІ</button>
-        <button class="button-gradient">ФОРМУВАННЯ МАТЕРІАЛІВ</button>
+        <button class="button-gradient" (click)="goTo('staff')" >ПЕРСОНАЛЬНІ ДАНІ</button>
+        <button class="button-gradient" [disabled]="true">ФОРМУВАННЯ МАТЕРІАЛІВ</button>
         <button class="button-gradient" [disabled]="true">АРХІВ</button>
         <button class="button-gradient" *ngIf="isAdmin" (click)="goTo('admin')">АДМІНКА</button>
     </div>
