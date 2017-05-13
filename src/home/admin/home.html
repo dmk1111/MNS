@@ -14,12 +14,12 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active" routerLink="staff" routerLinkActive="active"><a>Кадри</a></li>
-            <li *ngIf="isAdmin" routerLink="deletedStaff" routerLinkActive="active"><a>Видалені кадри</a></li>
-            <li *ngIf="isAdmin" routerLink="region" routerLinkActive="active"><a>Регіони</a></li>
-            <li *ngIf="isAdmin" routerLink="rank" routerLinkActive="active"><a>Звання</a></li>
-            <li *ngIf="isAdmin" routerLink="position" routerLinkActive="active"><a>Посади</a></li>
-            <li *ngIf="isAdmin" routerLink="users" routerLinkActive="active"><a>Користувачі</a></li>
+            <!--<li class="active" routerLink="staff" routerLinkActive="active"><a>Кадри</a></li>-->
+            <!--<li *ngIf="isAdmin" routerLink="deletedStaff" routerLinkActive="active"><a>Видалені кадри</a></li>-->
+            <li [class.active]="tabIndex === 0" (click)="tabIndex = 0"><a>Регіони</a></li>
+            <!--<li *ngIf="isAdmin" routerLink="rank" routerLinkActive="active"><a>Звання</a></li>-->
+            <!--<li *ngIf="isAdmin" routerLink="position" routerLinkActive="active"><a>Посади</a></li>-->
+            <li [class.active]="tabIndex === 1" (click)="tabIndex = 1" ><a>Користувачі</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a (click)="logOut()">Вихід</a> </li>
@@ -31,7 +31,8 @@
 
   <!-- Main component for a primary marketing message or call to action -->
   <div class="jumbotron col-xs-12">
-    <router-outlet></router-outlet>
+    <region *ngIf="tabIndex === 0"></region>
+    <users *ngIf="tabIndex === 1"></users>
   </div>
 
 </div>

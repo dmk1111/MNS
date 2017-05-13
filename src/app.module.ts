@@ -50,21 +50,23 @@ import { DocumentComponent } from './home/component/document/documanet.component
 import { FileService } from './services/file.service';
 import { SpinnerComponent } from './home/component/spinner/spinner.component';
 import { DeleteStaffComponent } from './home/component/deletedStaff/deleted.staff';
-import { RegionComponent } from './home/region/region.comp';
 import { BusyModule } from 'angular2-busy';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
-import { UsersComponent } from './home/users/users.component';
-import { EditUserModal } from './home/users/editUserModal/editUserComponent';
 import { SelectModule } from 'angular2-select';
 import { MaterialModule } from '@angular/material';
 import { PositionService } from './services/position.service';
-import { PositionComponent } from './home/position/position.compoennt';
-import { PositionModal } from './home/position/positionEditModal/positionEdit.component';
 import { CreateStaffModal } from './home/staff/staffCreateModal/staffCreateModal.component';
 import { HospitalsComponent } from './home/component/hospitals/hostital.component';
-import { RankComponent } from './home/rank/rank.component';
-import { RankEditModal } from './home/rank/rankEditModal/rankEditModal';
 import { MenuComponent } from './home/menu/menu.component';
+import { AdminComponent } from './home/admin/admin,compoennt';
+import { UsersComponent } from './home/admin/users/users.component';
+import { EditUserModal } from './home/admin/users/editUserModal/editUserComponent';
+import { RegionComponent } from './home/admin/region/region.comp';
+import { PositionBook } from './home/positionBooks/positionBook.component';
+import { PositionComponent } from './home/positionBooks/position/position.compoennt';
+import {PositionModal} from './home/positionBooks/position/positionEditModal/positionEdit.component';
+import { RankComponent } from './home/positionBooks/rank/rank.component';
+import { RankEditModal } from './home/positionBooks/rank/rankEditModal/rankEditModal';
 @NgModule({
   bootstrap: [App],
   declarations: [
@@ -91,10 +93,12 @@ import { MenuComponent } from './home/menu/menu.component';
     SpinnerComponent,
     HospitalsComponent,
     DeleteStaffComponent,
+    PositionBook,
     RegionComponent,
     RankComponent,
     RankEditModal,
-    MenuComponent
+    MenuComponent,
+    AdminComponent
   ],
   imports: [
     ConfirmationPopoverModule.forRoot({

@@ -8,8 +8,14 @@ const styles = require('./style.css');
   styles: [styles]
 })
 export class MenuComponent {
+  private isAdmin: boolean = false;
+  private access: string = localStorage.getItem('access');
   constructor(private router: Router) {}
   goTo(to) {
-    this.router.navigate(['home/staff']);
+    this.router.navigate(['home/' + to]);
   }
+  ngOnInit() {
+    if (this.access === 'admin')
+      this.isAdmin = true;
+    }
 }

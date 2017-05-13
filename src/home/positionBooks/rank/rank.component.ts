@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { rankHtml } from './rank.html';
-import { PositionService } from '../../services/position.service';
+import { PositionService } from '../../../services/position.service';
 
 @Component({
   selector: 'rank',

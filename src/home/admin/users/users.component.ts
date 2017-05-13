@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { usersHtml } from './user.html';
-import { UserApiService } from '../../services/user.service';
 import { ToastsManager } from 'ng2-toastr';
+import { UserApiService } from '../../../services/user.service';
 @Component({
   selector: 'users',
   template: usersHtml

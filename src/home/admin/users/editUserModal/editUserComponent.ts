@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { editUserModal } from './editUserComponentHtml';
-import { UserApiService } from '../../../services/user.service';
 import { ToastsManager } from 'ng2-toastr';
+import { UserApiService } from '../../../../services/user.service';
 
 @Component({
   selector: 'userEdit',

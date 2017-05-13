@@ -1,3 +1,4 @@
+//noinspection TsLint
 export const menuHtml = `
 <div class="wrapper">
     <div class="top">
@@ -5,11 +6,12 @@ export const menuHtml = `
       <h1>Електронна система кадрового обліку ДСНС України</h1>
     </div>
     <div class="buttons-container">
-        <button class="button-gradient">ШТАТНО-ПОСАДОВІ КНИГИ</button>
-        <button class="button-gradient">ЗВІТИ</button>
-        <button class="button-gradient" (click)="goTo('staff')">ПЕРСОНАЛЬНІ ДАНІ</button>
+        <button class="button-gradient" (click)="goTo('position-book')">ШТАТНО-ПОСАДОВІ КНИГИ</button>
+        <button class="button-gradient" [disabled]="true">ЗВІТИ</button>
+        <button class="button-gradient" (click)="goTo('staff')" [disabled]="true">ПЕРСОНАЛЬНІ ДАНІ</button>
         <button class="button-gradient">ФОРМУВАННЯ МАТЕРІАЛІВ</button>
-        <button class="button-gradient">АРХІВ</button>
+        <button class="button-gradient" [disabled]="true">АРХІВ</button>
+        <button class="button-gradient" *ngIf="isAdmin" (click)="goTo('admin')">АДМІНКА</button>
     </div>
 </div>
 `;
