@@ -4,25 +4,27 @@
   <!--Left Book Level-->
   <div class="col-md-4" *ngIf="parentsArray">
     <ul class="list-group">
-      <li class="list-group-item list-group-item-info" (click)="openCreateParentModal()" style="cursor: pointer">Додати</li>
+      <li class="list-group-item list-group-item-info add" (click)="openCreateParentModal()">Додати</li>
       <li class="list-group-item list-group-item-warning" [class.active]="parent.id === selectedParentId" *ngFor="let parent of parentsArray" (click)="selectParent(parent);">
-        {{ parent.name }}
-
+        <div class="col-xs-10"> {{parent.name}} </div>
+      <div class="col-xs-2">
         <span class="glyphicon glyphicon-plus float-right" *ngIf="selectedParentId === parent.id" (click)="openCreateChildModal(parent.id)"></span>
         <span class="glyphicon glyphicon-pencil float-right" *ngIf="selectedParentId === parent.id" (click)="openEditParentModal(parent)"></span>
         <!--<span class="glyphicon glyphicon-remove" *ngIf="selectedParentId === parent.id" (click)="openEditParentModal(parent)">Edit*</span>-->
+      </div>
       </li>
     </ul>
   </div>
 
   <!--Right book level-->
-  <div class="col-md-6">
+  <div class="col-md-7">
     <ul class="list-group">
       <li class="list-group-item list-group-item-info" [class.active]="child.id === selectedChildId" *ngFor="let child of childs" (click)="selectChild(child)">
-        {{ child.name }}
-
+        <div class="col-xs-10">{{child.name}}</div>
+        <div class="col-xs-2">
         <span class="glyphicon glyphicon-pencil float-right" *ngIf="selectedChildId === child.id" (click)="openEditChildModal(child)"></span>
         <span class="glyphicon glyphicon-remove float-right" *ngIf="selectedChildId === child.id" (click)="removeChild(child)"></span>
+        </div>
       </li>
     </ul>
   </div>

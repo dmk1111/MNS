@@ -2,3 +2,40 @@
   float: right;
   padding-left: 4px;
 }
+
+li {
+  cursor: pointer;
+  min-height: 35px;
+  overflow: hidden;
+  display: block;
+}
+
+li.list-group-item-warning:hover {
+  background-color: #ffff80;
+  color: black;
+}
+
+li.list-group-item-info:hover {
+  background-color: #0066cc;
+  color: white;
+}
+
+li.list-group-item-info {
+  color: blue;
+  background-color: #d4fdd9;
+}
+
+li.list-group-item-info.add {
+  color: #31708f;
+  background-color: #d9edf7;
+}
+
+li>div.col-xs-10, li>div.col-xs-2 {
+  padding: 0;
+  margin: 0;
+}
+
+li>div.col-xs-10 {
+  white-space: pre-wrap;
+  height: 100%;
+}
