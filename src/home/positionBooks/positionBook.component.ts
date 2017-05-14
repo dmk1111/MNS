@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   template: require('./positionBook.html')
 })
 export class PositionBook {
-  private tabIndex = 0;
+  private tabIndex = 2;
   constructor(private router: Router) {}
   ngOnInit() {
   }

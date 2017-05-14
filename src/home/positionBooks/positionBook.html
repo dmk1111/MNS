@@ -20,6 +20,7 @@
             <!--<li *ngIf="isAdmin" routerLink="rank" routerLinkActive="active"><a>Звання</a></li>-->
             <!--<li *ngIf="isAdmin" routerLink="position" routerLinkActive="active"><a>Посади</a></li>-->
             <li [class.active]="tabIndex === 1" (click)="tabIndex = 1" ><a>Звання</a></li>
+            <li [class.active]="tabIndex === 2" (click)="tabIndex = 2" ><a>Структура Штатно Посадових Книг</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a (click)="goBack()">Назад</a> </li>
@@ -33,6 +34,7 @@
   <div class="jumbotron col-xs-12">
     <position *ngIf="tabIndex === 0"></position>
     <rank *ngIf="tabIndex === 1"></rank>
+    <nominal-book *ngIf="tabIndex === 2"></nominal-book>
   </div>
 
 </div>

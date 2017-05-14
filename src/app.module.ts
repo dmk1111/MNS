@@ -67,6 +67,10 @@ import { PositionComponent } from './home/positionBooks/position/position.compoe
 import {PositionModal} from './home/positionBooks/position/positionEditModal/positionEdit.component';
 import { RankComponent } from './home/positionBooks/rank/rank.component';
 import { RankEditModal } from './home/positionBooks/rank/rankEditModal/rankEditModal';
+import { NominalJobBook } from './home/positionBooks/nominalJobBook/nominalJobBook.component';
+import { NominalBookService } from './services/nomimnalBook.service';
+import { ParentModalComponent } from './home/positionBooks/nominalJobBook/parentModal/parentModal.component';
+import { ChildModalComponent } from './home/positionBooks/nominalJobBook/childModal/childModal.component';
 @NgModule({
   bootstrap: [App],
   declarations: [
@@ -95,10 +99,13 @@ import { RankEditModal } from './home/positionBooks/rank/rankEditModal/rankEditM
     DeleteStaffComponent,
     PositionBook,
     RegionComponent,
+    NominalJobBook,
     RankComponent,
     RankEditModal,
     MenuComponent,
-    AdminComponent
+    AdminComponent,
+    ParentModalComponent,
+    ChildModalComponent
   ],
   imports: [
     ConfirmationPopoverModule.forRoot({
@@ -122,6 +129,7 @@ import { RankEditModal } from './home/positionBooks/rank/rankEditModal/rankEditM
     API_HTTP_PROVIDERS,
     AuthService,
     StaffAction,
+    NominalBookService,
     BenefitsService,
     EducationService,
     FiredService,
