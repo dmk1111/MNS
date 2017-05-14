@@ -3,7 +3,7 @@ export const regionHtml = `
   <md-card-content>
   <div>
     <h3>Регіони</h3>
-    <input mdInput [(ngModel)]="region" placeholder="Назва регіону">
+    <input [(ngModel)]="region" placeholder="Назва регіону">
     <button (click)="addRegion(region)" class="btn btn-default">Додати</button>
   </div> 
     <md-list>

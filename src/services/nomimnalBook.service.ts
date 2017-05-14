@@ -16,6 +16,10 @@ export class NominalBookService {
     return this.apiHttp.put('api/nominalJobBook/parent/' + id, book)
       .map(res => res.json());
   }
+  deleteParent(id) {
+    return this.apiHttp.delete('api/nominalJobBook/parent/' + id)
+      .map(res => res.json());
+  }
 
   createChild(parentId, body) {
     return this.apiHttp.post('api/nominalJobBook?parentId=' + parentId, body)
@@ -28,6 +32,10 @@ export class NominalBookService {
 
   deleteChild(id) {
     return this.apiHttp.delete('api/nominalJobBook/' + id)
+      .map(res => res.json());
+  }
+  getStaffByBook(bookId) {
+    return this.apiHttp.get(`api/nominalJobBook/parent/${bookId}/staff`)
       .map(res => res.json());
   }
 }

@@ -71,6 +71,7 @@ import { NominalJobBook } from './home/positionBooks/nominalJobBook/nominalJobBo
 import { NominalBookService } from './services/nomimnalBook.service';
 import { ParentModalComponent } from './home/positionBooks/nominalJobBook/parentModal/parentModal.component';
 import { ChildModalComponent } from './home/positionBooks/nominalJobBook/childModal/childModal.component';
+import { ShtatComponent } from './home/positionBooks/Shtat/shtat.component';
 @NgModule({
   bootstrap: [App],
   declarations: [
@@ -105,7 +106,8 @@ import { ChildModalComponent } from './home/positionBooks/nominalJobBook/childMo
     MenuComponent,
     AdminComponent,
     ParentModalComponent,
-    ChildModalComponent
+    ChildModalComponent,
+    ShtatComponent
   ],
   imports: [
     ConfirmationPopoverModule.forRoot({

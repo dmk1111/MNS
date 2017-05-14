@@ -1,17 +1,18 @@
 <parent-modal *ngIf="showParentModal" [parentBook]="selectedParent" (closeEvent)="handleParentModalClose($event)"></parent-modal>
-<child-modal *ngIf="showChildModal" (closeEvent)="handleChildModal($event)" [regions]="regions" [positions]="positions" [childBook]="selectedChild"></child-modal>
+<child-modal *ngIf="showChildModal" (closeEvent)="handleChildModal($event)" [regions]="regions" [positions]="filteredPosition" [childBook]="selectedChild"></child-modal>
 <div class="row">
   <!--Left Book Level-->
+  <button *ngIf="selectedParentId" (click)="goToShatat()">Штат</button>
   <div class="col-md-4" *ngIf="parentsArray">
     <ul class="list-group">
       <li class="list-group-item list-group-item-info add" (click)="openCreateParentModal()">Додати</li>
       <li class="list-group-item list-group-item-warning" [class.active]="parent.id === selectedParentId" *ngFor="let parent of parentsArray" (click)="selectParent(parent);">
         <div class="col-xs-10"> {{parent.name}} </div>
-      <div class="col-xs-2">
-        <span class="glyphicon glyphicon-plus float-right" *ngIf="selectedParentId === parent.id" (click)="openCreateChildModal(parent.id)"></span>
-        <span class="glyphicon glyphicon-pencil float-right" *ngIf="selectedParentId === parent.id" (click)="openEditParentModal(parent)"></span>
-        <!--<span class="glyphicon glyphicon-remove" *ngIf="selectedParentId === parent.id" (click)="openEditParentModal(parent)">Edit*</span>-->
-      </div>
+        <div class="col-xs-2">
+          <span class="glyphicon glyphicon-plus float-right" *ngIf="selectedParentId === parent.id" (click)="openCreateChildModal(parent.id)"></span>
+          <span class="glyphicon glyphicon-pencil float-right" *ngIf="selectedParentId === parent.id" (click)="openEditParentModal(parent)"></span>
+          <span class="glyphicon glyphicon-remove float-right" *ngIf="selectedParentId === parent.id" (click)="removeParent(parent)"></span>
+        </div>
       </li>
     </ul>
   </div>

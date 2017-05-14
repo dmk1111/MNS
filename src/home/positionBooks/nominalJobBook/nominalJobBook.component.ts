@@ -3,6 +3,7 @@ import { NominalBookService } from '../../../services/nomimnalBook.service';
 import { ToastsManager } from 'ng2-toastr';
 import { UserApiService } from '../../../services/user.service';
 import { PositionService } from '../../../services/position.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'nominal-book',
   template: require('./nominalBook.html'),
@@ -17,11 +18,13 @@ export class NominalJobBook {
   private parentsArray: any;
   private regions;
   private positions;
+  private filteredPosition;
   private showParentModal: boolean = false;
   private showChildModal: boolean = false;
   constructor(private bookService: NominalBookService,
               private regionServcie: UserApiService,
               private positionService: PositionService,
+              private router: Router,
               private toaster: ToastsManager) {}
   ngOnInit() {
     this.regionServcie.getRegions()
@@ -30,10 +33,38 @@ export class NominalJobBook {
       .subscribe(res => { this.positions = res; });
     this.getParents();
   }
+  removeParent(parent) {
+    if (confirm('Видалити ' + parent.name)) {
+      this.bookService.deleteParent(parent.id)
+        .subscribe(res => {
+          this.toaster.success('Успішно видалено');
+          this.parentsArray = this.parentsArray.filter(el => el.id !== parent.id);
+        }, error => {
+          this.toaster.error('Помилка видмлення!');
+        });
+    }
+  }
+  goToShatat() {
+    this.router.navigate(['home/shtat', this.selectedParentId]);
+  }
+  filterFreePosition() {
+    let positionInBook = [];
+    this.parentsArray.forEach(parent => {
+      if (parent.nominallyJobBooks.length) {
+        parent.nominallyJobBooks.forEach(child => {
+          child.positions.forEach(pos => {
+            positionInBook.push(pos.id);
+          });
+        });
+      }
+    });
+    this.filteredPosition = this.positions.filter(pos => positionInBook.indexOf(pos.id) === -1);
+  }
   getParents() {
     this.bookService.getParents()
       .subscribe(res => {
         this.parentsArray = res;
+        this.filterFreePosition();
         if (this.selectedParentId) {
           this.childs = this.parentsArray
             .find(el => el.id === this.selectedParentId).nominallyJobBooks;
@@ -52,7 +83,7 @@ export class NominalJobBook {
       this.bookService.deleteChild(child.id)
         .subscribe(res => {
           this.toaster.success('Успішно видалено');
-          this.parentsArray = this.parentsArray.filter(el => el.id !== child.id);
+          this.childs = this.childs.filter(el => el.id !== child.id);
         }, error => {
           this.toaster.error('Помилка видмлення!');
         });

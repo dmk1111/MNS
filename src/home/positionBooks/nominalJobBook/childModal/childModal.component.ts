@@ -19,6 +19,7 @@ export class ChildModalComponent {
     this.selectRegions = this.regions.map(el => { return { value: el.id, label: el.name }; });
     this.selectPositions = this.positions.map(el => { return { value: el.id, label: el.comment }; });
     if (this.childBook) {
+      this.selectPositions.push(...this.childBook.positions.map(el => { return { value: el.id, label: el.comment }}));
       this.isCreate = false;
       this.book = Object.assign({}, this.childBook, { region : [this.childBook.region.id] });
       this.bookSelectedPosition = this.book['positions'].map(el => el.id);
