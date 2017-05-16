@@ -76,15 +76,36 @@ export const baseStaffHtml = `
             </table>
         </form>
     </div>
+    
+    <div class="wrapper-2">         
+        <table>
+            <tr>
+                <td class="green">Прийняття присяги державного службовця</td>
+                <td class="green"><label><input type="date" value="20.05.2005"></label></td>
+            </tr>
+            <tr>
+                <td class="green">Ранг державного службовця</td>
+                <td class="green"><label><input type="number" value="9"></label></td>
+            </tr>
+            <tr>
+                <td class="green">Категорія державного службовця</td>
+                <td class="green"><label><input type="text" value="B"></label></td>
+            </tr>
+            <tr>
+                <td class="green">Група оплати праці</td>
+                <td class="green"><label><input type="number" value="9"></label></td>
+            </tr>
+        </table>
+    </div>
 
     <div class="right-info">
         <div>
-            <p>Загальний стаж роботи з
+            <p>Загальний стаж роботи з <br>
                 <span class="italic-text">01.08.1991</span></p>
         </div>
 
         <div>
-            <p>Стаж служби з
+            <p>Стаж служби з <br>
                 <span class="italic-text">01.08.1991</span></p>
         </div>
 
@@ -101,6 +122,16 @@ export const baseStaffHtml = `
             <tr>
                 <td>У посаді - <span class="italic-text">05 р. 11 м. 27 д.</span></td>
             </tr>
+        </table>
+        
+        <table style="width:290px">
+          <tr>
+            <td colspan="2">Звільнений зі служби цивільного захисту</td>
+          </tr>
+          <tr>
+            <td style="width:50%">Дата та № наказу</td>
+            <td>01.06.2016 № 10</td>
+          </tr>
         </table>
 
     </div>

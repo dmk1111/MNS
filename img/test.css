@@ -306,7 +306,7 @@ position-book .jumbotron {
   margin-bottom: 5px;
 }
 
-.wrapper-base table tr:last-child td, .right-info table tr:last-child td {
+.wrapper-base table tr:last-child td, .right-info table tr:last-child td, .wrapper-2 table tr:last-child td {
   border-bottom: 1px solid blue;
 }
 
@@ -321,6 +321,29 @@ position-book .jumbotron {
   width: 100%;
 }
 
+.wrapper-2 table {
+  width: 80%;border-collapse: collapse;
+}
+
+.wrapper-2 tr {
+  width: 470px;
+}
+
+.wrapper-2 td {
+  border-left: 1px solid blue;
+  border-right: 1px solid blue;
+  border-top: 1px solid blue;
+  padding: 5px;
+}
+
+.wrapper-2 tr td:first-child {
+  width: 90%;
+}
+
+.wrapper-2 tr td:last-child {
+  width: 25px !important;
+}
+
 .wrapper-base label {
   flex-grow: 1;
   display: flex;
@@ -331,18 +354,18 @@ position-book .jumbotron {
   flex-grow: 5;
 }
 
-.wrapper-base .green, .wrapper-base .green input {
+.wrapper-base .green, .wrapper-base .green input ,  .wrapper-2 .green,  .wrapper-2 .green input{
   background-color: #d4fdd9;
 }
 
-.wrapper-base .italic-text, .right-info  .italic-text {
+.wrapper-base .italic-text, .right-info  .italic-text,  .wrapper-2 .italic-text {
   font-style: italic;
 }
 
  .right-info > div {
-  width: 125px;
+  width: 135px;
   border: 1px solid blue;
-  margin: 5px;
+  margin: 5px 15px;
 }
 
  .right-info p {
@@ -350,11 +373,19 @@ position-book .jumbotron {
 }
 
  .right-info {
-  width: 200px;
+  width: 300px;
   position: fixed;
   right: 10px;
-  top: 550px;
+  top: 500px;
 }
+
+.right-info table {
+   width: 200px;
+ }
+
+.right-info div, .right-info table {
+   float: right;
+ }
 
  .right-info td {
   display: table-cell;
