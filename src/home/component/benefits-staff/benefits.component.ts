@@ -48,6 +48,6 @@ export class BenefitsComponent {
     }
   }
   ngOnDestroy() {
-    confirm('Really');
+    // confirm('Really');
   }
 }
