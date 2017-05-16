@@ -289,3 +289,73 @@ button:focus {
 position-book .jumbotron {
   background: none;
 }
+
+/* BASE STAFF STYLE */
+
+
+.wrapper-base {
+  box-sizing: border-box;
+  margin: 30px;
+  margin-top: 0;
+  font-family: "Times New Roman", Serif;
+}
+
+.wrapper-base table, .right-info table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.wrapper-base table tr:last-child td, .right-info table tr:last-child td {
+  border-bottom: 1px solid blue;
+}
+
+
+.wrapper-base td, .right-info td {
+  display: inline-flex;;
+  align-content: stretch;
+  border-left: 1px solid blue;
+  border-right: 1px solid blue;
+  border-top: 1px solid blue;
+  padding: 5px;
+  width: 100%;
+}
+
+.wrapper-base label {
+  flex-grow: 1;
+  display: flex;
+  align-content: stretch;
+}
+
+.wrapper-base input[type='text'] {
+  flex-grow: 5;
+}
+
+.wrapper-base .green, .wrapper-base .green input {
+  background-color: #d4fdd9;
+}
+
+.wrapper-base .italic-text, .right-info  .italic-text {
+  font-style: italic;
+}
+
+ .right-info > div {
+  width: 125px;
+  border: 1px solid blue;
+  margin: 5px;
+}
+
+ .right-info p {
+  text-align: center;
+}
+
+ .right-info {
+  width: 200px;
+  position: fixed;
+  right: 10px;
+  top: 550px;
+}
+
+ .right-info td {
+  display: table-cell;
+}

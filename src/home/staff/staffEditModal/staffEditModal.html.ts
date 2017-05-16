@@ -4,7 +4,7 @@ export const staffEditHtml = `
       <div class="modal-content" style="width: 100%;z-index: 9999;height: 100%"> 
         <!--Top Nav Bar-->
         <ul class="nav nav-tabs vertical-menu" >
-            <li><img src="../../../img/logo.png"/> </li>
+            <!-- <li><img src="../../../img/logo.png"/> </li> -->
             <li  [ngClass]="{active: tabIndex === 1}"><a (click)="tabIndex = 1">Основне</a></li>
             <li [ngClass]="{active: tabIndex === 2}"><a (click)="tabIndex = 2">Освіта</a></li>
             <li [ngClass]="{active: tabIndex === 4}"><a (click)="tabIndex = 4">Службова діяльність</a></li>
@@ -16,9 +16,9 @@ export const staffEditHtml = `
             <li [ngClass]="{active: tabIndex === 7}"><a (click)="tabIndex = 7">Звільнення</a></li>
             <!--<li [ngClass]="{active: tabIndex === 9}"><a (click)="tabIndex = 9">Просування по службі</a></li>-->
             <li [ngClass]="{active: tabIndex === 10}"><a (click)="tabIndex = 10">Документи</a></li>
-            <li class="save">
+            <!-- <li class="save">
               <button md-raised-button color="primary" (click)="save()">Зберегти</button>
-            </li>   
+            </li>   -->
         </ul> 
         <!---->
         
@@ -29,16 +29,18 @@ export const staffEditHtml = `
       
         <!--Left Content Card-->
         <div class="col-md-9 col-xs-9">
-           <md-card class="modal-inner-content">
            
-           <!--Card title-->
-           <md-card-title>{{ title }}</md-card-title>
-           
-           <!--Card Content-->
-            <md-card-content >
+            
                 
                 <!--Base Tab-->
                 <base-staff *ngIf="tabIndex === 1" [data]="staff.mainStaff"></base-staff>
+                <!--<md-card class="modal-inner-content">-->
+           
+           <!--Card title-->
+           <!--<md-card-title>{{ title }}</md-card-title>-->
+           
+           <!--Card Content-->
+                <md-card-content >
                 <education-staff *ngIf="tabIndex === 2" [id]="staff.id" [data]="staff.education"></education-staff>
                  <other-staff *ngIf="tabIndex === 3" [data]="staff.other"></other-staff>
                  <work-experience *ngIf="tabIndex === 4" [id]="staff.id" [data]="staff.workExperiences"></work-experience>
@@ -51,14 +53,14 @@ export const staffEditHtml = `
                  <hospitals *ngIf="tabIndex === 11" [id]="staff.id" [data]="staff.hospitals"></hospitals>
               </md-card-content>  
               
-            </md-card>  
+            <!--</md-card>  -->
         </div>
         
         <!--Right Content Card (User Profile)-->
         <div class="col-md-3 col-xs-3 user">
           <md-card>
             <md-card-content>
-              <h4 class="username">Іван Іванович Іванов</h4>
+              <h4 class="username">ІВАНОВ <br> Іван Іванович</h4>
               <label for="image">
                 <input type="file"  (change)="uploadPhoto($event)" name="image" id="image"/>
                 <img *ngIf="avatar" [src]="avatar" style="width: 60%" />
@@ -83,7 +85,7 @@ export const staffEditHtml = `
                    <!--Region edit -->
                   <div class="form-group" *ngIf="regions">
                     <label class="control-label col-sm-2" for="pwd">Регіон</label>
-                    <div class="col-sm-10">          
+                    <div class="col-sm-10  regions">          
                       <ng-select
                         [options]="regions"
                         [multiple]="false"
@@ -98,10 +100,13 @@ export const staffEditHtml = `
                 </div>
                 <br>
                 <div class="row">
-                  <div class="col-xs-12">               
+                  <div class="col-xs-12 button-wrapper">               
                     <button md-raised-button color="primary" (click)="close()">Назад до списку</button>
                   </div>
-                   <div class="col-xs-12">               
+                  <div class="col-xs-12 button-wrapper"> 
+                    <button md-raised-button color="primary" (click)="save()">Зберегти</button>
+                  </div>
+                   <div class="col-xs-12 button-wrapper">               
                     <button md-raised-button color="warn" (click)="delete()">Видалити персону</button>
                   </div>
                 </div>

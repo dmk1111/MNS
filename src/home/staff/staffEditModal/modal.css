@@ -4,12 +4,12 @@ a {
 
 /* use background color because there is no background picture at the moment */
 .modal-content {
-  background-color: #05117a;
+  background-color: white;
 }
 
 .vertical-menu {
   width: 200px;
-  background-color: #05117a;
+  background-color: white;
   float: left;
   margin: 20px;
   box-shadow: 0px 2px 10px rgba(255,255,255,0.25);
@@ -19,11 +19,13 @@ a {
 .vertical-menu li {
   display: block;
   width: 100%;
+  border: 1px solid blue;
 }
 
 .vertical-menu li a {
   border: none;
-  color: white;
+  color: black;
+  background-color: #fcf8e3;
 }
 
 .vertical-menu li.active a, .vertical-menu li a:hover, .vertical-menu li a:focus {
@@ -86,9 +88,18 @@ button:hover {
 }
 
 .content {
-  background-color: #05117a;
+  background-color: white;
   padding-top: 20px;
   min-height: 100%;
   overflow: auto;
   height: 100%;
+}
+
+.regions {
+  margin-bottom: 5px;
+}
+
+.button-wrapper {
+  margin: 0;
+  padding: 0;
 }
