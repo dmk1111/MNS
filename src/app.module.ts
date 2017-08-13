@@ -73,6 +73,9 @@ import { ParentModalComponent } from './home/positionBooks/nominalJobBook/parent
 import { ChildModalComponent } from './home/positionBooks/nominalJobBook/childModal/childModal.component';
 import { ShtatComponent } from './home/positionBooks/Shtat/shtat.component';
 import { NewStaffComponent } from './home/newStaff/staff.component';
+import { StaffService } from './home/newStaff/staff.service';
+import { HateOasService } from './common/hateoaes.service';
+import { StaffMainComoponent } from './home/newStaff/staffMain/staffMain.component';
 @NgModule({
   bootstrap: [App],
   declarations: [
@@ -80,6 +83,7 @@ import { NewStaffComponent } from './home/newStaff/staff.component';
     Login,
     App,
     NewStaffComponent,
+    StaffMainComoponent,
     UsersComponent,
     StaffEditModalComponent,
     BaseStaffComponent,
@@ -131,6 +135,8 @@ import { NewStaffComponent } from './home/newStaff/staff.component';
   providers: [
     API_HTTP_PROVIDERS,
     AuthService,
+    HateOasService,
+    StaffService,
     StaffAction,
     NominalBookService,
     BenefitsService,

@@ -10,6 +10,7 @@ import { MenuComponent } from './home/menu/menu.component';
 import { AdminComponent } from './home/admin/admin,compoennt';
 import { PositionBook } from './home/positionBooks/positionBook.component';
 import { ShtatComponent } from './home/positionBooks/Shtat/shtat.component';
+import { NewStaffComponent } from './home/newStaff/staff.component';
 
 export const routes: Routes = [
   { path: '',       redirectTo: 'home', pathMatch: 'full' },
@@ -19,7 +20,7 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'menu', pathMatch: 'full' },
       { path: 'menu',  component: MenuComponent },
-      { path: 'staff',  component: StaffListComponent },
+      { path: 'staff',  component: NewStaffComponent },
       { path: 'deletedStaff',  component: DeleteStaffComponent },
       { path: 'admin',  component: AdminComponent },
       { path: 'position-book',  component: PositionBook },

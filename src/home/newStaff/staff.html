@@ -1,10 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Container</title>
 </head>
 <body>
+<div class="main">
+  <div class="search-bar">
+    <div class="search-box">
+      <label for="search-box">Пошук</label>
+      <input type="search" placeholder="Прізвище ім'я по батькові" id="search-box" results=5>
+      <span class="buttons">
+                <span class="search-icon"></span>
+                <span class="arrow-back"></span>
+                <span class="arrow-forward"></span>
+            </span>
+    </div>
 
+    <span class="add"><span class="add-text">Додати</span><span class="add-button"></span></span>
+  </div>
+  <div class="sidebar">
+    <div class="menu-item" (click)="changeTab(1)"><span>Загальна інформація</span></div>
+    <div class="menu-item" (click)="changeTab(2)"><span>Звання, ранг, розряд (категорія)</span></div>
+    <div class="menu-item" (click)="changeTab(3)"><span>Службова (трудова) діяльність</span></div>
+    <div class="menu-item" (click)="changeTab(4)"><span>Освіта</span></div>
+    <div class="menu-item" (click)="changeTab(5)"><span>Контракт, атестація, кадровий резерв</span></div>
+    <div class="menu-item" (click)="changeTab(6)"><span>Заоходження, стягнення</span></div>
+    <div class="menu-item" (click)="changeTab(7)"><span>Місце проживання, сімейний стан</span></div>
+    <div class="menu-item" (click)="changeTab(8)"><span>Пільги, перевірки, декларації</span></div>
+    <div class="menu-item" (click)="changeTab(9)"><span>Відпустки, лікування</span></div>
+    <div class="menu-item" (click)="changeTab(10)"><span>Звільнення, вислуга (стаж)</span></div>
+    <div class="menu-item" (click)="changeTab(11)"><span>Військовий облік</span></div>
+    <div class="menu-item" (click)="changeTab(12)"><span>Інше</span></div>
+  </div>
+  <div class="container">
+
+    <staffmain *ngIf="tabIndex === 1"></staffmain>
+
+  </div>
+</div>
 </body>
 </html>
