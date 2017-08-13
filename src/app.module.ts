@@ -72,13 +72,14 @@ import { NominalBookService } from './services/nomimnalBook.service';
 import { ParentModalComponent } from './home/positionBooks/nominalJobBook/parentModal/parentModal.component';
 import { ChildModalComponent } from './home/positionBooks/nominalJobBook/childModal/childModal.component';
 import { ShtatComponent } from './home/positionBooks/Shtat/shtat.component';
+import { NewStaffComponent } from './home/newStaff/staff.component';
 @NgModule({
   bootstrap: [App],
   declarations: [
     Home,
     Login,
     App,
-    StaffListComponent,
+    NewStaffComponent,
     UsersComponent,
     StaffEditModalComponent,
     BaseStaffComponent,
